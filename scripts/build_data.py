@@ -1,24 +1,49 @@
 #!/usr/bin/env python3
 """Gera os dados estáticos do site Mnemosyne Viva a partir do corpus do repositório.
 
-Fontes (somente conteúdo já presente no repo):
+Fontes (resolvidas de forma robusta, na ordem indicada):
   - corpus/corpus-data.json           -> corpus operacional completo (contagens/estatísticas)
   - corpus/corpus-data-enriched.json  -> subconjunto curado com thumbnails reais de arquivos
+
+Quando o diretório ``corpus/`` não está presente (por exemplo, neste repositório
+público autônomo, que só distribui os dados já publicados), o script recorre a
+``site/data/corpus-data-enriched.json`` como fonte tanto do corpus quanto do
+subconjunto enriquecido. Assim ``build_data.py`` continua funcionando sem falhas
+crípticas e permanece idempotente sobre os dados já publicados.
 
 Saídas:
   - site/data/acervo.json  -> itens para a grade do acervo (com imagem quando disponível)
   - site/data/stats.json   -> agregados para a homepage e o cabeçalho do acervo
 
-Uso: python site/build_data.py  (a partir da raiz do repositório)
+Metadados iconográficos (metodologia ICONOCRACIA) são opcionais: quando um item
+enriquecido traz o objeto ``iconographic_metadata``, ele é preservado no item
+gerado do acervo, sem afetar os campos de filtro já consumidos pelo frontend.
+
+Uso: python scripts/build_data.py  (a partir da raiz do repositório)
 """
+from __future__ import annotations
+
+import argparse
 import json
 import pathlib
+import sys
 from collections import Counter
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "corpus" / "corpus-data.json"
-ENRICHED = ROOT / "corpus" / "corpus-data-enriched.json"
-OUT = ROOT / "site" / "data"
+DEFAULT_OUT = ROOT / "site" / "data"
+
+# Fonte primária (repo de trabalho) e fallback público (este repo autônomo).
+CORPUS_CANDIDATES = [
+    ROOT / "corpus" / "corpus-data.json",
+    ROOT / "site" / "data" / "corpus-data-enriched.json",
+]
+ENRICHED_CANDIDATES = [
+    ROOT / "corpus" / "corpus-data-enriched.json",
+    ROOT / "site" / "data" / "corpus-data-enriched.json",
+]
+
+# Campo aninhado, opcional, com os metadados iconográficos da metodologia ICONOCRACIA.
+ICONOGRAPHIC_KEY = "iconographic_metadata"
 
 COUNTRY_PT = {
     "France": "França", "Brazil": "Brasil", "United States": "Estados Unidos",
@@ -49,14 +74,33 @@ def norm_country(raw):
     return raw
 
 
-def main():
-    corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
-    enriched = json.loads(ENRICHED.read_text(encoding="utf-8"))
+def resolve_source(candidates: list[pathlib.Path], label: str) -> pathlib.Path:
+    """Retorna o primeiro caminho existente; erro claro se nenhum existir."""
+    for path in candidates:
+        if path.exists():
+            return path
+    tried = "\n  - ".join(str(p) for p in candidates)
+    raise SystemExit(
+        f"[build_data] Nenhuma fonte de {label} encontrada. Caminhos testados:\n  - {tried}\n"
+        "Coloque os dados do corpus em corpus/ ou garanta o JSON público em site/data/."
+    )
 
-    # ---- estatísticas do corpus operacional completo ----
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--corpus", type=pathlib.Path, default=None,
+                        help="JSON do corpus operacional completo (opcional).")
+    parser.add_argument("--enriched", type=pathlib.Path, default=None,
+                        help="JSON do subconjunto curado enriquecido (opcional).")
+    parser.add_argument("--out", type=pathlib.Path, default=DEFAULT_OUT,
+                        help="Diretório de saída para stats.json e acervo.json.")
+    return parser.parse_args()
+
+
+def build_stats(corpus: list[dict]) -> dict:
     countries = Counter(norm_country(x.get("country")) for x in corpus)
     regimes = Counter((x.get("regime") or "não classificado") for x in corpus)
-    motifs = Counter()
+    motifs: Counter = Counter()
     for x in corpus:
         for m in (x.get("motif") or []):
             m = (m or "").strip()
@@ -73,14 +117,12 @@ def main():
                 years.append(int(tok))
                 break
 
-    stats = {
+    return {
         "total": len(corpus),
         "paises": len([c for c in countries if c != "Outros"]),
-        "com_imagem": sum(1 for x in enriched if x.get("thumbnail_url")),
+        "com_imagem": sum(1 for x in corpus if x.get("thumbnail_url")),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
-        "por_pais": [
-            {"pais": p, "n": n} for p, n in countries.most_common()
-        ],
+        "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
         "por_regime": [
             {"regime": REGIME_PT.get(r, r.capitalize()), "chave": r, "n": n}
             for r, n in regimes.most_common()
@@ -88,11 +130,12 @@ def main():
         "motivos": [{"motivo": m, "n": n} for m, n in motifs.most_common(10)],
     }
 
-    # ---- itens do acervo (subconjunto curado enriquecido) ----
+
+def build_items(enriched: list[dict]) -> list[dict]:
     itens = []
     for x in enriched:
         img = x.get("thumbnail_url") or x.get("url_image_download") or ""
-        itens.append({
+        item = {
             "id": x.get("id"),
             "titulo": x.get("title") or "(sem título)",
             "pais": norm_country(x.get("country_pt") or x.get("country")),
@@ -108,16 +151,41 @@ def main():
             "imagem": img,
             "tem_imagem": bool(img),
             "citacao": x.get("citation_abnt") or "",
-        })
+        }
+        # Preserva metadados iconográficos quando presentes (opcional, não quebra filtros).
+        iconografia = x.get(ICONOGRAPHIC_KEY)
+        if isinstance(iconografia, dict) and iconografia:
+            item[ICONOGRAPHIC_KEY] = iconografia
+        itens.append(item)
     # imagens primeiro, depois por país
     itens.sort(key=lambda i: (not i["tem_imagem"], i["pais"], i["titulo"]))
+    return itens
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
-    (OUT / "acervo.json").write_text(json.dumps(itens, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def main() -> int:
+    args = parse_args()
+    corpus_path = args.corpus or resolve_source(CORPUS_CANDIDATES, "corpus")
+    enriched_path = args.enriched or resolve_source(ENRICHED_CANDIDATES, "enriched")
+
+    corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
+    enriched = json.loads(enriched_path.read_text(encoding="utf-8"))
+
+    stats = build_stats(corpus)
+    itens = build_items(enriched)
+
+    out = args.out
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "acervo.json").write_text(json.dumps(itens, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    print(f"fonte corpus:   {corpus_path}")
+    print(f"fonte enriched: {enriched_path}")
     print(f"stats.json: total={stats['total']} paises={stats['paises']} com_imagem={stats['com_imagem']}")
-    print(f"acervo.json: {len(itens)} itens ({sum(i['tem_imagem'] for i in itens)} com imagem)")
+    com_icono = sum(1 for i in itens if ICONOGRAPHIC_KEY in i)
+    print(f"acervo.json: {len(itens)} itens ({sum(i['tem_imagem'] for i in itens)} com imagem, "
+          f"{com_icono} com metadados iconográficos)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

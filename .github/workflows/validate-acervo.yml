@@ -23,15 +23,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Instalar dependências
+        run: pip install "jsonschema==4.23.0"
+
       - name: Validar acervo
         id: validate
         run: |
           python scripts/validate_acervo.py \
             --json site/data/corpus-data-enriched.json \
+            --schema schemas/corpus-data-enriched.schema.json \
             --report acervo-validation-report.md
 
       - name: Publicar resumo em issue se houver problemas
-        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0'
+        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0' || steps.validate.outputs.schema_valid != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           ISSUE_TITLE: "Acervo com itens quebrados ou inacessíveis"
@@ -51,7 +55,7 @@ jobs:
           fi
 
       - name: Marcar execução como falha quando houver problemas
-        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0'
+        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0' || steps.validate.outputs.schema_valid != 'true'
         run: |
           echo "A validação encontrou problemas no acervo. Consulte a issue criada ou atualizada."
           exit 1

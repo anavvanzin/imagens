@@ -82,6 +82,11 @@ def parse_args() -> argparse.Namespace:
         help="Path for the Markdown report.",
     )
     parser.add_argument(
+        "--schema",
+        default="schemas/corpus-data-enriched.schema.json",
+        help="Path to the JSON Schema used to validate the corpus structure.",
+    )
+    parser.add_argument(
         "--timeout",
         type=float,
         default=20.0,
@@ -123,6 +128,64 @@ def load_json(path: Path) -> tuple[bool, Any, str]:
             None,
             f"JSON inválido em linha {exc.lineno}, coluna {exc.colno}: {exc.msg}",
         )
+
+
+def validate_schema(data: Any, schema_path: Path) -> tuple[bool, list[str], str]:
+    """Valida ``data`` contra o JSON Schema.
+
+    Usa ``jsonschema`` quando disponível; caso contrário aplica um validador
+    mínimo (campos obrigatórios + padrões de id/url) derivado do próprio schema,
+    para não depender de bibliotecas externas em ambientes restritos.
+
+    Retorna (ok, lista_de_erros, modo).
+    """
+    if not schema_path.exists():
+        return True, [], "ausente"
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return False, [f"Falha ao ler schema: {exc}"], "erro"
+
+    try:
+        import jsonschema  # type: ignore
+
+        validator = jsonschema.Draft7Validator(schema)
+        errors = []
+        for err in sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path)):
+            loc = "/".join(str(p) for p in err.absolute_path) or "<root>"
+            errors.append(f"{loc}: {err.message}")
+        return (not errors), errors, "jsonschema"
+    except ModuleNotFoundError:
+        ok, errors = _validate_minimal(data, schema)
+        return ok, errors, "stdlib"
+
+
+def _validate_minimal(data: Any, schema: dict[str, Any]) -> tuple[bool, list[str]]:
+    item_def = schema.get("definitions", {}).get("corpusItem", {})
+    required = item_def.get("required", [])
+    props = item_def.get("properties", {})
+    pattern_fields = {
+        field: re.compile(spec["pattern"])
+        for field, spec in props.items()
+        if isinstance(spec, dict) and "pattern" in spec
+    }
+    errors: list[str] = []
+    if not isinstance(data, list):
+        return False, ["<root>: esperado um array de itens"]
+    for index, item in enumerate(data):
+        if not isinstance(item, dict):
+            errors.append(f"[{index}]: item não é um objeto")
+            continue
+        for field in required:
+            if field not in item:
+                errors.append(f"[{index}].{field}: campo obrigatório ausente")
+        for field, pattern in pattern_fields.items():
+            value = item.get(field)
+            if isinstance(value, str) and not pattern.search(value):
+                errors.append(
+                    f"[{index}].{field}: '{value}' não corresponde ao padrão {pattern.pattern}"
+                )
+    return (not errors), errors
 
 
 def records_from_data(data: Any) -> list[dict[str, Any]]:
@@ -284,7 +347,11 @@ def write_report(
     json_error: str,
     record_count: int,
     checks: list[UrlCheck],
+    schema_valid: bool = True,
+    schema_errors: list[str] | None = None,
+    schema_mode: str = "ausente",
 ) -> None:
+    schema_errors = schema_errors or []
     broken = sorted(
         [check for check in checks if not check.ok],
         key=lambda item: (item.item_id, item.field, item.url),
@@ -308,16 +375,27 @@ def write_report(
             "## Resumo",
             "",
             f"- JSON válido: {'sim' if json_valid else 'não'}",
+            f"- Schema válido: {'sim' if schema_valid else 'não'} (validador: {schema_mode})",
             f"- Itens no acervo: {record_count}",
             f"- URLs de imagem verificadas: {checked_count}",
             f"- URLs acessíveis com status 200: {ok_count}",
-            f"- Problemas encontrados: {len(broken) + (0 if json_valid else 1)}",
+            f"- Problemas encontrados: "
+            f"{len(broken) + (0 if json_valid else 1) + (0 if schema_valid else len(schema_errors))}",
             "",
         ]
     )
 
     if not json_valid:
         lines.extend(["## Erro de JSON", "", json_error, ""])
+
+    if not schema_valid:
+        lines.extend(["## Erros de schema", ""])
+        for err in schema_errors[:50]:
+            safe_err = err.replace("|", "\\|")
+            lines.append(f"- {safe_err}")
+        if len(schema_errors) > 50:
+            lines.append(f"- … e mais {len(schema_errors) - 50} erro(s).")
+        lines.append("")
 
     if broken:
         lines.extend(
@@ -353,6 +431,7 @@ def main() -> int:
     args = parse_args()
     json_path = Path(args.json)
     report_path = Path(args.report)
+    schema_path = Path(args.schema)
 
     json_valid, data, json_error = load_json(json_path)
     if not json_valid:
@@ -363,10 +442,21 @@ def main() -> int:
             json_error=json_error,
             record_count=0,
             checks=[],
+            schema_valid=False,
+            schema_errors=["JSON inválido: schema não avaliado."],
+            schema_mode="ausente",
         )
-        write_outputs(json_valid="false", checked_count=0, broken_count=1)
+        write_outputs(
+            json_valid="false",
+            schema_valid="false",
+            checked_count=0,
+            broken_count=1,
+            schema_error_count=1,
+        )
         print(json_error, file=sys.stderr)
         return 0
+
+    schema_valid, schema_errors, schema_mode = validate_schema(data, schema_path)
 
     records = records_from_data(data)
     image_urls = collect_image_urls(records)
@@ -384,15 +474,21 @@ def main() -> int:
         json_error="",
         record_count=len(records),
         checks=checks,
+        schema_valid=schema_valid,
+        schema_errors=schema_errors,
+        schema_mode=schema_mode,
     )
     write_outputs(
         json_valid="true",
+        schema_valid="true" if schema_valid else "false",
         checked_count=len(checks),
         broken_count=broken_count,
+        schema_error_count=len(schema_errors),
     )
     print(
-        f"JSON válido. Itens: {len(records)}. "
-        f"URLs verificadas: {len(checks)}. Problemas: {broken_count}."
+        f"JSON válido. Schema: {'ok' if schema_valid else 'FALHOU'} ({schema_mode}). "
+        f"Itens: {len(records)}. URLs verificadas: {len(checks)}. "
+        f"Problemas de URL: {broken_count}. Erros de schema: {len(schema_errors)}."
     )
     return 0
 

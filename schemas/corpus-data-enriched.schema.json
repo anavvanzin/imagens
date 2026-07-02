@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/corpus-data-enriched.schema.json",
+  "title": "Mnemosyne Viva — Corpus enriquecido",
+  "description": "Esquema do arquivo site/data/corpus-data-enriched.json: um array de itens do acervo. Mantém compatibilidade retroativa com os itens já publicados e documenta o objeto opcional iconographic_metadata (metodologia ICONOCRACIA).",
+  "type": "array",
+  "items": { "$ref": "#/definitions/corpusItem" },
+  "definitions": {
+    "corpusItem": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "title", "country", "date", "regime", "url", "motif"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador estável. Prefixo de país/coleção seguido de segmentos alfanuméricos.",
+          "pattern": "^[A-Z]{2,}(-[A-Z0-9]+)+$"
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "date": { "type": "string", "description": "Data textual (ano, 'c. 1900', intervalos)." },
+        "year": { "type": ["integer", "string", "null"] },
+        "period": { "type": "string" },
+        "period_norm": { "type": "string" },
+        "creator": { "type": "string" },
+        "institution": { "type": "string" },
+        "source_archive": { "type": "string" },
+        "country": { "type": "string" },
+        "country_pt": { "type": "string" },
+        "medium": { "type": "string" },
+        "medium_norm": { "type": "string" },
+        "motif": { "type": "array", "items": { "type": "string" } },
+        "motif_str": { "type": "string" },
+        "regime": { "type": "string" },
+        "regime_justificativa": { "type": "string" },
+        "description": { "type": "string" },
+        "rights": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "tags_str": { "type": "string" },
+        "citation_abnt": { "type": "string" },
+        "citation_chicago": { "type": "string" },
+        "local_image_path": { "type": ["string", "null"] },
+        "iiif_note": { "type": ["string", "null"] },
+        "iiif_source": { "type": ["string", "null"] },
+        "url": {
+          "type": ["string", "null"],
+          "description": "URL da ficha no arquivo de origem (http/https) ou null quando indisponível.",
+          "pattern": "^(https?://|$)"
+        },
+        "url_iiif": { "type": ["string", "null"] },
+        "url_image_download": { "type": ["string", "null"], "pattern": "^(https?://|$)" },
+        "thumbnail_url": { "type": ["string", "null"], "pattern": "^(https?://|$)" },
+        "iconographic_metadata": { "$ref": "#/definitions/iconographicMetadata" }
+      }
+    },
+    "iconographicMetadata": {
+      "type": "object",
+      "description": "Metadados iconográficos opcionais da metodologia ICONOCRACIA. Todos os campos são opcionais; nomes canônicos são obrigatórios (additionalProperties: false).",
+      "additionalProperties": false,
+      "properties": {
+        "allegorical_figure": {
+          "type": "string",
+          "description": "Figura alegórica identificada (ex.: 'República', 'Liberdade')."
+        },
+        "iconclass": {
+          "description": "Notação(ões) Iconclass. String única ou lista.",
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "attributes": {
+          "type": "array",
+          "description": "Atributos visuais (barrete frígio, ramo, espada, etc.).",
+          "items": { "type": "string" }
+        },
+        "pathosformel": {
+          "type": "string",
+          "description": "Pathosformel warburguiana associada ao gesto/afeto."
+        },
+        "visual_regime": {
+          "type": "string",
+          "description": "Regime visual (fundacional, normativo, militar, contra-alegoria)."
+        },
+        "state_function": {
+          "type": "string",
+          "description": "Função de Estado que a imagem desempenha."
+        },
+        "contract_visual_sexual": {
+          "type": "string",
+          "description": "Leitura do contrato visual-sexual encenado pela imagem."
+        },
+        "coloniality_of_seeing": {
+          "type": "string",
+          "description": "Nota sobre a colonialidade do ver mobilizada."
+        },
+        "purification_indicators": {
+          "type": "array",
+          "description": "Indicadores de purificação/branqueamento simbólico.",
+          "items": { "type": "string" }
+        },
+        "endurecimento_score": {
+          "type": "number",
+          "description": "Índice de endurecimento (0 a 1).",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "atlas_panel": {
+          "type": "string",
+          "description": "Painel do Atlas (Mnemosyne) ao qual o item pertence."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "mnemosyne-viva/performance-history@1",
+  "runs": [
+    {
+      "timestamp": "2026-07-02T23:36:07Z",
+      "checked_count": 84,
+      "accessible_count": 53,
+      "average_response_ms": 2830,
+      "threshold_ms": 2000,
+      "status": "alert",
+      "top_slowest": [
+        {
+          "id": "DE-001",
+          "title": "Gerechtigkeitsbrunnen mit Plastik der Justitia (Hans Gieng, 1543)",
+          "url": "https://www.bildindex.de/document/que20183316?part=0&medium=fmk45-ho-0136a",
+          "response_ms": 14366,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-002",
+          "title": "Justitia (marble head from Porta di Capua)",
+          "url": "https://www.bildindex.de/document/obj08148970?part=0&medium=bh798728",
+          "response_ms": 14100,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-009",
+          "title": "Relief: Gerechtigkeit und Eintracht (Bremen Rathaus)",
+          "url": "https://www.bildindex.de/document/obj20459153?part=0&medium=mi04250a11",
+          "response_ms": 11789,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-010",
+          "title": "Allegorie der Jus Civile (Christian Wenzinger)",
+          "url": "https://www.bildindex.de/document/obj20677105?part=0&medium=mi08920i01",
+          "response_ms": 11631,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-006",
+          "title": "Allegorie: Justitia (Marcantonio Raimondi)",
+          "url": "https://www.bildindex.de/document/obj08158050?part=0&medium=bh001222",
+          "response_ms": 11535,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-008",
+          "title": "Justitia (Hameln, Stiftsherrenhaus)",
+          "url": "https://www.bildindex.de/document/obj20608421?part=0&medium=mi11300c09",
+          "response_ms": 11236,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-007",
+          "title": "Allegorie der Justitia und eine weitere weibliche Allegorie",
+          "url": "https://www.bildindex.de/document/obj08108743?part=0&medium=bh_gern_024858_post",
+          "response_ms": 11234,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-005",
+          "title": "Barocke Holzdecke: Personifikation der Gerechtigkeit",
+          "url": "https://www.bildindex.de/document/obj20672587?part=0&medium=mi07014d04",
+          "response_ms": 11197,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-004",
+          "title": "Justitia an der Rathausuhr (Esslingen)",
+          "url": "https://www.bildindex.de/document/obj20553978?part=0&medium=mi05228a07",
+          "response_ms": 10915,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-003",
+          "title": "Die Göttin der Gerechtigkeit nach dem heutigen Geschmacke",
+          "url": "https://www.bildindex.de/document/obj30110594?part=0&medium=mi10000g04",
+          "response_ms": 10885,
+          "field": "thumbnail_url"
+        }
+      ]
+    }
+  ],
+  "last_run": "2026-07-02T23:36:07Z",
+  "last_average_response_ms": 2830,
+  "last_status": "alert"
+}
