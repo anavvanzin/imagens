@@ -80,9 +80,89 @@
           "field": "thumbnail_url"
         }
       ]
+    },
+    {
+      "timestamp": "2026-07-02T23:43:38Z",
+      "checked_count": 84,
+      "accessible_count": 51,
+      "average_response_ms": 1150,
+      "threshold_ms": 2000,
+      "status": "ok",
+      "top_slowest": [
+        {
+          "id": "DE-006",
+          "title": "Allegorie: Justitia (Marcantonio Raimondi)",
+          "url": "https://www.bildindex.de/document/obj08158050?part=0&medium=bh001222",
+          "response_ms": 4439,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-002",
+          "title": "Justitia (marble head from Porta di Capua)",
+          "url": "https://www.bildindex.de/document/obj08148970?part=0&medium=bh798728",
+          "response_ms": 4399,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-004",
+          "title": "Justitia an der Rathausuhr (Esslingen)",
+          "url": "https://www.bildindex.de/document/obj20553978?part=0&medium=mi05228a07",
+          "response_ms": 4232,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-008",
+          "title": "Justitia (Hameln, Stiftsherrenhaus)",
+          "url": "https://www.bildindex.de/document/obj20608421?part=0&medium=mi11300c09",
+          "response_ms": 4226,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-001",
+          "title": "Gerechtigkeitsbrunnen mit Plastik der Justitia (Hans Gieng, 1543)",
+          "url": "https://www.bildindex.de/document/que20183316?part=0&medium=fmk45-ho-0136a",
+          "response_ms": 4112,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-007",
+          "title": "Allegorie der Justitia und eine weitere weibliche Allegorie",
+          "url": "https://www.bildindex.de/document/obj08108743?part=0&medium=bh_gern_024858_post",
+          "response_ms": 4109,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-005",
+          "title": "Barocke Holzdecke: Personifikation der Gerechtigkeit",
+          "url": "https://www.bildindex.de/document/obj20672587?part=0&medium=mi07014d04",
+          "response_ms": 4037,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "DE-009",
+          "title": "Relief: Gerechtigkeit und Eintracht (Bremen Rathaus)",
+          "url": "https://www.bildindex.de/document/obj20459153?part=0&medium=mi04250a11",
+          "response_ms": 3950,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "EU-002",
+          "title": "Time and Justice Reveal the Truth",
+          "url": "http://balat.kikirpa.be/image/thumbnail/A114934.jpg",
+          "response_ms": 1927,
+          "field": "url_image_download"
+        },
+        {
+          "id": "EU-004",
+          "title": "Allegory of Justice (Charles Audran after B.P. Cortona)",
+          "url": "https://www.internetculturale.it/jmms/thumbnailProxy.jsp?type=normal&id=oai%3Awww.internetculturale.sbn.it%2FTeca%3A20%3ANT0000%3ARML0348941",
+          "response_ms": 1870,
+          "field": "url_image_download"
+        }
+      ]
     }
   ],
-  "last_run": "2026-07-02T23:36:07Z",
-  "last_average_response_ms": 2830,
-  "last_status": "alert"
+  "last_run": "2026-07-02T23:43:38Z",
+  "last_average_response_ms": 1150,
+  "last_status": "ok"
 }
