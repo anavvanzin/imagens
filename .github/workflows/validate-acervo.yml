@@ -1,0 +1,57 @@
+name: Validar acervo
+
+on:
+  schedule:
+    # Segunda-feira, 09:00 em São Paulo. GitHub Actions usa UTC.
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  validate-acervo:
+    name: Validar JSON e URLs de imagem
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validar acervo
+        id: validate
+        run: |
+          python scripts/validate_acervo.py \
+            --json site/data/corpus-data-enriched.json \
+            --report acervo-validation-report.md
+
+      - name: Publicar resumo em issue se houver problemas
+        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: "Acervo com itens quebrados ou inacessíveis"
+        run: |
+          existing_issue="$(
+            gh issue list \
+              --state open \
+              --search "$ISSUE_TITLE in:title" \
+              --json number \
+              --jq '.[0].number // empty'
+          )"
+
+          if [ -n "$existing_issue" ]; then
+            gh issue comment "$existing_issue" --body-file acervo-validation-report.md
+          else
+            gh issue create --title "$ISSUE_TITLE" --body-file acervo-validation-report.md
+          fi
+
+      - name: Marcar execução como falha quando houver problemas
+        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0'
+        run: |
+          echo "A validação encontrou problemas no acervo. Consulte a issue criada ou atualizada."
+          exit 1
