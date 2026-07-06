@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#8b3a1a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -22,8 +22,17 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="name">Mnemosyne Viva</span>
-      <span class="sub">Iconocracia · PPGD/UFSC</span>
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true" focusable="false">
+        <circle class="emblem-line" cx="22" cy="22" r="20.5"/>
+        <circle class="emblem-line" cx="22" cy="22" r="16.5" style="stroke-width:.8"/>
+        <path class="emblem-line" d="M6.5 22 Q22 11 37.5 22 Q22 33 6.5 22 Z"/>
+        <circle class="emblem-fill" cx="22" cy="22" r="3.3"/>
+        <path class="emblem-line" d="M22 4.5 v3.2 M22 36.3 v3.2 M4.5 22 h3.2 M36.3 22 h3.2"/>
+      </svg>
+      <span class="brand-text">
+        <span class="name">Mnemosyne Viva</span>
+        <span class="sub">Iconocracia · PPGD/UFSC</span>
+      </span>
     </a>
     <nav class="main-nav" aria-label="Navegação principal">
       <div class="nav-links">
@@ -53,6 +62,7 @@
       <a class="btn btn-primary" href="acervo.html">Explorar o acervo</a>
       <a class="btn btn-ghost" href="sobre.html">Conhecer a pesquisa</a>
     </div>
+    <div class="ornament" aria-hidden="true"><span class="glyph">❦ ✦ ❧</span></div>
   </section>
 
   <section class="stat-band">
@@ -73,6 +83,12 @@
       </div>
       <div class="grid-3">
         <article class="card">
+          <span class="numeral" aria-hidden="true">I</span>
+          <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="emblem-line" d="M2 16 Q16 5 30 16 Q16 27 2 16 Z"/>
+            <circle class="emblem-line" cx="16" cy="16" r="4.6"/>
+            <circle class="emblem-fill" cx="16" cy="16" r="1.8"/>
+          </svg>
           <span class="tag">Conceito autoral</span>
           <h3>Contrato Sexual Visual</h3>
           <p>Extensão visual do contrato sexual: a imagem alegórica feminina naturaliza,
@@ -80,6 +96,13 @@
             fora da imagem. A alegoria representa a mulher justamente para dela retirar o corpo histórico.</p>
         </article>
         <article class="card">
+          <span class="numeral" aria-hidden="true">II</span>
+          <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="emblem-line" d="M16 5 v21 M9 26 h14 M5 10 h22"/>
+            <path class="emblem-line" d="M5 10 L2 18 a4 3 0 0 0 6 0 Z"/>
+            <path class="emblem-line" d="M27 10 L24 18 a4 3 0 0 0 6 0 Z"/>
+            <circle class="emblem-fill" cx="16" cy="6" r="1.7"/>
+          </svg>
           <span class="tag">Conceito autoral</span>
           <h3>Feminilidade de Estado</h3>
           <p>O Estado se representa no feminino — República, Justiça, Nação — enquanto
@@ -87,6 +110,11 @@
             emblemática que funciona como fachada da ordem jurídica.</p>
         </article>
         <article class="card">
+          <span class="numeral" aria-hidden="true">III</span>
+          <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="emblem-line" d="M7 27 h18 M6 11 h20 M8 8 h16 M7.5 8 q8.5 -4 17 0"/>
+            <path class="emblem-line" d="M10 27 v-16 M14 27 v-16 M18 27 v-16 M22 27 v-16"/>
+          </svg>
           <span class="tag">Operacionalização empírica</span>
           <h3>Endurecimento</h3>
           <p>Processo formal pelo qual o corpo alegórico vivo é petrificado: desincorporado,
@@ -138,7 +166,17 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
+  <div class="footer-mark">
+    <svg viewBox="0 0 60 60" aria-hidden="true">
+      <circle class="emblem-line" cx="30" cy="30" r="27"/>
+      <circle class="emblem-line" cx="30" cy="30" r="22" style="stroke-width:.8"/>
+      <path class="emblem-line" d="M11 30 Q30 17 49 30 Q30 43 11 30 Z"/>
+      <circle class="emblem-fill" cx="30" cy="30" r="4"/>
+      <path class="emblem-line" d="M30 8 v4 M30 48 v4 M8 30 h4 M48 30 h4"/>
+    </svg>
+    <div class="motto">Ler é método · método é pesquisa</div>
+  </div>
+  <div class="wrap cols">
     <div class="fcol">
       <h4>Mnemosyne Viva</h4>
       <p class="muted">Casa pública do acervo, do atlas e da pesquisa Iconocracia. Alegoria feminina

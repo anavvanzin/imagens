@@ -119,13 +119,11 @@
         img.alt = i.titulo;
         img.src = i.imagem;
         img.addEventListener("error", function () {
-          thumb.className = "thumb noimg";
-          thumb.textContent = "Imagem no arquivo de origem";
+          setNoImage(thumb, "Imagem no arquivo de origem");
         });
         thumb.appendChild(img);
       } else {
-        thumb.className = "thumb noimg";
-        thumb.textContent = "Sem reprodução local — consultar arquivo";
+        setNoImage(thumb, "Sem reprodução local — consultar arquivo");
       }
       el.appendChild(thumb);
 
@@ -180,6 +178,18 @@
       el.appendChild(body);
       return el;
     }
+  }
+
+  var NOIMG_SVG =
+    '<svg viewBox="0 0 32 32" aria-hidden="true">' +
+    '<path fill="none" stroke="currentColor" stroke-width="1.4" d="M5 27 V9 l6 -4 h16 v22 Z"/>' +
+    '<path fill="none" stroke="currentColor" stroke-width="1.4" d="M11 5 v22 M11 12 h10 M11 17 h10 M11 22 h6"/>' +
+    "</svg>";
+
+  function setNoImage(thumb, text) {
+    thumb.className = "thumb noimg";
+    thumb.innerHTML = NOIMG_SVG + '<span class="noimg-cap"></span>';
+    thumb.querySelector(".noimg-cap").textContent = text;
   }
 
   function unique(arr) {
