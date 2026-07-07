@@ -28,11 +28,12 @@
   --bg-card-hover: #fffdf8;
   --text-primary: #1a1712;
   --text-secondary: #4a4236;
-  --text-muted: #7d7360;
+  /* escurecido para AA (4.5:1) sobre papel/cartão — metadados, contagem, legendas */
+  --text-muted: #6b6250;
   --accent: var(--red);
   --accent-hover: var(--red-deep);
   --accent-light: rgba(184, 30, 30, 0.07);
-  --accent-border: rgba(184, 30, 30, 0.30);
+  --accent-border: rgba(184, 30, 30, 0.55);
   --gold-line: rgba(203, 162, 58, 0.6);
   --border: #d3c7ac;
   --border-strong: var(--print-black);
@@ -317,15 +318,19 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
   padding: 1rem 1.1rem; border: 1.5px solid var(--print-black); background: var(--bg-card);
 }
 .acervo-toolbar input[type="search"] {
-  flex: 1 1 260px; min-width: 200px; padding: .68rem 1rem;
+  flex: 1 1 260px; min-width: 200px; padding: .68rem 1rem; min-height: 44px;
   border: 1.5px solid var(--print-black); background: var(--bg-primary); color: var(--text-primary);
   font-family: var(--font-mono); font-size: .88rem;
 }
 .acervo-toolbar input[type="search"]::placeholder { color: var(--text-muted); }
 .acervo-toolbar select {
-  padding: .68rem 1rem; border: 1.5px solid var(--print-black);
+  padding: .68rem 1rem; min-height: 44px; border: 1.5px solid var(--print-black);
   background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-mono);
   font-size: .8rem; cursor: pointer;
+}
+.acervo-toolbar input[type="search"]:focus-visible,
+.acervo-toolbar select:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
 }
 .result-count { color: var(--text-muted); font-family: var(--font-mono); font-size: .8rem; letter-spacing: .04em; margin-bottom: 1.2rem; }
 
@@ -347,7 +352,8 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 .item .body { padding: 1rem 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .45rem; flex: 1; }
 .item .body h3 { font-size: 1rem; line-height: 1.3; margin: 0; }
 .item .meta { font-family: var(--font-mono); font-size: .72rem; color: var(--text-muted); letter-spacing: .02em; }
-.item .body > a { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; margin-top: .3rem; }
+.item .body > a { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; margin-top: .3rem; align-self: flex-start; padding: .2rem 0; }
+.item .body > a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .pills { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: auto; padding-top: .6rem; }
 .pill {
   font-family: var(--font-mono); font-size: .6rem; text-transform: uppercase; letter-spacing: .06em;
@@ -406,14 +412,30 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
     flex-direction: column; background: var(--bg-primary); border-bottom: 2px solid var(--print-black);
     padding: .5rem 1rem 1rem; gap: 0; }
   nav.main-nav .nav-links.open { display: flex; }
-  nav.main-nav .nav-links a { padding: .7rem .5rem; border-bottom: 1px solid var(--border-light); }
+  nav.main-nav .nav-links a { padding: .75rem .5rem; min-height: 44px; display: flex; align-items: center; border-bottom: 1px solid var(--border-light); }
   nav.main-nav { position: static; }
   .nav-toggle { display: inline-flex; }
+  /* alvos de toque >= 44px (WCAG 2.5.5) */
+  .theme-toggle, .nav-toggle { width: 44px; height: 44px; }
   .split { grid-template-columns: 1fr; gap: 2rem; }
   .hero { padding: 3.5rem 0 2.5rem; }
   .stat { border-left: 0; border-top: 1px solid var(--border); }
   .stat:first-child { border-top: 0; }
   section.block { padding: 3.2rem 0; }
+  /* acervo: controles empilhados em largura total para não apertar */
+  .acervo-toolbar { flex-direction: column; align-items: stretch; gap: .55rem; }
+  .acervo-toolbar input[type="search"],
+  .acervo-toolbar select { flex: 1 1 auto; width: 100%; min-width: 0; font-size: 16px; }
+}
+
+/* larguras estreitas (<=430px): reduzir folga lateral e usar 1 coluna */
+@media (max-width: 430px) {
+  .wrap { padding: 0 1.1rem; }
+  .gallery { grid-template-columns: 1fr; gap: 1.1rem; }
+  .item .body { padding: 1rem 1.05rem 1.15rem; }
+  .item .body h3 { font-size: 1.05rem; line-height: 1.35; }
+  .acervo-toolbar { padding: .85rem .9rem; }
+  .notice { padding: 1rem 1.05rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
