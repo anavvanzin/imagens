@@ -255,11 +255,17 @@ def request_status(url: str, method: str, timeout: float) -> tuple[int | None, s
         url,
         method=method,
         headers={
+            # Browser-like User-Agent. Several digital archives (notably
+            # gallica.bnf.fr) run a WAF that returns 403 to any non-browser
+            # User-Agent — a self-identifying bot string was blocked outright,
+            # which produced ~30 false "broken" 403s in the acervo report. A
+            # standard browser UA restores 200 for those IIIF endpoints.
             "User-Agent": (
-                "MnemosyneVivaLinkChecker/1.0 "
-                "(https://github.com/anavvanzin/mnemosyne-viva)"
+                "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
             ),
-            "Accept": "image/avif,image/webp,image/*,*/*;q=0.8",
+            "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9,fr;q=0.8,pt;q=0.7",
         },
     )
     with urllib.request.urlopen(request, timeout=timeout) as response:
