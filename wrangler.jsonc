@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "iconocracia",
+  "name": "mnemosyne-viva",
   "compatibility_date": "2026-07-03",
   "observability": {
     "enabled": true
