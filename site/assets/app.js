@@ -40,6 +40,93 @@
 
     if (document.getElementById("gallery")) initAcervo();
     hydrateStats();
+
+    /* ---------- Animações GSAP ---------- */
+    if (typeof gsap !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero animations
+      gsap.from(".hero .label", { opacity: 0, y: 15, duration: 0.8, ease: "power2.out" });
+      gsap.from(".hero h1", { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: "power3.out" });
+      gsap.from(".hero .lead", { opacity: 0, y: 15, duration: 0.8, delay: 0.4, ease: "power2.out" });
+      gsap.from(".hero .desc", { opacity: 0, y: 15, duration: 0.8, delay: 0.6, ease: "power2.out" });
+      gsap.from(".hero .cta-row", { opacity: 0, y: 15, duration: 0.8, delay: 0.8, ease: "power2.out" });
+
+      // Stat band animation
+      gsap.from(".stat-band .stat", {
+        scrollTrigger: {
+          trigger: ".stat-band",
+          start: "top 90%",
+        },
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+
+      // Cards stagger animation
+      gsap.from(".grid-3 .card", {
+        scrollTrigger: {
+          trigger: ".grid-3",
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 30,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      // Tarot grid animation
+      gsap.from(".tarot-card", {
+        scrollTrigger: {
+          trigger: ".tarot-grid",
+          start: "top 85%",
+        },
+        opacity: 0,
+        y: 25,
+        stagger: 0.08,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      // Split panels reveal
+      document.querySelectorAll(".split").forEach((split) => {
+        gsap.from(split.children, {
+          scrollTrigger: {
+            trigger: split,
+            start: "top 85%",
+          },
+          opacity: 0,
+          y: 20,
+          stagger: 0.15,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      });
+    }
+
+    /* ---------- 3D Tilt interativo nos cards ---------- */
+    const cards = document.querySelectorAll(".card, .tarot-card, .item");
+    cards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width / 2;
+        const yc = rect.height / 2;
+        const dx = x - xc;
+        const dy = y - yc;
+        const tiltX = -(dy / yc) * 3.5;
+        const tiltY = (dx / xc) * 3.5;
+        card.style.transform = `perspective(800px) translateY(-5px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+      });
+    });
   });
 
   /* ---------- estatísticas na home ---------- */
@@ -105,6 +192,18 @@
       const frag = document.createDocumentFragment();
       filtered.forEach((i) => frag.appendChild(cardFor(i)));
       gallery.appendChild(frag);
+
+      // Animação staggered de entrada com GSAP se disponível
+      if (typeof gsap !== "undefined" && filtered.length > 0) {
+        gsap.from(gallery.children, {
+          opacity: 0,
+          y: 15,
+          stagger: 0.03,
+          duration: 0.45,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      }
     }
 
     function cardFor(i) {
