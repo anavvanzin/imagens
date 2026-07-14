@@ -1,0 +1,11 @@
+{
+  "name": "mnemosyne-viva-sandbox",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "wrangler": "^3.60.0"
+  },
+  "dependencies": {
+    "@cloudflare/sandbox": "^0.7.0"
+  }
+}
