@@ -1,5 +1,126 @@
 {
-  "total": 0,
-  "paises": 0,
-  "periodo": "16th-20th c."
+  "total": 95,
+  "paises": 14,
+  "com_imagem": 39,
+  "periodo": {
+    "min": 1730,
+    "max": 1975
+  },
+  "por_pais": [
+    {
+      "pais": "França",
+      "n": 22
+    },
+    {
+      "pais": "Alemanha",
+      "n": 15
+    },
+    {
+      "pais": "Estados Unidos",
+      "n": 14
+    },
+    {
+      "pais": "Brasil",
+      "n": 10
+    },
+    {
+      "pais": "Países Baixos",
+      "n": 8
+    },
+    {
+      "pais": "Reino Unido",
+      "n": 6
+    },
+    {
+      "pais": "Portugal",
+      "n": 5
+    },
+    {
+      "pais": "Bélgica",
+      "n": 4
+    },
+    {
+      "pais": "Itália",
+      "n": 4
+    },
+    {
+      "pais": "Áustria",
+      "n": 2
+    },
+    {
+      "pais": "Espanha",
+      "n": 2
+    },
+    {
+      "pais": "Suíça",
+      "n": 1
+    },
+    {
+      "pais": "Uruguai",
+      "n": 1
+    },
+    {
+      "pais": "México",
+      "n": 1
+    }
+  ],
+  "por_regime": [
+    {
+      "regime": "Normativo",
+      "chave": "NORMATIVO",
+      "n": 68
+    },
+    {
+      "regime": "Militar",
+      "chave": "MILITAR",
+      "n": 15
+    },
+    {
+      "regime": "Fundacional",
+      "chave": "FUNDACIONAL",
+      "n": 12
+    }
+  ],
+  "motivos": [
+    {
+      "motivo": "Justice",
+      "n": 34
+    },
+    {
+      "motivo": "Justitia",
+      "n": 31
+    },
+    {
+      "motivo": "Marianne",
+      "n": 11
+    },
+    {
+      "motivo": "Balança",
+      "n": 9
+    },
+    {
+      "motivo": "scales",
+      "n": 9
+    },
+    {
+      "motivo": "Espada",
+      "n": 8
+    },
+    {
+      "motivo": "sword",
+      "n": 8
+    },
+    {
+      "motivo": "Columbia",
+      "n": 8
+    },
+    {
+      "motivo": "République",
+      "n": 7
+    },
+    {
+      "motivo": "Justiça",
+      "n": 6
+    }
+  ]
 }
