@@ -1,0 +1,27 @@
+name: Conflict markers
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Reject unresolved merge conflicts
+        shell: bash
+        run: |
+          if git grep -nI -E '^(<{7}|={7}$|>{7}|\|{7})' -- .; then
+            echo "::error::Unresolved merge-conflict marker found."
+            exit 1
+          fi
