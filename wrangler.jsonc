@@ -1,8 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "iconocracia",
+  "name": "imagens",
   "main": "src/index.js",
-  "compatibility_date": "2026-07-03",
+  "compatibility_date": "2026-07-23",
   "observability": {
     "enabled": true
   },
