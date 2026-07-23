@@ -56,3 +56,8 @@ python scripts/measure_performance.py --threshold-ms 2000 --top 10
 ## Deploy
 
 O site é HTML/CSS/JS puro, sem etapa de build. No Vercel, usar framework `Other` ou `null`, sem `buildCommand` e com `outputDirectory` configurado como `site`.
+
+Para o Worker Cloudflare (`npx wrangler deploy`), `POST /api/exec` exige
+`Authorization: Bearer <EXEC_API_KEY>`. Configure o secret com
+`npx wrangler secret put EXEC_API_KEY` (localmente: copie `.dev.vars.example` para
+`.dev.vars`). Sem o secret, a rota responde `503`.

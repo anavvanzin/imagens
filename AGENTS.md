@@ -20,6 +20,10 @@ canonical file/directory overview.
     *container* Durable Object built from `Dockerfile`). Containers require Docker, which
     is **not** available in this environment. This does **not** affect the editorial site
     or static asset serving — only that one sandbox API route is unavailable locally.
+  - **Auth:** `POST /api/exec` requires `Authorization: Bearer <EXEC_API_KEY>`. Set the
+    secret locally via `.dev.vars` (see `.dev.vars.example`) and in production with
+    `npx wrangler secret put EXEC_API_KEY`. If the secret is unset, the route returns
+    `503` (fail closed). Static assets stay public.
 
 ### Data generation (do this before demoing the acervo grid)
 

@@ -1,0 +1,3 @@
+# Copie para .dev.vars (gitignored) e preencha um valor forte.
+# Em produção: npx wrangler secret put EXEC_API_KEY
+EXEC_API_KEY=change-me-to-a-long-random-secret
