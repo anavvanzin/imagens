@@ -2,6 +2,14 @@
 (function () {
   "use strict";
 
+  function debounce(fn, ms) {
+    let t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, ms);
+    };
+  }
+
   /* ---------- tema claro/escuro (persistente) ---------- */
   const root = document.documentElement;
   const saved = localStorage.getItem("mv-theme");
@@ -110,20 +118,25 @@
     /* ---------- 3D Tilt interativo nos cards ---------- */
     const cards = document.querySelectorAll(".card, .tarot-card, .item");
     cards.forEach((card) => {
+      let rafId = null;
+      let lastMouseEvent = null;
       card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xc = rect.width / 2;
-        const yc = rect.height / 2;
-        const dx = x - xc;
-        const dy = y - yc;
-        const tiltX = -(dy / yc) * 3.5;
-        const tiltY = (dx / xc) * 3.5;
-        card.style.transform = `perspective(800px) translateY(-5px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        lastMouseEvent = e;
+        if (rafId !== null) return;
+        rafId = requestAnimationFrame(() => {
+          rafId = null;
+          const ev = lastMouseEvent;
+          const rect = card.getBoundingClientRect();
+          const dx = ev.clientX - rect.left - rect.width / 2;
+          const dy = ev.clientY - rect.top - rect.height / 2;
+          const tiltX = -(dy / (rect.height / 2)) * 3.5;
+          const tiltY = (dx / (rect.width / 2)) * 3.5;
+          card.style.transform = `perspective(800px) translateY(-5px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
       });
 
       card.addEventListener("mouseleave", () => {
+        if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
         card.style.transform = "";
       });
     });
@@ -160,6 +173,9 @@
       .then((r) => r.json())
       .then((data) => {
         itens = data;
+        itens.forEach((i) => {
+          i._hay = (i.titulo + " " + i.autoria + " " + i.instituicao + " " + (i.motivos || []).join(" ")).toLowerCase();
+        });
         populate(fPais, unique(itens.map((i) => i.pais)));
         populate(fRegime, unique(itens.map((i) => i.regime).filter(Boolean)));
         render();
@@ -171,7 +187,8 @@
           "). Verifique se o site está sendo servido por HTTP.</p>";
       });
 
-    [search, fPais, fRegime].forEach((el) => el && el.addEventListener("input", render));
+    search && search.addEventListener("input", debounce(render, 200));
+    [fPais, fRegime].forEach((el) => el && el.addEventListener("input", render));
 
     function render() {
       const q = (search.value || "").trim().toLowerCase();
@@ -180,10 +197,7 @@
       const filtered = itens.filter((i) => {
         if (p && i.pais !== p) return false;
         if (r && i.regime !== r) return false;
-        if (q) {
-          const hay = (i.titulo + " " + i.autoria + " " + i.instituicao + " " + (i.motivos || []).join(" ")).toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
+        if (q && !i._hay.includes(q)) return false;
         return true;
       });
       countEl.textContent =
