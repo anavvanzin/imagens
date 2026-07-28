@@ -52,6 +52,8 @@ COUNTRY_PT = {
     "Spain": "Espanha", "Austria": "Áustria", "Denmark": "Dinamarca",
     "Mexico": "México", "Argentina": "Argentina", "Switzerland": "Suíça",
     "Uruguay": "Uruguai", "CL": "Chile",
+    # apelidos que apareciam crus no dataset e duplicavam o filtro de pais
+    "EUA": "Estados Unidos", "USA": "Estados Unidos", "US": "Estados Unidos",
 }
 
 REGIME_PT = {
@@ -120,7 +122,11 @@ def build_stats(corpus: list[dict]) -> dict:
     return {
         "total": len(corpus),
         "paises": len([c for c in countries if c != "Outros"]),
-        "com_imagem": sum(1 for x in corpus if x.get("thumbnail_url")),
+        # mesmo criterio de build_items(), senao stats e grade divergem
+        "com_imagem": sum(
+            1 for x in corpus
+            if x.get("thumbnail_url") or x.get("url_image_download")
+        ),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
         "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
         "por_regime": [
