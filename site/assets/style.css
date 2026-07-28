@@ -504,13 +504,52 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
    painel de regimes e bloco de fechamento.
    ============================================================ */
 
-/* --- vitrine: prova visual imediata na home --- */
+/* --- dossies de coexistencia: mesmo corpo alegorico, funcoes incompativeis --- */
 .vitrine-block { border-bottom: 2px solid var(--print-black); }
-.vitrine {
-  list-style: none; margin: 2.5rem 0 0; padding: 0;
-  display: grid; gap: 1.25rem;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+.dossier {
+  margin: 2.75rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
 }
+.dossier:first-of-type { border-top: 0; padding-top: .5rem; }
+
+.dossier-head {
+  display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+.dossier-num {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em;
+  background: var(--print-black); color: var(--paper);
+  padding: .18rem .5rem; line-height: 1;
+}
+.dossier-head h3 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 1.5rem; line-height: 1.15; margin: 0;
+  color: var(--text-primary);
+}
+.dossier-span {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.dossier-read {
+  max-width: 68ch; margin: 0 0 1.4rem;
+  font-size: 1rem; line-height: 1.62; color: var(--text-secondary);
+  border-left: 2px solid var(--gold); padding-left: .9rem;
+}
+.dossier-read strong { color: var(--text-primary); }
+
+.dossier-figs {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+/* dossie de duas imagens nao deve esticar para tres colunas */
+.dossier-figs:has(> li:nth-child(2):last-child) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 62%;
+}
+
 .vfig { margin: 0; }
 .vfig > a {
   display: block; text-decoration: none; color: inherit; height: 100%;
@@ -523,7 +562,7 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 }
 .vfig figure { margin: 0; display: flex; flex-direction: column; height: 100%; }
 .vfig img {
-  display: block; width: 100%; height: 220px; object-fit: cover;
+  display: block; width: 100%; height: 250px; object-fit: cover;
   background: var(--muted, #DDD0B8);
   border-bottom: 1px solid var(--border);
 }
@@ -540,7 +579,7 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
   font-weight: 400; color: var(--text-primary);
 }
 .vfig .pill { align-self: flex-start; margin-top: auto; }
-.vitrine-foot { margin: 2rem 0 0; text-align: center; }
+.vitrine-foot { margin: 2.5rem 0 0; text-align: center; }
 
 /* --- nota da faixa de dados --- */
 .band-note {
@@ -569,35 +608,41 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 /* --- bloco de fechamento --- */
 .block.closing { border-top: 2px solid var(--print-black); }
 
-/* --- responsivo da vitrine --- */
-@media (max-width: 1000px) { .vitrine { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* --- responsivo dos dossies --- */
+@media (max-width: 1000px) {
+  .dossier-figs:has(> li:nth-child(2):last-child) { max-width: 100%; }
+  .vfig img { height: 210px; }
+}
+
+/* Em tela estreita, coluna unica destruiria a comparacao: o dossie vira
+   faixa deslizante com encaixe, mantendo as imagens lado a lado. */
 @media (max-width: 720px) {
-  .vitrine { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
-  .vfig img { height: 165px; }
+  .dossier-figs,
+  .dossier-figs:has(> li:nth-child(2):last-child) {
+    display: flex; max-width: 100%; gap: .8rem;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .6rem;
+    scrollbar-width: thin;
+  }
+  .dossier-figs > .vfig {
+    flex: 0 0 72%; scroll-snap-align: start;
+  }
+  .dossier-head h3 { font-size: 1.28rem; }
+  .dossier-read { font-size: .95rem; }
+  .vfig img { height: 200px; }
   .vfig figcaption { padding: .65rem .7rem .8rem; }
   .vfig figcaption strong { font-size: .92rem; }
   .vfig .vmeta { font-size: .72rem; letter-spacing: .1em; }
   .band-note { text-align: left; font-size: .84rem; }
+  .dossier-figs::after { content: ""; flex: 0 0 .2rem; }
 }
-@media (max-width: 380px) {
-  .vitrine { grid-template-columns: 1fr; }
-  .vfig img { height: 200px; }
-}
-
-/* --- acessibilidade: rotulos mono nunca abaixo de 11px --- */
-.stat .lbl { font-size: .7rem; }
-@media (max-width: 720px) {
-  .stat .lbl { font-size: .72rem; letter-spacing: .1em; }
-  .label { font-size: .7rem; }
+@media (max-width: 420px) {
+  .dossier-figs > .vfig { flex: 0 0 80%; }
+  .vfig img { height: 190px; }
 }
 
-/* --- barra "carregar mais" do acervo --- */
-.mais-bar { display: flex; justify-content: center; margin: 2.5rem 0 1rem; }
-.mais-bar .btn { min-height: 48px; }
-
-/* --- conteudo nunca depende de animacao para existir --- */
-@media (prefers-reduced-motion: reduce) {
-  .grid-3 .card, .split > div, .stat-band .stat, .vfig, .tarot-card {
-    opacity: 1 !important; transform: none !important;
-  }
+/* Sem :has() (navegadores antigos), o dossie de duas imagens ainda funciona */
+@supports not selector(:has(*)) {
+  .dossier-figs { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 }
