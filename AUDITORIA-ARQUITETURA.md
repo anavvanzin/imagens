@@ -77,7 +77,7 @@ site/
 ### Recursos transversais
 - Navegação sticky funcional + menu mobile; tema claro/escuro persistente (`localStorage`).
 - Responsivo (grid fluida), acessibilidade básica (skip-link, `aria-current`, `aria-live`, labels,
-  `prefers-reduced-motion`), metatags Open Graph + `theme-color` + `lang="pt-BR"`.
+  `prefers-reduced-motion` — implementado de fato apenas no PR #27; antes desta data a afirmacao era incorreta), metatags Open Graph + `theme-color` + `lang="pt-BR"`.
 
 ## 5. Configuração de deploy (Vercel)
 
