@@ -96,12 +96,29 @@ def load_records(path: Path) -> list[dict[str, Any]]:
     return []
 
 
+MIRROR_DIR = Path("site/assets/acervo")
+MIRROR_BASE = "https://iconocracia.com/assets/acervo"
+
+
 def collect_targets(records: list[dict[str, Any]]) -> list[ImageTarget]:
-    """Uma imagem representativa por item (primeiro campo de imagem preenchido)."""
+    """Uma imagem representativa por item.
+
+    A grade do acervo carrega primeiro a reproducao espelhada no proprio
+    dominio e so recorre ao arquivo de guarda quando o espelho nao existe.
+    A medicao segue a mesma ordem: medir o terceiro quando existe espelho
+    reportaria lentidao que nao afeta quem visita o site.
+    """
     targets: list[ImageTarget] = []
     for index, item in enumerate(records):
         item_id = str(item.get("id") or item.get("item_id") or f"item-{index + 1}")
         title = str(item.get("title") or item.get("titulo") or item_id)
+
+        if (MIRROR_DIR / f"{item_id}.webp").exists():
+            targets.append(
+                ImageTarget(item_id, title, "espelho", f"{MIRROR_BASE}/{item_id}.webp")
+            )
+            continue
+
         for field in IMAGE_FIELDS:
             value = item.get(field)
             if isinstance(value, str) and HTTP_URL_RE.match(value.strip()):
@@ -117,7 +134,7 @@ def measure_one(target: ImageTarget, timeout: float, retries: int) -> Measuremen
         headers={
             "User-Agent": (
                 "MnemosyneVivaPerfMeter/1.0 "
-                "(https://github.com/anavvanzin/mnemosyne-viva)"
+                "(https://github.com/anavvanzin/imagens)"
             ),
             "Accept": "image/avif,image/webp,image/*,*/*;q=0.8",
         },
