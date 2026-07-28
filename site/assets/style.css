@@ -30,8 +30,8 @@
   --bg-card: var(--surface-folio);
   --bg-card-hover: var(--cream);
   --text-primary: var(--ink);
-  --text-secondary: #7D756D;
-  --text-muted: var(--text-tertiary);
+  --text-secondary: #625A50;  /* AA: 5,42:1 no creme, 6,23:1 no card (era #7D756D = 3,62:1) */
+  --text-muted: #6B6157;      /* AA: 4,83:1 no creme, 5,55:1 no card (era #8D8377 = 2,97:1) */
   
   --accent: var(--brand-lacre);
   --accent-hover: var(--terracotta-deep);
@@ -582,4 +582,22 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 @media (max-width: 380px) {
   .vitrine { grid-template-columns: 1fr; }
   .vfig img { height: 200px; }
+}
+
+/* --- acessibilidade: rotulos mono nunca abaixo de 11px --- */
+.stat .lbl { font-size: .7rem; }
+@media (max-width: 720px) {
+  .stat .lbl { font-size: .72rem; letter-spacing: .1em; }
+  .label { font-size: .7rem; }
+}
+
+/* --- barra "carregar mais" do acervo --- */
+.mais-bar { display: flex; justify-content: center; margin: 2.5rem 0 1rem; }
+.mais-bar .btn { min-height: 48px; }
+
+/* --- conteudo nunca depende de animacao para existir --- */
+@media (prefers-reduced-motion: reduce) {
+  .grid-3 .card, .split > div, .stat-band .stat, .vfig, .tarot-card {
+    opacity: 1 !important; transform: none !important;
+  }
 }
