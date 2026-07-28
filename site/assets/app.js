@@ -216,8 +216,17 @@
         const img = document.createElement("img");
         img.loading = "lazy";
         img.alt = i.titulo;
-        img.src = i.imagem;
+        /* Prioridade: a reproducao espelhada no proprio dominio. Imune a
+           bloqueio por Referer, a Opaque Response Blocking, a
+           Cross-Origin-Resource-Policy e a limite de taxa de terceiros.
+           Se o espelho nao existir, tenta a URL do arquivo de guarda. */
+        img.src = "assets/acervo/" + i.id + ".webp";
+        img.dataset.fallback = i.imagem;
         img.addEventListener("error", function () {
+          if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+            img.src = img.dataset.fallback;
+            return;
+          }
           setNoImage(thumb, "Imagem no arquivo de origem");
         });
         thumb.appendChild(img);
