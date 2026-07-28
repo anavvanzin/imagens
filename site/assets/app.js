@@ -42,8 +42,23 @@
     hydrateStats();
 
     /* ---------- Animações GSAP ---------- */
-    if (typeof gsap !== "undefined") {
+    var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (typeof gsap !== "undefined" && !reduzirMovimento) {
       gsap.registerPlugin(ScrollTrigger);
+      /* Rede de seguranca. gsap.from() aplica opacity:0 imediatamente e so
+         revela quando o ScrollTrigger dispara. Se ele nao disparar (ancora
+         no meio da pagina, captura estatica, impressao, pre-visualizacao de
+         link), o conteudo ficaria invisivel. Aqui ele volta. */
+      setTimeout(function () {
+        document.querySelectorAll(
+          ".grid-3 .card, .split > div, .stat-band .stat, .tarot-card, .vfig"
+        ).forEach(function (el) {
+          if (parseFloat(getComputedStyle(el).opacity) === 0) {
+            el.style.opacity = "1";
+            el.style.transform = "none";
+          }
+        });
+      }, 3000);
 
       // Hero animations
       gsap.from(".hero .label", { opacity: 0, y: 15, duration: 0.8, ease: "power2.out" });
@@ -56,7 +71,7 @@
       gsap.from(".stat-band .stat", {
         scrollTrigger: {
           trigger: ".stat-band",
-          start: "top 90%",
+          start: "top 99%",
         },
         opacity: 0,
         y: 20,
@@ -155,6 +170,8 @@
     const fPais = document.getElementById("f-pais");
     const fRegime = document.getElementById("f-regime");
     let itens = [];
+    const PAGINA = 24;
+    let mostrando = PAGINA;
 
     fetch("data/acervo.json")
       .then((r) => r.json())
@@ -171,7 +188,34 @@
           "). Verifique se o site está sendo servido por HTTP.</p>";
       });
 
-    [search, fPais, fRegime].forEach((el) => el && el.addEventListener("input", render));
+    [search, fPais, fRegime].forEach((el) =>
+      el && el.addEventListener("input", function () {
+        mostrando = PAGINA;
+        render();
+      }));
+
+    /* Carrega em blocos de 24. Antes a grade despejava os 95 cards de uma
+       vez, o que dava 48.490px de altura em 390px de largura. */
+    function renderMais(total) {
+      const antiga = document.getElementById("mv-mais");
+      if (antiga) antiga.remove();
+      if (mostrando >= total) return;
+      const bar = document.createElement("div");
+      bar.id = "mv-mais";
+      bar.className = "mais-bar";
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "btn btn-ghost";
+      const restantes = total - mostrando;
+      b.textContent = "Carregar mais " + Math.min(PAGINA, restantes) +
+        " (" + mostrando + " de " + total + ")";
+      b.addEventListener("click", function () {
+        mostrando += PAGINA;
+        render();
+      });
+      bar.appendChild(b);
+      gallery.parentNode.insertBefore(bar, gallery.nextSibling);
+    }
 
     function render() {
       const q = (search.value || "").trim().toLowerCase();
@@ -190,8 +234,9 @@
         filtered.length + " de " + itens.length + " itens do recorte inicial";
       gallery.innerHTML = "";
       const frag = document.createDocumentFragment();
-      filtered.forEach((i) => frag.appendChild(cardFor(i)));
+      filtered.slice(0, mostrando).forEach((i) => frag.appendChild(cardFor(i)));
       gallery.appendChild(frag);
+      renderMais(filtered.length);
 
       // Animação staggered de entrada com GSAP se disponível
       if (typeof gsap !== "undefined" && filtered.length > 0) {

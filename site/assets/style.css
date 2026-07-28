@@ -30,8 +30,8 @@
   --bg-card: var(--surface-folio);
   --bg-card-hover: var(--cream);
   --text-primary: var(--ink);
-  --text-secondary: #7D756D;
-  --text-muted: var(--text-tertiary);
+  --text-secondary: #625A50;  /* AA: 5,42:1 no creme, 6,23:1 no card (era #7D756D = 3,62:1) */
+  --text-muted: #6B6157;      /* AA: 4,83:1 no creme, 5,55:1 no card (era #8D8377 = 2,97:1) */
   
   --accent: var(--brand-lacre);
   --accent-hover: var(--terracotta-deep);
@@ -497,4 +497,152 @@ section.block.alt { background: var(--bg-secondary); border-top: 2px solid var(-
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   Landing 2026-07 — vitrine visual, nota da faixa de dados,
+   painel de regimes e bloco de fechamento.
+   ============================================================ */
+
+/* --- dossies de coexistencia: mesmo corpo alegorico, funcoes incompativeis --- */
+.vitrine-block { border-bottom: 2px solid var(--print-black); }
+
+.dossier {
+  margin: 2.75rem 0 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+.dossier:first-of-type { border-top: 0; padding-top: .5rem; }
+
+.dossier-head {
+  display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
+  margin-bottom: .5rem;
+}
+.dossier-num {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em;
+  background: var(--print-black); color: var(--paper);
+  padding: .18rem .5rem; line-height: 1;
+}
+.dossier-head h3 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 1.5rem; line-height: 1.15; margin: 0;
+  color: var(--text-primary);
+}
+.dossier-span {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.dossier-read {
+  max-width: 68ch; margin: 0 0 1.4rem;
+  font-size: 1rem; line-height: 1.62; color: var(--text-secondary);
+  border-left: 2px solid var(--gold); padding-left: .9rem;
+}
+.dossier-read strong { color: var(--text-primary); }
+
+.dossier-figs {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+/* dossie de duas imagens nao deve esticar para tres colunas */
+.dossier-figs:has(> li:nth-child(2):last-child) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 62%;
+}
+
+.vfig { margin: 0; }
+.vfig > a {
+  display: block; text-decoration: none; color: inherit; height: 100%;
+  border: 1px solid var(--border); background: var(--paper-card);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.vfig > a:hover, .vfig > a:focus-visible {
+  border-color: var(--print-black); box-shadow: var(--shadow); transform: translateY(-3px);
+  text-decoration: none;
+}
+.vfig figure { margin: 0; display: flex; flex-direction: column; height: 100%; }
+.vfig img {
+  display: block; width: 100%; height: 250px; object-fit: cover;
+  background: var(--muted, #DDD0B8);
+  border-bottom: 1px solid var(--border);
+}
+.vfig figcaption {
+  padding: .8rem .85rem 1rem; display: flex; flex-direction: column;
+  gap: .35rem; flex: 1 1 auto;
+}
+.vfig .vmeta {
+  font-family: var(--font-mono); font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.vfig figcaption strong {
+  font-family: var(--font-display); font-size: 1.02rem; line-height: 1.25;
+  font-weight: 400; color: var(--text-primary);
+}
+.vfig .pill { align-self: flex-start; margin-top: auto; }
+.vitrine-foot { margin: 2.5rem 0 0; text-align: center; }
+
+/* --- nota da faixa de dados --- */
+.band-note {
+  font-size: .88rem; line-height: 1.6; color: var(--text-secondary);
+  padding-top: 1rem; padding-bottom: 0; margin: 0 auto;
+  max-width: 760px; text-align: center;
+}
+
+/* --- painel de regimes: rotulo e glosa em duas linhas --- */
+.panel.regimes p {
+  display: flex; flex-direction: column; gap: .15rem;
+  padding: .7rem 0; margin: 0; border-bottom: 1px solid var(--border);
+}
+.panel.regimes p:last-child { border-bottom: 0; }
+.panel.regimes strong {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent);
+}
+.panel.regimes span { font-size: .95rem; color: var(--text-secondary); }
+.panel.regimes .pending strong { color: var(--text-muted); }
+.micro-note {
+  font-size: .86rem; color: var(--text-secondary);
+  border-left: 2px solid var(--gold); padding-left: .8rem; margin: 1rem 0 1.4rem;
+}
+
+/* --- bloco de fechamento --- */
+.block.closing { border-top: 2px solid var(--print-black); }
+
+/* --- responsivo dos dossies --- */
+@media (max-width: 1000px) {
+  .dossier-figs:has(> li:nth-child(2):last-child) { max-width: 100%; }
+  .vfig img { height: 210px; }
+}
+
+/* Em tela estreita, coluna unica destruiria a comparacao: o dossie vira
+   faixa deslizante com encaixe, mantendo as imagens lado a lado. */
+@media (max-width: 720px) {
+  .dossier-figs,
+  .dossier-figs:has(> li:nth-child(2):last-child) {
+    display: flex; max-width: 100%; gap: .8rem;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .6rem;
+    scrollbar-width: thin;
+  }
+  .dossier-figs > .vfig {
+    flex: 0 0 72%; scroll-snap-align: start;
+  }
+  .dossier-head h3 { font-size: 1.28rem; }
+  .dossier-read { font-size: .95rem; }
+  .vfig img { height: 200px; }
+  .vfig figcaption { padding: .65rem .7rem .8rem; }
+  .vfig figcaption strong { font-size: .92rem; }
+  .vfig .vmeta { font-size: .72rem; letter-spacing: .1em; }
+  .band-note { text-align: left; font-size: .84rem; }
+  .dossier-figs::after { content: ""; flex: 0 0 .2rem; }
+}
+@media (max-width: 420px) {
+  .dossier-figs > .vfig { flex: 0 0 80%; }
+  .vfig img { height: 190px; }
+}
+
+/* Sem :has() (navegadores antigos), o dossie de duas imagens ainda funciona */
+@supports not selector(:has(*)) {
+  .dossier-figs { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 }
