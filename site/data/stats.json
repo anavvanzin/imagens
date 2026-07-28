@@ -1,7 +1,7 @@
 {
   "total": 95,
   "paises": 14,
-  "com_imagem": 39,
+  "com_imagem": 72,
   "periodo": {
     "min": 1730,
     "max": 1975
@@ -83,32 +83,24 @@
   ],
   "motivos": [
     {
-      "motivo": "Justice",
-      "n": 34
+      "motivo": "Justiça",
+      "n": 39
     },
     {
       "motivo": "Justitia",
       "n": 31
     },
     {
-      "motivo": "Marianne",
-      "n": 11
-    },
-    {
       "motivo": "Balança",
-      "n": 9
-    },
-    {
-      "motivo": "scales",
-      "n": 9
+      "n": 18
     },
     {
       "motivo": "Espada",
-      "n": 8
+      "n": 16
     },
     {
-      "motivo": "sword",
-      "n": 8
+      "motivo": "Marianne",
+      "n": 11
     },
     {
       "motivo": "Columbia",
@@ -119,8 +111,16 @@
       "n": 7
     },
     {
-      "motivo": "Justiça",
+      "motivo": "Liberdade",
+      "n": 7
+    },
+    {
+      "motivo": "República",
       "n": 6
+    },
+    {
+      "motivo": "WWI",
+      "n": 4
     }
   ]
 }
