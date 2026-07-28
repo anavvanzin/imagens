@@ -8,24 +8,29 @@
 @import url("./design-system/styles.css");
 
 :root {
+  /* Tipografia e superficies: valores LITERAIS de proposito.
+     Estas declaracoes nao podem usar var() apontando para os tokens de
+     mesmo nome nem para tokens que apontem de volta para elas: o ciclo
+     torna a variavel invalida no momento da computacao e o navegador
+     descarta toda propriedade que a consome. Ver PR "fix/tokens-css-invalidos". */
   /* Tipografia mapeada do design system */
-  --font-display: var(--font-display);
-  --font-serif: var(--font-body);
-  --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-serif: "Crimson Pro", Georgia, serif;
+  --font-body: "Crimson Pro", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Paleta semântica do design system (Iuris Memoria) */
   --print-black: var(--ink);
-  --paper: var(--surface-page);
+  --paper: #EFE5CF;
   --paper-2: var(--surface-card);
   --paper-card: var(--surface-folio);
   
-  --bg-primary: var(--surface-page);
+  --bg-primary: #EFE5CF;
   --bg-secondary: var(--surface-card);
   --bg-card: var(--surface-folio);
   --bg-card-hover: var(--cream);
   --text-primary: var(--ink);
-  --text-secondary: var(--text-secondary);
+  --text-secondary: #7D756D;
   --text-muted: var(--text-tertiary);
   
   --accent: var(--brand-lacre);
@@ -35,7 +40,7 @@
   
   --red: var(--brand-lacre);
   --red-deep: var(--terracotta-deep);
-  --gold: var(--gold);
+  --gold: #B8924A;
   --gold-deep: var(--gold-bright);
   --gold-line: var(--hairline-dark);
   
@@ -44,7 +49,7 @@
   --border-light: rgba(212, 193, 154, 0.25);
   
   --shadow: var(--shadow-sm);
-  --shadow-lg: var(--shadow-lg);
+  --shadow-lg: 0 24px 72px rgba(26,22,18,.14), 0 8px 24px rgba(26,22,18,.08);
   --maxw: 1160px;
   --paper-grain: var(--grain);
 }
