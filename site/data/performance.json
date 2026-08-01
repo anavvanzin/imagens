@@ -160,9 +160,89 @@
           "field": "url_image_download"
         }
       ]
+    },
+    {
+      "timestamp": "2026-08-01T12:17:05Z",
+      "checked_count": 72,
+      "accessible_count": 68,
+      "average_response_ms": 246,
+      "threshold_ms": 2000,
+      "status": "ok",
+      "top_slowest": [
+        {
+          "id": "BR-003",
+          "title": "Monumento à República, Praça da República, Belém (vista geral)",
+          "url": "https://iconocracia.com/assets/acervo/BR-003.webp",
+          "response_ms": 444,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-003",
+          "title": "L'envoyé de la Justice",
+          "url": "https://iconocracia.com/assets/acervo/FR-003.webp",
+          "response_ms": 444,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-004",
+          "title": "Jardim do Campo da Aclamação (Campo de Santana): estátuas do Outono e da Primavera",
+          "url": "https://iconocracia.com/assets/acervo/BR-004.webp",
+          "response_ms": 435,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-001",
+          "title": "La Justice, la Vengeance et la Vérité",
+          "url": "https://iconocracia.com/assets/acervo/FR-001.webp",
+          "response_ms": 431,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-005",
+          "title": "Alegoria da República (Décio Villares)",
+          "url": "https://iconocracia.com/assets/acervo/BR-005.webp",
+          "response_ms": 425,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-002",
+          "title": "Detalhe do monumento à República, Praça da República, Belém",
+          "url": "https://iconocracia.com/assets/acervo/BR-002.webp",
+          "response_ms": 421,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-012",
+          "title": "La Liberté guidant le peuple (Eugène Delacroix)",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+          "response_ms": 421,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "FR-002",
+          "title": "Le triomphe de la Justice et de la Vérité",
+          "url": "https://iconocracia.com/assets/acervo/FR-002.webp",
+          "response_ms": 396,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-001",
+          "title": "Estátua feminina na abertura da amostra dos produtos do Rio Grande do Sul",
+          "url": "https://iconocracia.com/assets/acervo/BR-001.webp",
+          "response_ms": 393,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-SEM-1898",
+          "title": "Semeuse 1 Franc silver coin (Oscar Roty)",
+          "url": "https://en.numista.com/catalogue/photo682.jpeg",
+          "response_ms": 386,
+          "field": "url_image_download"
+        }
+      ]
     }
   ],
-  "last_run": "2026-07-02T23:43:38Z",
-  "last_average_response_ms": 1150,
+  "last_run": "2026-08-01T12:17:05Z",
+  "last_average_response_ms": 246,
   "last_status": "ok"
 }
