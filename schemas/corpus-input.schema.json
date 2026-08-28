@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/corpus-input.schema.json",
+  "title": "ICONOCRACIA corpus export",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": ["id", "title", "country", "date", "regime"],
+    "properties": {
+      "id": {"type": "string", "minLength": 1},
+      "title": {"type": "string", "minLength": 1},
+      "country": {"type": "string", "minLength": 1},
+      "date": {"type": "string"},
+      "regime": {"type": "string"},
+      "motif": {"type": "array", "items": {"type": "string"}},
+      "editorialStatus": {"type": "string", "enum": ["draft", "review", "published", "archived"]},
+      "endurecimento_score": {"type": "number", "minimum": 0, "maximum": 1},
+      "indicadores": {"type": "object"},
+      "local_image_path": {"type": ["string", "null"]},
+      "thumbnail_url": {"type": ["string", "null"]},
+      "url_image_download": {"type": ["string", "null"]}
+    }
+  }
+}

@@ -26,6 +26,13 @@ jobs:
       - name: Instalar dependências
         run: pip install "jsonschema==4.23.0"
 
+      - name: Validar contrato e gerar dados
+        run: |
+          python scripts/corpus_sync.py \
+            --corpus site/data/corpus-data-enriched.json \
+            --schema schemas/corpus-input.schema.json \
+            --out /tmp/acervo-data
+
       - name: Validar acervo
         id: validate
         run: |
@@ -59,3 +66,6 @@ jobs:
         run: |
           echo "A validação encontrou problemas no acervo. Consulte a issue criada ou atualizada."
           exit 1
+
+      - name: Testar pipeline
+        run: python -m unittest discover -s tests -v

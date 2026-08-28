@@ -2,6 +2,11 @@
 
 ## Problem Statement
 
+> Estado implementado: `scripts/corpus_sync.py` realiza validação, filtro,
+> transformação e emissão. O export consumido é `corpus/corpus-data.json` do
+> repositório `anavvanzin/iconocracy-corpus`; neste repositório, uma cópia local
+> pode ser usada para builds reproduzíveis.
+
 Transform academic iconography corpus records (English, research-oriented) into
 static site JSON (Portuguese, display-oriented) with strict validation as the
 first gate. The pipeline must filter by `editorialStatus === "published"`, remap
@@ -446,4 +451,7 @@ def resolve_image(files: list[dict]) -> tuple[str, bool]:
 
 ### Immediate blocker
 
-All 30 items in the current corpus have `editorialStatus: "draft"`. The pipeline will produce empty output until items are promoted to `"published"`. This is by design — the gate works correctly — but means the site will show 0 items until editorial work is done.
+The current upstream public export does not yet contain `editorialStatus`. The
+pipeline therefore treats an absent status as `published`; once the upstream
+field is introduced, only explicitly published records are emitted. This avoids
+an accidental empty public site while preserving the editorial gate.
