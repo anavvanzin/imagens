@@ -6,6 +6,7 @@ import argparse
 import json
 import pathlib
 import sys
+import urllib.error
 import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
