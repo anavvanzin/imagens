@@ -261,19 +261,28 @@
         const img = document.createElement("img");
         img.loading = "lazy";
         img.alt = i.titulo;
+        /* Brasiliana and similar archives 403 a cross-origin Referer. */
+        img.referrerPolicy = "no-referrer";
         /* Prioridade: a reproducao espelhada no proprio dominio. Imune a
            bloqueio por Referer, a Opaque Response Blocking, a
            Cross-Origin-Resource-Policy e a limite de taxa de terceiros.
            Se o espelho nao existir, tenta a URL do arquivo de guarda. */
-        img.src = "assets/acervo/" + i.id + ".webp";
-        img.dataset.fallback = i.imagem;
-        img.addEventListener("error", function () {
-          if (img.dataset.fallback && img.src !== img.dataset.fallback) {
-            img.src = img.dataset.fallback;
+        const primary = "assets/acervo/" + i.id + ".webp";
+        const fallback = i.imagem;
+        let triedFallback = false;
+        img.addEventListener("error", function onImgError() {
+          /* Do not compare img.src (always absolute) to the fallback string
+             (often relative, or a pre-redirect URL). That mismatch retries
+             forever and freezes the tab. */
+          if (!triedFallback && fallback && fallback !== primary) {
+            triedFallback = true;
+            img.src = fallback;
             return;
           }
+          img.removeEventListener("error", onImgError);
           setNoImage(thumb, "Imagem no arquivo de origem");
         });
+        img.src = primary;
         thumb.appendChild(img);
       } else {
         setNoImage(thumb, "Sem reprodução local — consultar arquivo");
