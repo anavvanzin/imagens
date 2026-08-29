@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iconocracia.com/schemas/acervo.schema.json",
+  "title": "Mnemosyne Viva generated acervo",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": ["id", "titulo", "pais", "data", "regime", "motivos", "imagem", "tem_imagem"],
+    "properties": {
+      "id": {"type": "string", "minLength": 1},
+      "titulo": {"type": "string"},
+      "pais": {"type": "string"},
+      "data": {"type": "string"},
+      "regime": {"type": "string"},
+      "motivos": {"type": "array", "items": {"type": "string"}},
+      "imagem": {"type": "string"},
+      "tem_imagem": {"type": "boolean"}
+    }
+  }
+}

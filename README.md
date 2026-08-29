@@ -10,6 +10,8 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 - `site/assets/` — CSS e JavaScript.
 - `site/data/` — JSONs estáticos usados pela homepage e pelo acervo.
 - `scripts/build_data.py` — regenera `site/data/*.json` a partir dos dados do corpus original.
+- `scripts/corpus_sync.py` — valida e transforma o export canônico do repositório
+  [`iconocracy-corpus`](https://github.com/anavvanzin/iconocracy-corpus) em dados do site.
 - `scripts/validate_acervo.py` — valida o JSON enriquecido (estrutura + JSON Schema) e verifica URLs de imagem.
 - `scripts/measure_performance.py` — mede o tempo de resposta das imagens e mantém o histórico em `site/data/performance.json`.
 - `schemas/corpus-data-enriched.schema.json` — JSON Schema (draft-07) do corpus enriquecido.
@@ -38,6 +40,23 @@ Validação local (o `jsonschema` é opcional; sem ele, um validador stdlib mín
 pip install jsonschema  # opcional
 python scripts/validate_acervo.py --json site/data/corpus-data-enriched.json
 ```
+
+O export público versionado do corpus canônico é `corpus/corpus-data.json`. Para uma
+sincronização reproduzível, use uma cópia local fixada em um commit (ou uma URL raw
+fixada) e gere os artefatos fora do diretório editorial:
+
+```bash
+python scripts/corpus_sync.py \
+  --corpus /caminho/para/corpus-data.json \
+  --schema schemas/corpus-input.schema.json \
+  --out /tmp/mnemosyne-data \
+  --version <commit-ou-release>
+```
+
+O campo `editorialStatus` é aplicado quando existir; registros sem esse campo no
+export upstream atual são tratados como publicados para manter compatibilidade.
+IDs são preservados como strings estáveis, inclusive UUIDs. `acervo.json` e
+`stats.json` continuam sendo artefatos gerados e não devem ser editados manualmente.
 
 ## Monitoramento de performance
 
