@@ -240,9 +240,89 @@
           "field": "url_image_download"
         }
       ]
+    },
+    {
+      "timestamp": "2026-09-01T12:02:24Z",
+      "checked_count": 72,
+      "accessible_count": 66,
+      "average_response_ms": 144,
+      "threshold_ms": 2000,
+      "status": "ok",
+      "top_slowest": [
+        {
+          "id": "FR-012",
+          "title": "La Liberté guidant le peuple (Eugène Delacroix)",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+          "response_ms": 289,
+          "field": "thumbnail_url"
+        },
+        {
+          "id": "EU-003",
+          "title": "Justitia (Jacob Matham)",
+          "url": "https://iconocracia.com/assets/acervo/EU-003.webp",
+          "response_ms": 257,
+          "field": "espelho"
+        },
+        {
+          "id": "EU-005",
+          "title": "Justitia (Hans Kels d. J.)",
+          "url": "https://iconocracia.com/assets/acervo/EU-005.webp",
+          "response_ms": 255,
+          "field": "espelho"
+        },
+        {
+          "id": "DE-013",
+          "title": "Germania",
+          "url": "https://iconocracia.com/assets/acervo/DE-013.webp",
+          "response_ms": 253,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-004",
+          "title": "Marianne enseignant l'alphabet à des enfants (naïades et Marianne)",
+          "url": "https://iconocracia.com/assets/acervo/FR-004.webp",
+          "response_ms": 226,
+          "field": "espelho"
+        },
+        {
+          "id": "UK-005",
+          "title": "Woman holding sword and scales of justice (Jurisprudentia)",
+          "url": "https://iconocracia.com/assets/acervo/UK-005.webp",
+          "response_ms": 226,
+          "field": "espelho"
+        },
+        {
+          "id": "UK-006",
+          "title": "Women of Britain Say 'Go!'",
+          "url": "https://iconocracia.com/assets/acervo/UK-006.webp",
+          "response_ms": 222,
+          "field": "espelho"
+        },
+        {
+          "id": "US-006",
+          "title": "Die Wage der Macht / La balance de la puissance",
+          "url": "https://iconocracia.com/assets/acervo/US-006.webp",
+          "response_ms": 215,
+          "field": "espelho"
+        },
+        {
+          "id": "FR-007",
+          "title": "République Française: 3e Emprunt de la Défense nationale",
+          "url": "https://iconocracia.com/assets/acervo/FR-007.webp",
+          "response_ms": 191,
+          "field": "espelho"
+        },
+        {
+          "id": "BR-002",
+          "title": "Detalhe do monumento à República, Praça da República, Belém",
+          "url": "https://iconocracia.com/assets/acervo/BR-002.webp",
+          "response_ms": 190,
+          "field": "espelho"
+        }
+      ]
     }
   ],
-  "last_run": "2026-08-01T12:17:05Z",
-  "last_average_response_ms": 246,
+  "last_run": "2026-09-01T12:02:24Z",
+  "last_average_response_ms": 144,
   "last_status": "ok"
 }
