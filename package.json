@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "devDependencies": {
-    "wrangler": "^3.60.0"
+    "wrangler": "^4.128.0"
   },
   "dependencies": {
     "@cloudflare/sandbox": "^0.7.0"
