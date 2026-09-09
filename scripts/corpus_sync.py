@@ -45,17 +45,42 @@ def norm_country(value: Any) -> str:
     return raw
 
 
+def public_image_ref(value: Any) -> str:
+    """Return a URL or site-relative path the public site can actually serve.
+
+    ``local_image_path`` in the enriched export points at ``corpus/imagens/...``,
+    which is not shipped in ``site/``. Using those paths as ``imagem`` marks
+    items as having a reproduction, then 404s in the browser. HTTP thumbnails
+    and ``assets/`` paths are the only refs visitors can load.
+    """
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    if raw.startswith(("http://", "https://")):
+        return raw
+    if raw.startswith("/assets/"):
+        return raw[1:]
+    if raw.startswith("assets/"):
+        return raw
+    return ""
+
+
 def image_for(item: dict[str, Any]) -> str:
-    local = item.get("local_image_path")
-    if local:
-        return str(local)
+    for key in ("thumbnail_url", "url_image_download"):
+        found = public_image_ref(item.get(key))
+        if found:
+            return found
     for file in item.get("files") or []:
-        if (file.get("role") in (None, "primary", "thumbnail")
-                and file.get("type") == "image" and file.get("path")):
-            return str(file["path"])
-    for key in ("thumbnail_url", "url_iiif", "url_image_download"):
-        if item.get(key):
-            return str(item[key])
+        if file.get("role") in (None, "primary", "thumbnail") and file.get("type") == "image":
+            found = public_image_ref(file.get("path"))
+            if found:
+                return found
+    found = public_image_ref(item.get("local_image_path"))
+    if found:
+        return found
+    iiif = public_image_ref(item.get("url_iiif"))
+    if iiif and not iiif.lower().endswith("info.json"):
+        return iiif
     return ""
 
 
