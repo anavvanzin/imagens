@@ -53,7 +53,13 @@
       });
     }).catch(() => {});
   }
-  if (!$('.exhibition')) return;
+  if (!$('.exhibition')) {
+    // Preserve collection links shared before the homepage became an introduction.
+    if ($('.ex-home') && new URLSearchParams(location.search).has('item')) {
+      location.replace('acervo.html' + location.search + location.hash);
+    }
+    return;
+  }
 
   let items = [], filtered = [], selected = null;
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
