@@ -100,9 +100,9 @@
         },
         "endurecimento_score": {
           "type": "number",
-          "description": "Índice de endurecimento (0 a 1).",
+          "description": "Índice composto legado e congelado (0 a 3). Não gerar para novas codificações.",
           "minimum": 0,
-          "maximum": 1
+          "maximum": 3
         },
         "atlas_panel": {
           "type": "string",
