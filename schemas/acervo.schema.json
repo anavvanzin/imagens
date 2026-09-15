@@ -15,7 +15,11 @@
       "regime": {"type": "string"},
       "motivos": {"type": "array", "items": {"type": "string"}},
       "imagem": {"type": "string"},
-      "tem_imagem": {"type": "boolean"}
+      "tem_imagem": {"type": "boolean"},
+      "slug": {"type": "string"},
+      "legacy_ids": {"type": "array", "items": {"type": "string"}},
+      "constelacoes": {"type": "array", "items": {"type": "string"}},
+      "analise_publica": {"type": ["object", "null"]}
     }
   }
 }

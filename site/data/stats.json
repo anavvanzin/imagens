@@ -1,9 +1,9 @@
 {
   "total": 95,
   "paises": 14,
-  "com_imagem": 72,
+  "com_imagem": 64,
   "periodo": {
-    "min": 1730,
+    "min": 1239,
     "max": 1975
   },
   "por_pais": [
@@ -66,41 +66,53 @@
   ],
   "por_regime": [
     {
+      "regime": "Fundacional",
+      "chave": "fundacional",
+      "n": 56
+    },
+    {
       "regime": "Normativo",
-      "chave": "NORMATIVO",
-      "n": 68
+      "chave": "normativo",
+      "n": 29
     },
     {
       "regime": "Militar",
-      "chave": "MILITAR",
-      "n": 15
-    },
-    {
-      "regime": "Fundacional",
-      "chave": "FUNDACIONAL",
-      "n": 12
+      "chave": "militar",
+      "n": 10
     }
   ],
   "motivos": [
     {
-      "motivo": "Justiça",
-      "n": 39
+      "motivo": "Justice",
+      "n": 34
     },
     {
       "motivo": "Justitia",
       "n": 31
     },
     {
-      "motivo": "Balança",
-      "n": 18
-    },
-    {
-      "motivo": "Espada",
-      "n": 16
+      "motivo": "Allégorie féminine",
+      "n": 13
     },
     {
       "motivo": "Marianne",
       "n": 11
+    },
+    {
+      "motivo": "Balança",
+      "n": 9
+    },
+    {
+      "motivo": "sword",
+      "n": 9
+    },
+    {
+      "motivo": "scales",
+      "n": 9
+    },
+    {
+      "motivo": "Espada",
+      "n": 8
     },
     {
       "motivo": "Columbia",
@@ -109,18 +121,12 @@
     {
       "motivo": "République",
       "n": 7
-    },
-    {
-      "motivo": "Liberdade",
-      "n": 7
-    },
-    {
-      "motivo": "República",
-      "n": 6
-    },
-    {
-      "motivo": "WWI",
-      "n": 4
     }
-  ]
+  ],
+  "meta": {
+    "source_count": 336,
+    "published_count": 95,
+    "generated_at": "2026-09-15",
+    "corpus_version": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7"
+  }
 }

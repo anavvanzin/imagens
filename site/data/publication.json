@@ -1,0 +1,1978 @@
+{
+  "schema_version": "1.0",
+  "corpus_repository": "anavvanzin/iconocracy-corpus",
+  "corpus_commit": "d5f8ad1d5eaf039f3837d13ad3eb6ef38dedf2b7",
+  "items": [
+    {
+      "canonical_id": "BR-001",
+      "legacy_record_id": "BR-001",
+      "legacy_ids": [],
+      "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11778",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-001",
+      "image": {
+        "path": "assets/acervo/BR-001.webp",
+        "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/bitstream/handle/20.500.12156.1/11778/0000001.JPG.jpg?sequence=3&isAllowed=y",
+        "catalog_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11778",
+        "license": "Public access",
+        "credit": "Museu Histórico Nacional",
+        "alt": "Estátua feminina na abertura da amostra dos produtos do Rio Grande do Sul"
+      }
+    },
+    {
+      "canonical_id": "BR-002",
+      "legacy_record_id": "BR-002",
+      "legacy_ids": [],
+      "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/13609",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-002",
+      "image": {
+        "path": "assets/acervo/BR-002.webp",
+        "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/bitstream/handle/20.500.12156.1/13609/GV%20dvft%20004%20-%20Visita%20de%20Get%c3%balio%20a%20Bel%c3%a9m%20do%20Par%c3%a1%20Out19400000095.JPG.jpg?sequence=3&isAllowed=y",
+        "catalog_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/13609",
+        "license": "Public access",
+        "credit": "Museu da República / IBRAM",
+        "alt": "Detalhe do monumento à República, Praça da República, Belém"
+      }
+    },
+    {
+      "canonical_id": "BR-003",
+      "legacy_record_id": "BR-003",
+      "legacy_ids": [],
+      "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/13611",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-003",
+      "image": {
+        "path": "assets/acervo/BR-003.webp",
+        "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/bitstream/handle/20.500.12156.1/13611/GV%20dvft%20004%20-%20Visita%20de%20Get%c3%balio%20a%20Bel%c3%a9m%20do%20Par%c3%a1%20Out19400000097.JPG.jpg?sequence=3&isAllowed=y",
+        "catalog_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/13611",
+        "license": "Public access",
+        "credit": "Museu da República / IBRAM",
+        "alt": "Monumento à República, Praça da República, Belém (vista geral)"
+      }
+    },
+    {
+      "canonical_id": "BR-004",
+      "legacy_record_id": "BR-004",
+      "legacy_ids": [],
+      "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11529",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-004",
+      "image": {
+        "path": "assets/acervo/BR-004.webp",
+        "source_url": "https://brasilianafotografica.bn.gov.br/brasiliana/bitstream/handle/20.500.12156.1/11529/002080RJ0118.jpg.jpg?sequence=2&isAllowed=y",
+        "catalog_url": "https://brasilianafotografica.bn.gov.br/brasiliana/handle/20.500.12156.1/11529",
+        "license": "Public access",
+        "credit": "Instituto Moreira Salles (IMS)",
+        "alt": "Jardim do Campo da Aclamação (Campo de Santana): estátuas do Outono e da Primavera"
+      }
+    },
+    {
+      "canonical_id": "BR-005",
+      "legacy_record_id": "BR-005",
+      "legacy_ids": [],
+      "source_url": "https://archive.nyu.edu/handle/2451/61396",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-005",
+      "image": {
+        "path": "assets/acervo/BR-005.webp",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/D%C3%A9cio_Villares_-_A_Rep%C3%BAblica.jpg",
+        "catalog_url": "https://archive.nyu.edu/handle/2451/61396",
+        "license": "Public domain",
+        "credit": "Museu Histórico Nacional",
+        "alt": "Alegoria da República (Décio Villares)"
+      }
+    },
+    {
+      "canonical_id": "BR-006",
+      "legacy_record_id": "BR-006",
+      "legacy_ids": [],
+      "source_url": "https://brasiliana.museus.gov.br/acervos/alegoria-da-republica/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-006",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://brasiliana.museus.gov.br/acervos/alegoria-da-republica/",
+        "license": "Public domain",
+        "credit": "Museu Histórico Nacional",
+        "alt": "Alegoria da República (Carlos Chambelland)"
+      }
+    },
+    {
+      "canonical_id": "BR-007",
+      "legacy_record_id": "BR-007",
+      "legacy_ids": [],
+      "source_url": "http://memoria.bn.br/pdf/702390/per702390_1827_00060.pdf",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-007",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "http://memoria.bn.br/pdf/702390/per702390_1827_00060.pdf",
+        "license": "Public domain",
+        "credit": "Fundação Biblioteca Nacional",
+        "alt": "As Estátuas Fallando (The Statues Speaking) — Justiça"
+      }
+    },
+    {
+      "canonical_id": "BR-008",
+      "legacy_record_id": "BR-008",
+      "legacy_ids": [],
+      "source_url": "http://memoria.bn.br/docreader/webindex/WIPagina/313394/101306",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-008",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "http://memoria.bn.br/docreader/webindex/WIPagina/313394/101306",
+        "license": "Public domain",
+        "credit": "Fundação Biblioteca Nacional",
+        "alt": "Estátua da Justiça (Luiz Rochet) — referência no Almanak Laemmert"
+      }
+    },
+    {
+      "canonical_id": "FR-001",
+      "legacy_record_id": "FR-001",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b531737635",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-001",
+      "image": {
+        "path": "assets/acervo/FR-001.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b531737635/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b531737635",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "La Justice, la Vengeance et la Vérité"
+      }
+    },
+    {
+      "canonical_id": "FR-002",
+      "legacy_record_id": "FR-002",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b531737529",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-002",
+      "image": {
+        "path": "assets/acervo/FR-002.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b531737529/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b531737529",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Le triomphe de la Justice et de la Vérité"
+      }
+    },
+    {
+      "canonical_id": "FR-003",
+      "legacy_record_id": "FR-003",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b53173732g",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-003",
+      "image": {
+        "path": "assets/acervo/FR-003.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b53173732g/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b53173732g",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "L'envoyé de la Justice"
+      }
+    },
+    {
+      "canonical_id": "FR-004",
+      "legacy_record_id": "FR-004",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b10574064v",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-004",
+      "image": {
+        "path": "assets/acervo/FR-004.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b10574064v/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b10574064v",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Marianne enseignant l'alphabet à des enfants (naïades et Marianne)"
+      }
+    },
+    {
+      "canonical_id": "FR-005",
+      "legacy_record_id": "FR-005",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b531842166",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-005",
+      "image": {
+        "path": "assets/acervo/FR-005.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b531842166/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b531842166",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "La République aimable (Félicien Rops)"
+      }
+    },
+    {
+      "canonical_id": "FR-006",
+      "legacy_record_id": "FR-006",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8438243t",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-006",
+      "image": {
+        "path": "assets/acervo/FR-006.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b8438243t/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b8438243t",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "The French Crisis: Madame La République"
+      }
+    },
+    {
+      "canonical_id": "2b7a1a18-1a29-5703-9264-6012425c65e8",
+      "legacy_record_id": "FR-007",
+      "legacy_ids": [
+        "FR-007"
+      ],
+      "source_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b10051217v",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-007",
+      "image": {
+        "path": "assets/acervo/FR-007.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b10051217v/f1/full/full/0/native.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b10051217v",
+        "license": "No Copyright – Other Known Legal Restrictions",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "République Française: 3e Emprunt de la Défense nationale"
+      }
+    },
+    {
+      "canonical_id": "FR-008",
+      "legacy_record_id": "FR-008",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b10510623s",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-008",
+      "image": {
+        "path": "assets/acervo/FR-008.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b10510623s/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b10510623s",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "La République nous appelle... (Steinlen)"
+      }
+    },
+    {
+      "canonical_id": "FR-009",
+      "legacy_record_id": "FR-009",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b6952880n",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-009",
+      "image": {
+        "path": "assets/acervo/FR-009.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b6952880n/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b6952880n",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Buste de la République (Agence Rol)"
+      }
+    },
+    {
+      "canonical_id": "FR-010",
+      "legacy_record_id": "FR-010",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b8577646g",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-010",
+      "image": {
+        "path": "assets/acervo/FR-010.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b8577646g/f1/full/1000,/0/native.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/9200518/ark__12148_btv1b8577646g",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Le hochet de la République (Jean Veber)"
+      }
+    },
+    {
+      "canonical_id": "EU-001",
+      "legacy_record_id": "EU-001",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/201/item_IBA5QWMUFFBZOLE2SPIJO5QD2SPIZS6S",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-001",
+      "image": {
+        "path": "assets/acervo/EU-001.webp",
+        "source_url": "https://proxy.europeana.eu/media/201/item_IBA5QWMUFFBZOLE2SPIJO5QD2SPIZS6S/60083dd530e50fba0723a5b8b09fd96d",
+        "catalog_url": "https://www.europeana.eu/en/item/201/item_IBA5QWMUFFBZOLE2SPIJO5QD2SPIZS6S",
+        "license": "CC BY-NC-SA 4.0",
+        "credit": "Zentralinstitut für Kunstgeschichte",
+        "alt": "Thronende Justitia / Allegorie der strafenden Gerechtigkeit"
+      }
+    },
+    {
+      "canonical_id": "EU-002",
+      "legacy_record_id": "EU-002",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/2048001/AP_10342206",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-002",
+      "image": {
+        "path": "assets/acervo/EU-002.webp",
+        "source_url": "http://balat.kikirpa.be/image/thumbnail/A114934.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/2048001/AP_10342206",
+        "license": "Unknown",
+        "credit": "Royal Institute for Cultural Heritage",
+        "alt": "Time and Justice Reveal the Truth"
+      }
+    },
+    {
+      "canonical_id": "EU-003",
+      "legacy_record_id": "EU-003",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/89/item_ZCR4KC47OMJN7DRRDFTIWRQS33M7PBN2",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-003",
+      "image": {
+        "path": "assets/acervo/EU-003.webp",
+        "source_url": "http://diglib.hab.de/varia/haum/matham-j-wb3-0015/max/000001.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/89/item_ZCR4KC47OMJN7DRRDFTIWRQS33M7PBN2",
+        "license": "Public domain",
+        "credit": "Herzog Anton Ulrich Museum",
+        "alt": "Justitia (Jacob Matham)"
+      }
+    },
+    {
+      "canonical_id": "EU-004",
+      "legacy_record_id": "EU-004",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/446/RML0348941",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-004",
+      "image": {
+        "path": "assets/acervo/EU-004.webp",
+        "source_url": "https://www.internetculturale.it/jmms/thumbnailProxy.jsp?type=normal&id=oai%3Awww.internetculturale.sbn.it%2FTeca%3A20%3ANT0000%3ARML0348941",
+        "catalog_url": "https://www.europeana.eu/en/item/446/RML0348941",
+        "license": "Unknown",
+        "credit": "Casanatense Library",
+        "alt": "Allegory of Justice (Charles Audran after B.P. Cortona)"
+      }
+    },
+    {
+      "canonical_id": "EU-005",
+      "legacy_record_id": "EU-005",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/15502/KK_6068",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-005",
+      "image": {
+        "path": "assets/acervo/EU-005.webp",
+        "source_url": "http://imageapi.khm.at/images/92075/KK_6068.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/15502/KK_6068",
+        "license": "Unknown",
+        "credit": "Kunsthistorisches Museum Wien (Fine Arts Museum Vienna)",
+        "alt": "Justitia (Hans Kels d. J.)"
+      }
+    },
+    {
+      "canonical_id": "EU-006",
+      "legacy_record_id": "EU-006",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/89/item_MH6IXNHWTECBQCNPU7IIMCFP2BDFAV76",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-006",
+      "image": {
+        "path": "assets/acervo/EU-006.webp",
+        "source_url": "http://diglib.hab.de/varia/haumzeichnungen/z-04356/max/000001.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/89/item_MH6IXNHWTECBQCNPU7IIMCFP2BDFAV76",
+        "license": "Public domain",
+        "credit": "Herzog Anton Ulrich Museum",
+        "alt": "Justitia, Allegory of Justice (Johann Oswald Harms)"
+      }
+    },
+    {
+      "canonical_id": "EU-007",
+      "legacy_record_id": "EU-007",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/2048001/AP_10133590",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-007",
+      "image": {
+        "path": "assets/acervo/EU-007.webp",
+        "source_url": "http://balat.kikirpa.be/image/thumbnail/B016622.jpg",
+        "catalog_url": "https://www.europeana.eu/en/item/2048001/AP_10133590",
+        "license": "Unknown",
+        "credit": "Royal Institute for Cultural Heritage",
+        "alt": "Justitia civilis (Maarten de Vos)"
+      }
+    },
+    {
+      "canonical_id": "EU-008",
+      "legacy_record_id": "EU-008",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/15508/30435",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-008",
+      "image": {
+        "path": "",
+        "source_url": "https://sammlungenonline.albertina.at/cc/imageproxy.ashx?server=localhost&port=15001&filename=images/30435.jpg&cache=yes",
+        "catalog_url": "https://www.europeana.eu/en/item/15508/30435",
+        "license": "Unknown",
+        "credit": "Albertina Museum",
+        "alt": "Allegory with Justizia, crowned by a putto"
+      }
+    },
+    {
+      "canonical_id": "EU-009",
+      "legacy_record_id": "EU-009",
+      "legacy_ids": [],
+      "source_url": "https://www.europeana.eu/en/item/15508/DG1918_7",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "eu-009",
+      "image": {
+        "path": "",
+        "source_url": "https://sammlungenonline.albertina.at/cc/imageproxy.ashx?server=localhost&port=15001&filename=images/DG1918_7.jpg&cache=yes",
+        "catalog_url": "https://www.europeana.eu/en/item/15508/DG1918_7",
+        "license": "Public domain",
+        "credit": "Albertina Museum",
+        "alt": "Female Allegory (Pierre Puvis de Chavannes)"
+      }
+    },
+    {
+      "canonical_id": "PT-001",
+      "legacy_record_id": "PT-001",
+      "legacy_ids": [],
+      "source_url": "https://bndigital.bnportugal.gov.pt/records/item/17148-justica-popular",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "pt-001",
+      "image": {
+        "path": "assets/acervo/PT-001.webp",
+        "source_url": "https://bndigital.bnportugal.gov.pt/i/?IIIF=/c7/6e/8e/87/c76e8e87-15a8-464f-bc44-1c87dfdd8953/iiif/ct-117-g-cx_0000_000001.tif/full/!256,256/0/default.jpg",
+        "catalog_url": "https://bndigital.bnportugal.gov.pt/records/item/17148-justica-popular",
+        "license": "Copyrighted – accessible only in BNP internal network",
+        "credit": "Biblioteca Nacional de Portugal",
+        "alt": "Justiça popular (UDP political poster)"
+      }
+    },
+    {
+      "canonical_id": "PT-002",
+      "legacy_record_id": "PT-002",
+      "legacy_ids": [],
+      "source_url": "https://bndigital.bnportugal.gov.pt/records/item/39213-alegoria-a-historia",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "pt-002",
+      "image": {
+        "path": "assets/acervo/PT-002.webp",
+        "source_url": "https://bndigital.bnportugal.gov.pt/i/?IIIF=/b3/e4/a7/5d/b3e4a75d-d38e-45ca-9c5b-2614e7f5b2bd/iiif/e-900-v_0000_000001.tif/full/!256,256/0/default.jpg",
+        "catalog_url": "https://bndigital.bnportugal.gov.pt/records/item/39213-alegoria-a-historia",
+        "license": "Public domain",
+        "credit": "Biblioteca Nacional de Portugal",
+        "alt": "Alegoria à História (female allegorical engraving)"
+      }
+    },
+    {
+      "canonical_id": "PT-003",
+      "legacy_record_id": "PT-003",
+      "legacy_ids": [],
+      "source_url": "https://bndigital.bnportugal.gov.pt/records/item/37491-alegoria-a-morte",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "pt-003",
+      "image": {
+        "path": "assets/acervo/PT-003.webp",
+        "source_url": "https://bndigital.bnportugal.gov.pt/i/?IIIF=/ae/8d/15/76/ae8d1576-002e-4678-af6f-cde5bdb3a602/iiif/e-4395-p_0000_1-2_p24-C-R0150_000001.tif/full/!256,256/0/default.jpg",
+        "catalog_url": "https://bndigital.bnportugal.gov.pt/records/item/37491-alegoria-a-morte",
+        "license": "Public domain",
+        "credit": "Biblioteca Nacional de Portugal",
+        "alt": "Alegoria à Morte (Pierre Antoine Quillard)"
+      }
+    },
+    {
+      "canonical_id": "PT-004",
+      "legacy_record_id": "PT-004",
+      "legacy_ids": [],
+      "source_url": "https://bndigital.bnportugal.gov.pt/records/item/37507-alegoria-ao-tempo",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "pt-004",
+      "image": {
+        "path": "assets/acervo/PT-004.webp",
+        "source_url": "https://bndigital.bnportugal.gov.pt/i/?IIIF=/96/87/56/c0/968756c0-6765-4371-bac9-b5efe8fa114e/iiif/e-4390-p_0000_1-2_p24-C-R0150_000001.tif/full/!256,256/0/default.jpg",
+        "catalog_url": "https://bndigital.bnportugal.gov.pt/records/item/37507-alegoria-ao-tempo",
+        "license": "Public domain",
+        "credit": "Biblioteca Nacional de Portugal",
+        "alt": "Alegoria ao Tempo (Pierre Antoine Quillard)"
+      }
+    },
+    {
+      "canonical_id": "PT-005",
+      "legacy_record_id": "PT-005",
+      "legacy_ids": [],
+      "source_url": "https://bndigital.bnportugal.gov.pt/records/search?q=república&DocumentType=Iconografia",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "pt-005",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://bndigital.bnportugal.gov.pt/records/search?q=república&DocumentType=Iconografia",
+        "license": "Status to be confirmed",
+        "credit": "Biblioteca Nacional de Portugal",
+        "alt": "A Republica precisa de ti: vota em Norton de Matos"
+      }
+    },
+    {
+      "canonical_id": "FR-011",
+      "legacy_record_id": "FR-011",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/services/engine/search/sru?query=justice+symbole+femme&filter=dc.type+all+%22image%22",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-011",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://gallica.bnf.fr/services/engine/search/sru?query=justice+symbole+femme&filter=dc.type+all+%22image%22",
+        "license": "Public domain",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Illustrations de Calendrier et compost des bergiers (Danse macabre — female Justice figure)"
+      }
+    },
+    {
+      "canonical_id": "DE-001",
+      "legacy_record_id": "DE-001",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/que20183316",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-001",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/que20183316",
+        "license": "Public domain",
+        "credit": "Bildarchiv Foto Marburg",
+        "alt": "Gerechtigkeitsbrunnen mit Plastik der Justitia (Hans Gieng, 1543)"
+      }
+    },
+    {
+      "canonical_id": "DE-002",
+      "legacy_record_id": "DE-002",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj08148970",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-002",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj08148970",
+        "license": "Public domain",
+        "credit": "Museo Provinciale Campano, Capua",
+        "alt": "Justitia (marble head from Porta di Capua)"
+      }
+    },
+    {
+      "canonical_id": "DE-003",
+      "legacy_record_id": "DE-003",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj30110594",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-003",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj30110594",
+        "license": "Public domain",
+        "credit": "Kupferstich-Kabinett Dresden",
+        "alt": "Die Göttin der Gerechtigkeit nach dem heutigen Geschmacke"
+      }
+    },
+    {
+      "canonical_id": "DE-004",
+      "legacy_record_id": "DE-004",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj20553978",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-004",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj20553978",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Justitia an der Rathausuhr (Esslingen)"
+      }
+    },
+    {
+      "canonical_id": "DE-005",
+      "legacy_record_id": "DE-005",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj20672587",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-005",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj20672587",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Barocke Holzdecke: Personifikation der Gerechtigkeit"
+      }
+    },
+    {
+      "canonical_id": "DE-006",
+      "legacy_record_id": "DE-006",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj08158050",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-006",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj08158050",
+        "license": "Public domain",
+        "credit": "Bibliotheca Hertziana",
+        "alt": "Allegorie: Justitia (Marcantonio Raimondi)"
+      }
+    },
+    {
+      "canonical_id": "DE-007",
+      "legacy_record_id": "DE-007",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj08108743",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-007",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj08108743",
+        "license": "Public domain",
+        "credit": "Museo Civico, Bassano del Grappa",
+        "alt": "Allegorie der Justitia und eine weitere weibliche Allegorie"
+      }
+    },
+    {
+      "canonical_id": "DE-008",
+      "legacy_record_id": "DE-008",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj20608421",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-008",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj20608421",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Justitia (Hameln, Stiftsherrenhaus)"
+      }
+    },
+    {
+      "canonical_id": "DE-009",
+      "legacy_record_id": "DE-009",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj20459153",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-009",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj20459153",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Relief: Gerechtigkeit und Eintracht (Bremen Rathaus)"
+      }
+    },
+    {
+      "canonical_id": "DE-010",
+      "legacy_record_id": "DE-010",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj20677105",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-010",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj20677105",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Allegorie der Jus Civile (Christian Wenzinger)"
+      }
+    },
+    {
+      "canonical_id": "DE-011",
+      "legacy_record_id": "DE-011",
+      "legacy_ids": [],
+      "source_url": "https://www.bildindex.de/document/obj30143134",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-011",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.bildindex.de/document/obj30143134",
+        "license": "Public domain",
+        "credit": "Bildindex",
+        "alt": "Kamin mit Justitia (Leipzig, Altes Rathaus)"
+      }
+    },
+    {
+      "canonical_id": "NL-001",
+      "legacy_record_id": "NL-001",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/object/Vrouwe-Justitia--13997b5b276f9bbbb36a847da4c3022a",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-001",
+      "image": {
+        "path": "assets/acervo/NL-001.webp",
+        "source_url": "https://iiif.micr.io/SVmwk/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/object/Vrouwe-Justitia--13997b5b276f9bbbb36a847da4c3022a",
+        "license": "Public domain",
+        "credit": "Rijksmuseum",
+        "alt": "Vrouwe Justitia (nude, with sword and scales)"
+      }
+    },
+    {
+      "canonical_id": "NL-002",
+      "legacy_record_id": "NL-002",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/object/Justitia--314f580f935ba978fb199ce7abeb0db1",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-002",
+      "image": {
+        "path": "assets/acervo/NL-002.webp",
+        "source_url": "https://iiif.micr.io/seExq/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/object/Justitia--314f580f935ba978fb199ce7abeb0db1",
+        "license": "Public domain",
+        "credit": "Rijksmuseum",
+        "alt": "Justitia (bust with crown and eye pendant)"
+      }
+    },
+    {
+      "canonical_id": "NL-003",
+      "legacy_record_id": "NL-003",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/object/Allegorie-op-de-rechtvaardigheid--a26144337b14ab57eb5ca23025308032",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-003",
+      "image": {
+        "path": "assets/acervo/NL-003.webp",
+        "source_url": "https://iiif.micr.io/rBXyc/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/object/Allegorie-op-de-rechtvaardigheid--a26144337b14ab57eb5ca23025308032",
+        "license": "Public domain",
+        "credit": "Rijksmuseum",
+        "alt": "Allegorie op de rechtvaardigheid (Allegory of Justice, enthroned)"
+      }
+    },
+    {
+      "canonical_id": "UK-001",
+      "legacy_record_id": "UK-001",
+      "legacy_ids": [],
+      "source_url": "https://www.britishmuseum.org/collection/object/P_1870-0625-185",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-001",
+      "image": {
+        "path": "assets/acervo/UK-001.webp",
+        "source_url": "http://media.britishmuseum.org/media/Repository/Documents/2014_10/11_1/016d35db_1d43_47ce_8fe3_a3c10016707c/preview_00583790_001.jpg",
+        "catalog_url": "https://www.britishmuseum.org/collection/object/P_1870-0625-185",
+        "license": "CC BY-NC-SA 4.0",
+        "credit": "British Museum",
+        "alt": "Justitia enthroned, with sword and scales"
+      }
+    },
+    {
+      "canonical_id": "UK-002",
+      "legacy_record_id": "UK-002",
+      "legacy_ids": [],
+      "source_url": "https://www.britishmuseum.org/collection/object/P_1862-0712-304",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-002",
+      "image": {
+        "path": "assets/acervo/UK-002.webp",
+        "source_url": "http://media.britishmuseum.org/media/Repository/Documents/2014_9/30_9/901985b0_bffe_4d77_821b_a3b6009af4c5/preview_00188066_001.jpg",
+        "catalog_url": "https://www.britishmuseum.org/collection/object/P_1862-0712-304",
+        "license": "CC BY-NC-SA 4.0",
+        "credit": "British Museum",
+        "alt": "Providence and Justice (female personifications in niches)"
+      }
+    },
+    {
+      "canonical_id": "UK-003",
+      "legacy_record_id": "UK-003",
+      "legacy_ids": [],
+      "source_url": "https://www.britishmuseum.org/collection/object/P_1862-0712-305",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-003",
+      "image": {
+        "path": "assets/acervo/UK-003.webp",
+        "source_url": "http://media.britishmuseum.org/media/Repository/Documents/2014_9/30_9/324571c5_1b0a_47d7_8f80_a3b6009b03c3/preview_00188075_001.jpg",
+        "catalog_url": "https://www.britishmuseum.org/collection/object/P_1862-0712-305",
+        "license": "CC BY-NC-SA 4.0",
+        "credit": "British Museum",
+        "alt": "Justitia and Prudentia (female personifications)"
+      }
+    },
+    {
+      "canonical_id": "US-001",
+      "legacy_record_id": "US-001",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2004673327/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-001",
+      "image": {
+        "path": "assets/acervo/US-001.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3a40000/3a45000/3a45700/3a45724r.jpg",
+        "catalog_url": "https://www.loc.gov/item/2004673327/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "America pois'd in the balance of justice"
+      }
+    },
+    {
+      "canonical_id": "US-002",
+      "legacy_record_id": "US-002",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2009631377/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-002",
+      "image": {
+        "path": "assets/acervo/US-002.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/87900/87910v.jpg",
+        "catalog_url": "https://www.loc.gov/item/2009631377/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Justice and History (plaster model for US Capitol)"
+      }
+    },
+    {
+      "canonical_id": "US-003",
+      "legacy_record_id": "US-003",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2007675578/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-003",
+      "image": {
+        "path": "",
+        "source_url": "https://www.loc.gov/resource/cph.3b09379/",
+        "catalog_url": "https://www.loc.gov/item/2007675578/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Justice (blindfolded woman with sword and scales)"
+      }
+    },
+    {
+      "canonical_id": "US-004",
+      "legacy_record_id": "US-004",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/99613542/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-004",
+      "image": {
+        "path": "assets/acervo/US-004.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3f00000/3f04000/3f04000/3f04023v.jpg",
+        "catalog_url": "https://www.loc.gov/item/99613542/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Foire France-Américaine: Justice, Liberty, Demeter, Athena"
+      }
+    },
+    {
+      "canonical_id": "US-005",
+      "legacy_record_id": "US-005",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2004676797/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-005",
+      "image": {
+        "path": "assets/acervo/US-005.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3a40000/3a45000/3a45700/3a45707r.jpg",
+        "catalog_url": "https://www.loc.gov/item/2004676797/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Behold! a fabric now to freedom rear'd (Constitutional allegory)"
+      }
+    },
+    {
+      "canonical_id": "US-006",
+      "legacy_record_id": "US-006",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2004673370/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-006",
+      "image": {
+        "path": "assets/acervo/US-006.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3a40000/3a45000/3a45500/3a45590r.jpg",
+        "catalog_url": "https://www.loc.gov/item/2004673370/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Die Wage der Macht / La balance de la puissance"
+      }
+    },
+    {
+      "canonical_id": "US-007",
+      "legacy_record_id": "US-007",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2018697020/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-007",
+      "image": {
+        "path": "assets/acervo/US-007.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/46400/46404v.jpg",
+        "catalog_url": "https://www.loc.gov/item/2018697020/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Columbia presenting sword to Admiral Dewey"
+      }
+    },
+    {
+      "canonical_id": "US-008",
+      "legacy_record_id": "US-008",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/97510759/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-008",
+      "image": {
+        "path": "assets/acervo/US-008.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsc/00000/00032v.jpg",
+        "catalog_url": "https://www.loc.gov/item/97510759/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "Hedwig Reicher as Columbia in suffrage pageant"
+      }
+    },
+    {
+      "canonical_id": "US-009",
+      "legacy_record_id": "US-009",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2018664118/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-009",
+      "image": {
+        "path": "assets/acervo/US-009.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/57600/57686v.jpg",
+        "catalog_url": "https://www.loc.gov/item/2018664118/",
+        "license": "Public domain",
+        "credit": "Library of Congress",
+        "alt": "The Goddess of Liberty (woman in star-spangled cape)"
+      }
+    },
+    {
+      "canonical_id": "DE-012",
+      "legacy_record_id": "DE-012",
+      "legacy_ids": [],
+      "source_url": "https://lucascranach.org/en/PRIVATE_NONE-P457/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-012",
+      "image": {
+        "path": "",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Gerechtigkeit-1537.jpg",
+        "catalog_url": "https://lucascranach.org/en/PRIVATE_NONE-P457/",
+        "license": "Public domain",
+        "credit": "Private Collection",
+        "alt": "Gerechtigkeit (Allegory of Justice) by Lucas Cranach the Elder"
+      }
+    },
+    {
+      "canonical_id": "FR-012",
+      "legacy_record_id": "FR-012",
+      "legacy_ids": [],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-012",
+      "image": {
+        "path": "",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+        "catalog_url": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Delacroix_-_Le_28_Juillet._La_Libert%C3%A9_guidant_le_peuple.jpg",
+        "license": "Public domain",
+        "credit": "Musée du Louvre",
+        "alt": "La Liberté guidant le peuple (Eugène Delacroix)"
+      }
+    },
+    {
+      "canonical_id": "UK-004",
+      "legacy_record_id": "UK-004",
+      "legacy_ids": [],
+      "source_url": "http://www.speel.me.uk/sculptlondon/oldbaileyjustice.htm",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-004",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "http://www.speel.me.uk/sculptlondon/oldbaileyjustice.htm",
+        "license": "Public domain",
+        "credit": "Central Criminal Court (Old Bailey), London",
+        "alt": "Lady Justice (F.W. Pomeroy, Old Bailey, London)"
+      }
+    },
+    {
+      "canonical_id": "BR-009",
+      "legacy_record_id": "BR-009",
+      "legacy_ids": [],
+      "source_url": "https://acervos.ims.com.br/index.php/Detail/objects/18758",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-009",
+      "image": {
+        "path": "assets/acervo/BR-009.webp",
+        "source_url": "https://acervos.ims.com.br/service.php/File/13350_ca_object_representations_media_8449_medium.jpg",
+        "catalog_url": "https://acervos.ims.com.br/index.php/Detail/objects/18758",
+        "license": "Public domain",
+        "credit": "Supremo Tribunal Federal, Praça dos Três Poderes, Brasília",
+        "alt": "A Justiça (Alfredo Ceschiatti, STF Brasília)"
+      }
+    },
+    {
+      "canonical_id": "BE-001",
+      "legacy_record_id": "BE-001",
+      "legacy_ids": [],
+      "source_url": "https://collections.heritage.brussels/fr/objects/36822",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "be-001",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://collections.heritage.brussels/fr/objects/36822",
+        "license": "Public domain",
+        "credit": "Musée de la Ville de Bruxelles / Hôtel de Ville",
+        "alt": "Allégorie de la Justice (Joseph Stallaert, Brussels City Hall)"
+      }
+    },
+    {
+      "canonical_id": "BR-010",
+      "legacy_record_id": "BR-010",
+      "legacy_ids": [],
+      "source_url": "https://eliseuvisconti.com.br/obra/d702/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "br-010",
+      "image": {
+        "path": "assets/acervo/BR-010.webp",
+        "source_url": "https://eliseuvisconti.com.br/wp-content/uploads/2017/06/D702.jpg",
+        "catalog_url": "https://eliseuvisconti.com.br/obra/d702/",
+        "license": "Public domain",
+        "credit": "Fundação Biblioteca Nacional, Rio de Janeiro",
+        "alt": "Eliseu Visconti — Alegoria (Biblioteca Nacional, Rio de Janeiro)"
+      }
+    },
+    {
+      "canonical_id": "BE-002",
+      "legacy_record_id": "BE-002",
+      "legacy_ids": [],
+      "source_url": "https://be-monumen.be/patrimoine-belge/poelaert-joseph/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "be-002",
+      "image": {
+        "path": "assets/acervo/BE-002.webp",
+        "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Bruxelles_-_Palais_de_Justice.jpg/960px-Bruxelles_-_Palais_de_Justice.jpg",
+        "catalog_url": "https://be-monumen.be/patrimoine-belge/poelaert-joseph/",
+        "license": "Public domain",
+        "credit": "Palais de Justice, Brussels",
+        "alt": "Palais de Justice de Bruxelles (Joseph Poelaert)"
+      }
+    },
+    {
+      "canonical_id": "NL-004",
+      "legacy_record_id": "NL-004",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-27.296",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-004",
+      "image": {
+        "path": "assets/acervo/NL-004.webp",
+        "source_url": "https://iiif.micr.io/TQoch/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-27.296",
+        "license": "CC0 (Public Domain)",
+        "credit": "Rijksmuseum, Amsterdam",
+        "alt": "Rechtvaardigheid (Justitia)"
+      }
+    },
+    {
+      "canonical_id": "NL-005",
+      "legacy_record_id": "NL-005",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1883-A-6992",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-005",
+      "image": {
+        "path": "assets/acervo/NL-005.webp",
+        "source_url": "https://iiif.micr.io/ueUTw/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1883-A-6992",
+        "license": "CC0 (Public Domain)",
+        "credit": "Rijksmuseum, Amsterdam",
+        "alt": "Vrouwe Justitia voor het oordeel van Zaleucus en het oordeel van Cambyses"
+      }
+    },
+    {
+      "canonical_id": "NL-006",
+      "legacy_record_id": "NL-006",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-27.124",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-006",
+      "image": {
+        "path": "assets/acervo/NL-006.webp",
+        "source_url": "https://iiif.micr.io/CRpgV/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-27.124",
+        "license": "CC0 (Public Domain)",
+        "credit": "Rijksmuseum, Amsterdam",
+        "alt": "Rechtvaardigheid (Justitia)"
+      }
+    },
+    {
+      "canonical_id": "NL-007",
+      "legacy_record_id": "NL-007",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1882-A-6499",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-007",
+      "image": {
+        "path": "assets/acervo/NL-007.webp",
+        "source_url": "https://iiif.micr.io/dBSbp/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1882-A-6499",
+        "license": "CC0 (Public Domain)",
+        "credit": "Rijksmuseum, Amsterdam",
+        "alt": "Rechtvaardigheid (Justitia) / Iustitia"
+      }
+    },
+    {
+      "canonical_id": "NL-008",
+      "legacy_record_id": "NL-008",
+      "legacy_ids": [],
+      "source_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1887-A-12280",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "nl-008",
+      "image": {
+        "path": "assets/acervo/NL-008.webp",
+        "source_url": "https://iiif.micr.io/BdhAp/full/1200,/0/default.jpg",
+        "catalog_url": "https://www.rijksmuseum.nl/en/collection/RP-P-1887-A-12280",
+        "license": "CC0 (Public Domain)",
+        "credit": "Rijksmuseum, Amsterdam",
+        "alt": "Rechtvaardigheid (Justitia)"
+      }
+    },
+    {
+      "canonical_id": "FR-013",
+      "legacy_record_id": "FR-013",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b69480451.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-013",
+      "image": {
+        "path": "assets/acervo/FR-013.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b69480451/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b69480451.item",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Déclaration des droits de l'homme et du citoyen"
+      }
+    },
+    {
+      "canonical_id": "FR-014",
+      "legacy_record_id": "FR-014",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410817c.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-014",
+      "image": {
+        "path": "assets/acervo/FR-014.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410817c/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410817c.item",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Déclaration des droits de l'homme et du citoyen (variante)"
+      }
+    },
+    {
+      "canonical_id": "FR-015",
+      "legacy_record_id": "FR-015",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410270p.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-015",
+      "image": {
+        "path": "assets/acervo/FR-015.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410270p/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410270p.item",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Allégorie pour le frontispice du compte-rendu au Roi par M. Necker"
+      }
+    },
+    {
+      "canonical_id": "FR-016",
+      "legacy_record_id": "FR-016",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b6942595s.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-016",
+      "image": {
+        "path": "assets/acervo/FR-016.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b6942595s/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b6942595s.item",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Allégorie pour le frontispice du compte rendu au Roi par M. Necker (variante)"
+      }
+    },
+    {
+      "canonical_id": "FR-017",
+      "legacy_record_id": "FR-017",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410268m",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-017",
+      "image": {
+        "path": "assets/acervo/FR-017.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410268m/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b8410268m",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Allégorie pour servir de frontispice au compte-rendu au Roi par M. Necker"
+      }
+    },
+    {
+      "canonical_id": "FR-018",
+      "legacy_record_id": "FR-018",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8412560z",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-018",
+      "image": {
+        "path": "assets/acervo/FR-018.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b8412560z/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b8412560z",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "[Liberté, Égalité, Fraternité — portrait allégorique d'Ernouf]"
+      }
+    },
+    {
+      "canonical_id": "US-010",
+      "legacy_record_id": "US-010",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2008661765/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-010",
+      "image": {
+        "path": "assets/acervo/US-010.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/17500/17520v.jpg",
+        "catalog_url": "https://www.loc.gov/item/2008661765/",
+        "license": "Public Domain",
+        "credit": "Library of Congress, Washington, D.C.",
+        "alt": "Temple of Liberty"
+      }
+    },
+    {
+      "canonical_id": "UK-005",
+      "legacy_record_id": "UK-005",
+      "legacy_ids": [],
+      "source_url": "https://wellcomecollection.org/works/rkvhanzr",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-005",
+      "image": {
+        "path": "assets/acervo/UK-005.webp",
+        "source_url": "https://iiif.wellcomecollection.org/image/V0007524EC/full/300,/0/default.jpg",
+        "catalog_url": "https://wellcomecollection.org/works/rkvhanzr",
+        "license": "CC BY 4.0 (Wellcome Collection)",
+        "credit": "Wellcome Collection, London",
+        "alt": "Woman holding sword and scales of justice (Jurisprudentia)"
+      }
+    },
+    {
+      "canonical_id": "ES-001",
+      "legacy_record_id": "ES-001",
+      "legacy_ids": [],
+      "source_url": "https://bdh.bne.es/bnesearch/detalle/76944",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "es-001",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://bdh.bne.es/bnesearch/detalle/76944",
+        "license": "Dominio público (BNE)",
+        "credit": "Biblioteca Nacional de España, Madrid",
+        "alt": "[Alegoría de la República española y la República francesa]"
+      }
+    },
+    {
+      "canonical_id": "39ebfe77-0d0b-5130-8cce-f6f48d85a081",
+      "legacy_record_id": "US-011",
+      "legacy_ids": [
+        "US-011"
+      ],
+      "source_url": "https://www.loc.gov/item/91726511/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-011",
+      "image": {
+        "path": "assets/acervo/US-011.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/40900/40985v.jpg",
+        "catalog_url": "https://www.loc.gov/item/91726511/",
+        "license": "Public Domain",
+        "credit": "Library of Congress, Washington, D.C.",
+        "alt": "Wake up America! Civilization calls every man, woman and child!"
+      }
+    },
+    {
+      "canonical_id": "US-017",
+      "legacy_record_id": "US-012",
+      "legacy_ids": [
+        "US-012"
+      ],
+      "source_url": "https://www.loc.gov/item/95506508/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-012",
+      "image": {
+        "path": "assets/acervo/US-012.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/ppmsca/50000/50012v.jpg",
+        "catalog_url": "https://www.loc.gov/item/95506508/",
+        "license": "Public Domain",
+        "credit": "Library of Congress, Washington, D.C.",
+        "alt": "Columbia calls—Enlist now for U.S. Army"
+      }
+    },
+    {
+      "canonical_id": "UK-006",
+      "legacy_record_id": "UK-006",
+      "legacy_ids": [],
+      "source_url": "https://www.iwm.org.uk/collections/item/object/14592",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uk-006",
+      "image": {
+        "path": "assets/acervo/UK-006.webp",
+        "source_url": "https://media.iwm.org.uk/ciim5/145/831/large_000000.jpg",
+        "catalog_url": "https://www.iwm.org.uk/collections/item/object/14592",
+        "license": "© IWM (PST 2763) — reproduction rights contact IWM",
+        "credit": "Imperial War Museum, London",
+        "alt": "Women of Britain Say 'Go!'"
+      }
+    },
+    {
+      "canonical_id": "FR-019",
+      "legacy_record_id": "FR-019",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b9012753r.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-019",
+      "image": {
+        "path": "assets/acervo/FR-019.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b9012753r/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b9012753r.item",
+        "license": "Domaine public (BnF)",
+        "credit": "Bibliothèque nationale de France",
+        "alt": "Journée du Poilu, 25 et 26 décembre 1915, organisée par le Parlement"
+      }
+    },
+    {
+      "canonical_id": "DE-013",
+      "legacy_record_id": "DE-013",
+      "legacy_ids": [],
+      "source_url": "https://www.dhm.de/lemo/bestand/objekt/gemaelde-friedrich-august-von-kaulbach-germania-1914",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-013",
+      "image": {
+        "path": "assets/acervo/DE-013.webp",
+        "source_url": "https://www.dhm.de/lemo/fileadmin/medien/lemo/images/g0000016.jpg",
+        "catalog_url": "https://www.dhm.de/lemo/bestand/objekt/gemaelde-friedrich-august-von-kaulbach-germania-1914",
+        "license": "Domínio público (Friedrich August von Kaulbach, 1850–1920; obra de 1914)",
+        "credit": "Deutsches Historisches Museum, Berlin",
+        "alt": "Germania"
+      }
+    },
+    {
+      "canonical_id": "ES-002",
+      "legacy_record_id": "ES-002",
+      "legacy_ids": [],
+      "source_url": "https://hemerotecadigital.bne.es/hd/es/card?sid=3971781",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "es-002",
+      "image": {
+        "path": "",
+        "source_url": "https://hemerotecadigital.bne.es/hd/es/medium?id=722c9085-527c-454b-ba2e-bd7f3a3c8378",
+        "catalog_url": "https://hemerotecadigital.bne.es/hd/es/card?sid=3971781",
+        "license": "Domínio público (Tomás Padró i Pedret, 1840–1877; publicação de 1873)",
+        "credit": "Biblioteca Nacional de España",
+        "alt": "Alegoría de la Primera República española (La Flaca)"
+      }
+    },
+    {
+      "canonical_id": "UY-001",
+      "legacy_record_id": "UY-001",
+      "legacy_ids": [],
+      "source_url": "https://www.museos.gub.uy/index.php/component/k2/item/1550-juan-manuel-blanes-1830-1901",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "uy-001",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.museos.gub.uy/index.php/component/k2/item/1550-juan-manuel-blanes-1830-1901",
+        "license": "Domínio público (Juan Manuel Blanes, 1830–1901; obra de 1896)",
+        "credit": "Museo Departamental de Bellas Artes Juan Manuel Blanes, Montevidéu",
+        "alt": "El Altar de la Patria"
+      }
+    },
+    {
+      "canonical_id": "MX-001",
+      "legacy_record_id": "MX-001",
+      "legacy_ids": [],
+      "source_url": "https://www.loc.gov/item/2003656173/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "mx-001",
+      "image": {
+        "path": "assets/acervo/MX-001.webp",
+        "source_url": "https://tile.loc.gov/storage-services/service/pnp/cph/3b10000/3b18000/3b18400/3b18453r.jpg",
+        "catalog_url": "https://www.loc.gov/item/2003656173/",
+        "license": "Domínio público (José Guadalupe Posada, 1852–1913; publicação de 1889)",
+        "credit": "Library of Congress, Washington D.C.",
+        "alt": "[Virtudes cardinales: Justica] (La Patria Ilustrada)"
+      }
+    },
+    {
+      "canonical_id": "FR-020",
+      "legacy_record_id": "FR-020",
+      "legacy_ids": [],
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b10544534k.item",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-020",
+      "image": {
+        "path": "assets/acervo/FR-020.webp",
+        "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b10544534k/thumbnail",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b10544534k.item",
+        "license": "Domínio público (obra medieval); digitalização BnF — Gallica (acesso aberto)",
+        "credit": "Bibliothèque nationale de France, Paris",
+        "alt": "Decretum Gratiani (manuscrito iluminado, BnF)"
+      }
+    },
+    {
+      "canonical_id": "US-EDUC-1896-02",
+      "legacy_record_id": "US-EDUC-1896-02",
+      "legacy_ids": [],
+      "source_url": "https://americanhistory.si.edu/collections/object/nmah_1817050",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-educ-1896-02",
+      "image": {
+        "path": "assets/acervo/US-EDUC-1896-02.webp",
+        "source_url": "https://ids.si.edu/ids/deliveryService?id=NMAH-AHB2021q127671&max=800",
+        "catalog_url": "https://americanhistory.si.edu/collections/object/nmah_1817050",
+        "license": "",
+        "credit": "Bureau of Engraving and Printing",
+        "alt": "Science Presenting Steam and Electricity to Commerce and Manufacture ($2 Silver Certificate)"
+      }
+    },
+    {
+      "canonical_id": "US-EDUC-1896-05",
+      "legacy_record_id": "US-EDUC-1896-05",
+      "legacy_ids": [],
+      "source_url": "https://americanhistory.si.edu/collections/object/nmah_1816788",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "us-educ-1896-05",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://americanhistory.si.edu/collections/object/nmah_1816788",
+        "license": "",
+        "credit": "Bureau of Engraving and Printing",
+        "alt": "Electricity Presenting Light to the World ($5 Silver Certificate)"
+      }
+    },
+    {
+      "canonical_id": "FR-SEM-1898",
+      "legacy_record_id": "FR-SEM-1898",
+      "legacy_ids": [],
+      "source_url": "https://en.numista.com/catalogue/pieces682.html",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "fr-sem-1898",
+      "image": {
+        "path": "",
+        "source_url": "https://en.numista.com/catalogue/photo682.jpeg",
+        "catalog_url": "https://en.numista.com/catalogue/pieces682.html",
+        "license": "",
+        "credit": "Monnaie de Paris",
+        "alt": "Semeuse 1 Franc silver coin (Oscar Roty)"
+      }
+    },
+    {
+      "canonical_id": "DE-NOTG-1921",
+      "legacy_record_id": "DE-NOTG-1921",
+      "legacy_ids": [],
+      "source_url": "",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-notg-1921",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "",
+        "license": "",
+        "credit": "Municipality of Bielefeld",
+        "alt": "Notgeld Bielefeld — Jungbrunnen (Fountain of Youth) silk note"
+      }
+    },
+    {
+      "canonical_id": "DE-WR-1919-50M",
+      "legacy_record_id": "DE-WR-1919-50M",
+      "legacy_ids": [],
+      "source_url": "https://www.numizon.com/en/banknote/germany-reichsbanknotes-50-mark-type-1919-pick-66/deu-p66/",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-wr-1919-50m",
+      "image": {
+        "path": "",
+        "source_url": "",
+        "catalog_url": "https://www.numizon.com/en/banknote/germany-reichsbanknotes-50-mark-type-1919-pick-66/deu-p66/",
+        "license": "",
+        "credit": "Deutsche Reichsbank",
+        "alt": "50 Mark Reichsbanknote — Germania as Young Girl (Weimar 1919)"
+      }
+    },
+    {
+      "canonical_id": "DE-WR-1924-50PF",
+      "legacy_record_id": "DE-WR-1924-50PF",
+      "legacy_ids": [],
+      "source_url": "https://en.numista.com/catalogue/pieces2546.html",
+      "editorial_status": "published",
+      "grandfathered": true,
+      "slug": "de-wr-1924-50pf",
+      "image": {
+        "path": "",
+        "source_url": "https://en.numista.com/catalogue/photo2546.jpeg",
+        "catalog_url": "https://en.numista.com/catalogue/pieces2546.html",
+        "license": "",
+        "credit": "Reichsbank",
+        "alt": "50 Reichspfennig — Woman Planting Oak Sapling (Weimar 1924)"
+      }
+    },
+    {
+      "canonical_id": "FR-087",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b6948145c.item",
+      "slug": "allegorie-constitution-1791",
+      "image": {
+        "path": "assets/acervo/FR-087.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b6948145c/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b6948145c.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura feminina coroada, sentada junto ao leão francês, sustenta a Constituição diante de um busto de Luís XVI."
+      },
+      "legacy_record_id": "FR-087",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A Constituição toma corpo feminino para articular nação, direitos e monarquia sob uma nova ordem escrita.",
+        "panofsky": {
+          "level_1": "Mulher coroada em vestes longas apresenta um volume aberto; leão, busto de Luís XVI, pedestais, inscrições e documentos estruturam a cena.",
+          "level_2": "A figura personifica a Constituição ou a Nação constitucional. O leão e o retrato régio inserem a nova ordem na monarquia constitucional.",
+          "level_3": "O corpo feminino torna a Constituição sensível, enquanto texto, rei e nação dividem a autoridade visual."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 1,
+          "dessexualizacao": 1,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 1,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 0,
+          "serialidade": 1,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "FR-073",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b53009905z.item",
+      "slug": "constitution-francaise-droits",
+      "image": {
+        "path": "assets/acervo/FR-073.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b53009905z/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b53009905z.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura masculina erguida sobre um braseiro segura barrete vermelho e coroa, cercada por homens em celebração."
+      },
+      "legacy_record_id": "FR-073",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A fundação constitucional aparece por corpos masculinos e emblemas políticos, sem personificação feminina identificável.",
+        "panofsky": {
+          "level_1": "Figura masculina elevada segura barrete vermelho e coroa diante de uma multidão masculina; fumaça e raios concentram o eixo central.",
+          "level_2": "Barrete, coroa e reunião pública articulam liberdade, monarquia e povo. A reprodução não sustenta a identificação de uma República feminina.",
+          "level_3": "Como caso negativo, a obra mostra que a lei também foi corporificada sem feminilidade alegórica."
+        },
+        "indicators": null,
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "gender_attributed": "ausente"
+      }
+    },
+    {
+      "canonical_id": "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+      "source_url": "https://www.museodelprado.es/en/the-collection/art-work/truth-has-died/8c3b0257-606f-4d0b-af9e-73f05de59697",
+      "slug": "goya-murio-la-verdad",
+      "image": {
+        "path": "assets/acervo/ce773ab1-3bfc-9f6e-754a-efe0c567916d.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_Muri%C3%B3_la_Verdad_(Desastres_79).jpg",
+        "catalog_url": "https://www.museodelprado.es/en/the-collection/art-work/truth-has-died/8c3b0257-606f-4d0b-af9e-73f05de59697",
+        "license": "Domínio público — PDM 1.0",
+        "credit": "Francisco de Goya / Wikimedia Commons; ficha Museo del Prado",
+        "alt": "A Verdade, figura feminina luminosa, jaz morta diante de um cortejo dominado por religiosos; uma mulher lamenta à direita."
+      },
+      "legacy_record_id": "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A Verdade morta transforma a restauração absolutista em violência visível contra a promessa constitucional.",
+        "panofsky": {
+          "level_1": "Corpo feminino luminoso jaz no chão; uma mulher se curva sobre ele e figuras masculinas, entre elas clérigos, cercam a cena escura.",
+          "level_2": "A legenda identifica a morta como Verdade; luz e nudez separam seu corpo dos agentes do sepultamento.",
+          "level_3": "A alegoria não legitima o Estado: torna visível a supressão da verdade pública e da promessa liberal da Constituição de Cádiz."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 0,
+          "dessexualizacao": 0,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 0,
+          "enquadramento_arquitetonico": 0,
+          "apagamento_narrativo": 0,
+          "monocromatizacao": 3,
+          "serialidade": 2,
+          "inscricao_estatal": 0
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b69481105",
+      "slug": "nation-loi-roi-1791",
+      "image": {
+        "path": "assets/acervo/324a90b6-403b-5b36-9bcf-d4c4db9efdc1.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:La_Nation,_la_Loi,_le_Roi._Constitution_fran%C3%A7aise._(du_14_septembre_1791)_-_estampe_-_btv1b69481105.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b69481105",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Figura feminina de barrete frígio apresenta a Constituição de 1791 monumentalizada, sob galo, bandeiras e raios."
+      },
+      "legacy_record_id": "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "approved",
+        "summary": "A Nação feminina dá presença à soberania, mas o texto constitucional monumentalizado domina a imagem.",
+        "panofsky": {
+          "level_1": "Figura feminina de barrete frígio e seio exposto aparece à esquerda da Constituição; galo, globo, raios, bandeiras, lanças e ramos completam a composição.",
+          "level_2": "A mulher personifica a Nação ou a França no vocabulário da Liberdade revolucionária e guarda a Constituição.",
+          "level_3": "Produzida entre 1835 e 1841, a estampa reapresenta a Constituição de 1791 como patrimônio jurídico nacional."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 1,
+          "dessexualizacao": 0,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 2,
+          "apagamento_narrativo": 2,
+          "monocromatizacao": 3,
+          "serialidade": 1,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      },
+      "approved_by": "ana",
+      "approved_at": "2026-09-15"
+    },
+    {
+      "canonical_id": "FR-075",
+      "source_url": "https://gallica.bnf.fr/ark:/12148/btv1b530172177.item",
+      "slug": "proclamation-constitution-1848",
+      "image": {
+        "path": "assets/acervo/FR-075.webp",
+        "source_url": "https://gallica.bnf.fr/iiif/ark:/12148/btv1b530172177/f1/full/full/0/native.jpg",
+        "catalog_url": "https://gallica.bnf.fr/ark:/12148/btv1b530172177.item",
+        "license": "Domínio público",
+        "credit": "Bibliothèque nationale de France / Gallica",
+        "alt": "Cena pública de proclamação da Constituição de 1848 conduzida por homens, dentro de moldura ornamental com bandeiras."
+      },
+      "legacy_record_id": "FR-075",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "A proclamação constitucional é encenada como ritual cívico masculino, sem personificação feminina identificável.",
+        "panofsky": {
+          "level_1": "Homem elevado lê ou exibe um documento diante de assembleia masculina em uma moldura ornamental.",
+          "level_2": "O ato público, o documento e a assembleia identificam a proclamação da Constituição de 1848.",
+          "level_3": "Como caso negativo, a obra visualiza a soberania pela voz e pelo ritual político, sem corpo alegórico feminino."
+        },
+        "indicators": null,
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "gender_attributed": "ausente"
+      }
+    },
+    {
+      "canonical_id": "BE-004",
+      "source_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+      "slug": "constitution-belgique-1852",
+      "image": {
+        "path": "assets/acervo/BE-004.webp",
+        "source_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+        "catalog_url": "https://neptun.unamur.be/ark:/83449/0091bdf9fa",
+        "license": "Domínio público; digitalização UNamur",
+        "credit": "Bibliothèque Universitaire Moretus Plantin, UNamur",
+        "alt": "La Belgique, coroada e entronizada, eleva a Constituição de 1831 sobre corpos sociais, militares e jurídicos masculinos."
+      },
+      "legacy_record_id": "BE-004",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "approved",
+        "summary": "La Belgique eleva a Constituição de 1831 enquanto corpos masculinos sustentam materialmente a ordem nacional.",
+        "panofsky": {
+          "level_1": "Figura feminina monumental, coroada, frontal e entronizada eleva a Constituição; leão, bandeira, raios e tipos sociais masculinos compõem a cena.",
+          "level_2": "La Belgique personifica a nação; os homens representam corpos sociais, jurídicos e militares que sustentam sua estrutura.",
+          "level_3": "A edição de 1852 monumentaliza retrospectivamente a Constituição de 1831 como origem e continuidade estatal."
+        },
+        "indicators": {
+          "desincorporacao": 0,
+          "rigidez_postural": 2,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 1,
+          "heraldizacao": 3,
+          "enquadramento_arquitetonico": 2,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 3,
+          "serialidade": 2,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      },
+      "approved_by": "ana",
+      "approved_at": "2026-09-15"
+    },
+    {
+      "canonical_id": "235c545a-f3b8-568a-f268-178806a4bf07",
+      "source_url": "https://www.loc.gov/item/2003689297/",
+      "slug": "lincoln-justice-liberty-1860",
+      "image": {
+        "path": "assets/acervo/235c545a-f3b8-568a-f268-178806a4bf07.webp",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln,_Republican_candidate_for_president_of_the_United_States_LCCN2003689297.jpg",
+        "catalog_url": "https://www.loc.gov/item/2003689297/",
+        "license": "Sem restrições conhecidas para publicação",
+        "credit": "Library of Congress, Prints & Photographs Division",
+        "alt": "Retrato de Abraham Lincoln entre as personificações da Justiça e da Liberdade, com Constituição, bandeiras e águia."
+      },
+      "legacy_record_id": "235c545a-f3b8-568a-f268-178806a4bf07",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "draft",
+        "summary": "Justiça e Liberty/Columbia oferecem caução constitucional à candidatura masculina no limiar da crise seccional.",
+        "panofsky": {
+          "level_1": "O retrato de Lincoln é ladeado por duas mulheres clássicas; balança, espada, águia, bandeiras, escudos e inscrições cercam o centro.",
+          "level_2": "Justiça e Liberty/Columbia guardam a Constituição e a União.",
+          "level_3": "Corpos femininos idealizados oferecem soberania abstrata ao agente masculino autorizado a exercer o poder."
+        },
+        "indicators": {
+          "desincorporacao": 1,
+          "rigidez_postural": 2,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 2,
+          "heraldizacao": 2,
+          "enquadramento_arquitetonico": 1,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 2,
+          "serialidade": 2,
+          "inscricao_estatal": 2
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado."
+      }
+    },
+    {
+      "canonical_id": "BE-IND-1880",
+      "source_url": "https://en.numista.com/27258",
+      "slug": "belgica-cinquentenario-1880",
+      "image": {
+        "path": "",
+        "source_url": "https://en.numista.com/catalogue/photos/belgique/1661-original.jpg",
+        "catalog_url": "https://en.numista.com/27258",
+        "license": "",
+        "credit": "Fotografia © Heritage Auctions — autorização pendente",
+        "alt": "La Belgique apoia-se no leão e segura a Constituição; ao fundo, a Coluna do Congresso e o Palácio da Justiça."
+      },
+      "legacy_record_id": "BE-IND-1880",
+      "legacy_ids": [],
+      "editorial_status": "review",
+      "grandfathered": false,
+      "constellations": [
+        "constituicoes-atlanticas"
+      ],
+      "public_analysis": {
+        "status": "provisional-image-pending",
+        "summary": "No reverso comemorativo, La Belgique reúne Constituição, leão e monumentos numa memória estatal portátil.",
+        "panofsky": {
+          "level_1": "Conforme o catálogo, mulher apoia-se em leão e segura a Constituição; aparecem a Coluna do Congresso e o Palácio da Justiça.",
+          "level_2": "La Belgique reúne lei, emblema animal e monumentos nacionais.",
+          "level_3": "Cinquenta anos depois da independência, a soberania constitucional torna-se memória estatal serial."
+        },
+        "indicators": {
+          "desincorporacao": 1,
+          "rigidez_postural": 3,
+          "dessexualizacao": 2,
+          "uniformizacao_facial": 2,
+          "heraldizacao": 3,
+          "enquadramento_arquitetonico": 0,
+          "apagamento_narrativo": 1,
+          "monocromatizacao": 0,
+          "serialidade": 2,
+          "inscricao_estatal": 3
+        },
+        "scale": "0–3; não aplicável quando não há figura feminina",
+        "method_note": "Rascunho assistido seguido de adjudicação humana quando indicado. O índice composto histórico não é exibido nem recalculado.",
+        "limitation": "Leitura baseada na descrição catalográfica; inspeção direta e licença da fotografia pendentes."
+      }
+    }
+  ],
+  "constellations": [
+    {
+      "slug": "constituicoes-atlanticas",
+      "title": "Constituições atlânticas",
+      "subtitle": "Corpo, lei e soberania, 1789–1880",
+      "editorial_status": "review",
+      "introduction": "Entre a Revolução Francesa e o cinquentenário belga, a Constituição assume corpo, monumento, inscrição e ausência. O percurso aproxima imagens que celebram a fundação jurídica de outras que expõem seus limites: mulheres figuram a Nação, a Justiça, a Liberdade e a Verdade; em duas cenas francesas, porém, o feminino desaparece e a proclamação constitucional permanece inteiramente masculina.",
+      "method_note": "A ordem segue a produção dos objetos. La Nation, la Loi, le Roi foi impressa entre 1835 e 1841, embora represente a Constituição de 1791.",
+      "item_ids": [
+        "FR-087",
+        "FR-073",
+        "ce773ab1-3bfc-9f6e-754a-efe0c567916d",
+        "324a90b6-403b-5b36-9bcf-d4c4db9efdc1",
+        "FR-075",
+        "BE-004",
+        "235c545a-f3b8-568a-f268-178806a4bf07",
+        "BE-IND-1880"
+      ]
+    }
+  ],
+  "generated_at": "2026-09-15"
+}

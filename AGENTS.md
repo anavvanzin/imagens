@@ -25,20 +25,23 @@ canonical file/directory overview.
     `npx wrangler secret put EXEC_API_KEY`. If the secret is unset, the route returns
     `503` (fail closed). Static assets stay public.
 
-### Data generation (do this before demoing the acervo grid)
+### Data generation
 
-- `site/data/acervo.json` and `site/data/stats.json` are **generated** by
-  `python3 scripts/build_data.py` from `site/data/corpus-data-enriched.json`. A fresh
-  checkout ships `acervo.json` as an empty `[]` and a minimal `stats.json`, so the grid
-  is empty until you run the build script (it regenerates ~95 items). These generated
-  files are intentionally left untracked-in-spirit; avoid committing regenerated data.
+- `site/data/publication.json` is the editorial source of truth. It pins one public
+  commit of `anavvanzin/iconocracy-corpus` and stores publication decisions, aliases,
+  image rights, public analysis, and constellations.
+- `site/data/acervo.json`, `stats.json`, and `constellations.json` are reproducible
+  deployment artifacts and are committed. Regenerate with
+  `conda run -n iconocracy python scripts/build_data.py --corpus /path/to/pinned/corpus/corpus-data.json`.
+- CI checks out the exact corpus commit and fails when regenerated JSON differs.
 
-### Validation (no unit/test suite exists)
+### Validation
 
 - `python3 scripts/validate_acervo.py --json site/data/corpus-data-enriched.json --schema schemas/corpus-data-enriched.schema.json --report /tmp/report.md`
   validates JSON + JSON Schema, then checks every external image URL over the network.
   Schema validation uses `jsonschema` when installed (stdlib fallback otherwise). Some
   image URLs return 403/timeout from restricted networks — those are network/WAF issues,
   **not** code failures. Use `--retries 0 --timeout 5` for a fast run.
-- There is no linter configured. CI is the GitHub workflows in `.github/workflows/`
-  (`validate-acervo`, `performance-acervo`, `conflict-markers`).
+- Run `conda run -n iconocracy python -m unittest discover -s tests -v` for the
+  publication pipeline. External URL checks are diagnostic; local image presence and
+  deterministic generation are release gates.

@@ -1,71 +1,70 @@
 name: Validar acervo
 
 on:
+  pull_request:
+  push:
+    branches: [main]
   schedule:
-    # Segunda-feira, 09:00 em São Paulo. GitHub Actions usa UTC.
     - cron: "0 12 * * 1"
   workflow_dispatch:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   validate-acervo:
-    name: Validar JSON e URLs de imagem
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout do site
         uses: actions/checkout@v4
+        with:
+          path: imagens
+
+      - name: Ler commit fixado do corpus
+        id: corpus
+        working-directory: imagens
+        run: python -c 'import json; print("sha=" + json.load(open("site/data/publication.json"))["corpus_commit"])' >> "$GITHUB_OUTPUT"
+
+      - name: Checkout público do corpus
+        uses: actions/checkout@v4
+        with:
+          repository: anavvanzin/iconocracy-corpus
+          ref: ${{ steps.corpus.outputs.sha }}
+          path: iconocracy-corpus
 
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Instalar dependências
         run: pip install "jsonschema==4.23.0"
 
-      - name: Validar contrato e gerar dados
+      - name: Validar manifesto e reproduzir artefatos
+        working-directory: imagens
         run: |
-          python scripts/corpus_sync.py \
-            --corpus site/data/corpus-data-enriched.json \
-            --schema schemas/corpus-input.schema.json \
-            --out /tmp/acervo-data
+          python -c 'import json,jsonschema; jsonschema.validate(json.load(open("site/data/publication.json")),json.load(open("schemas/publication.schema.json")))'
+          python scripts/corpus_sync.py --corpus ../iconocracy-corpus/corpus/corpus-data.json --out /tmp/iconocracia-generated
+          diff -u site/data/acervo.json /tmp/iconocracia-generated/acervo.json
+          diff -u site/data/stats.json /tmp/iconocracia-generated/stats.json
+          diff -u site/data/constellations.json /tmp/iconocracia-generated/constellations.json
 
-      - name: Validar acervo
-        id: validate
+      - name: Validar imagens locais publicadas
+        working-directory: imagens
         run: |
-          python scripts/validate_acervo.py \
-            --json site/data/corpus-data-enriched.json \
-            --schema schemas/corpus-data-enriched.schema.json \
-            --report acervo-validation-report.md
-
-      - name: Publicar resumo em issue se houver problemas
-        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0' || steps.validate.outputs.schema_valid != 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ISSUE_TITLE: "Acervo com itens quebrados ou inacessíveis"
-        run: |
-          existing_issue="$(
-            gh issue list \
-              --state open \
-              --search "$ISSUE_TITLE in:title" \
-              --json number \
-              --jq '.[0].number // empty'
-          )"
-
-          if [ -n "$existing_issue" ]; then
-            gh issue comment "$existing_issue" --body-file acervo-validation-report.md
-          else
-            gh issue create --title "$ISSUE_TITLE" --body-file acervo-validation-report.md
-          fi
-
-      - name: Marcar execução como falha quando houver problemas
-        if: steps.validate.outputs.json_valid != 'true' || steps.validate.outputs.broken_count != '0' || steps.validate.outputs.schema_valid != 'true'
-        run: |
-          echo "A validação encontrou problemas no acervo. Consulte a issue criada ou atualizada."
-          exit 1
+          python - <<'PY'
+          import json, pathlib
+          root = pathlib.Path("site")
+          missing = [item["imagem"] for item in json.load(open(root / "data/acervo.json")) if item.get("tem_imagem") and not item["imagem"].startswith(("http://", "https://")) and not (root / item["imagem"]).is_file()]
+          if missing:
+              raise SystemExit("Imagens locais ausentes: " + ", ".join(missing))
+          PY
 
       - name: Testar pipeline
+        working-directory: imagens
         run: python -m unittest discover -s tests -v
+
+      - name: Diagnóstico separado de links externos
+        continue-on-error: true
+        working-directory: imagens
+        run: python scripts/validate_acervo.py --json site/data/publication.json --schema schemas/publication.schema.json --report acervo-validation-report.md --retries 0 --timeout 8

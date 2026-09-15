@@ -15,7 +15,7 @@
       "regime": {"type": "string"},
       "motif": {"type": "array", "items": {"type": "string"}},
       "editorialStatus": {"type": "string", "enum": ["draft", "review", "published", "archived"]},
-      "endurecimento_score": {"type": "number", "minimum": 0, "maximum": 1},
+      "endurecimento_score": {"type": "number", "minimum": 0, "maximum": 3, "description": "Índice composto legado e congelado; não gerar para novas codificações."},
       "indicadores": {"type": "object"},
       "local_image_path": {"type": ["string", "null"]},
       "thumbnail_url": {"type": ["string", "null"]},

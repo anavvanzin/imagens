@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Manifesto editorial de publicação",
+  "type": "object",
+  "required": ["schema_version", "corpus_repository", "corpus_commit", "generated_at", "items", "constellations"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "corpus_repository": {"const": "anavvanzin/iconocracy-corpus"},
+    "corpus_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "generated_at": {"type": "string", "format": "date"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["editorial_status"],
+        "anyOf": [{"required": ["canonical_id"]}, {"required": ["legacy_record_id"]}],
+        "properties": {
+          "canonical_id": {"type": "string"},
+          "legacy_record_id": {"type": "string"},
+          "legacy_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "editorial_status": {"enum": ["review", "published", "withheld"]},
+          "approved_at": {"type": "string", "format": "date"},
+          "published_at": {"type": "string", "format": "date"},
+          "constellations": {"type": "array", "items": {"type": "string"}},
+          "image": {
+            "type": "object",
+            "properties": {
+              "path": {"type": "string"}, "source_url": {"type": "string"},
+              "catalog_url": {"type": "string"}, "license": {"type": "string"},
+              "credit": {"type": "string"}, "alt": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "constellations": {"type": "array", "items": {"type": "object", "required": ["slug", "editorial_status", "item_ids"]}}
+  },
+  "additionalProperties": false
+}
