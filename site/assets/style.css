@@ -665,7 +665,7 @@ button:disabled { cursor:default; opacity:.4; }
 .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
 .ex-page { background:linear-gradient(to right,var(--ex-ground) 0 67.6%,var(--ex-reading) 67.6% 100%); }
 .ex-header { min-height:86px; padding:20px 3.125%; display:flex; align-items:center; gap:40px; }
-.ex-brand { margin-right:auto; font:600 34px/1.1 Arial,Helvetica,sans-serif; letter-spacing:.09em; color:var(--ex-ink); }
+.ex-brand { margin-right:auto; display:inline-flex; align-items:center; gap:13px; font:600 34px/1.1 Arial,Helvetica,sans-serif; letter-spacing:.09em; color:var(--ex-ink); }
 .ex-brand:hover { color:var(--ex-ink); text-decoration:none; }
 .ex-header nav { display:flex; align-items:center; gap:36px; }
 .ex-header nav a { color:var(--ex-ink); white-space:nowrap; font:16px/1.5 Arial,Helvetica,sans-serif; padding:8px 0; }
@@ -762,3 +762,70 @@ button:disabled { cursor:default; opacity:.4; }
  .ex-dialog { padding:17px; }.ex-dialog-layout { grid-template-columns:1fr; }.ex-dialog-image img { max-height:42vh; }.ex-dialog h2 { font-size:25px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } }
+
+/* Edelweiss: decorative brand illustrations, independent of corpus imagery.
+   Three motifs share one transparent sprite adapted from Ana's reference sheet. */
+.brand-ornament { display:block; flex:none; background-image:url("edelweiss-ornaments.png"); background-repeat:no-repeat; pointer-events:none; }
+.brand-flower { width:46px; height:46px; background-size:300% 100%; background-position:0 50%; clip-path:inset(0 6% 0 0); }
+.ornamental-divider { display:flex; align-items:center; justify-content:center; gap:24px; padding:22px max(24px,6vw); background:var(--ex-reading); }
+.ornamental-divider::before,.ornamental-divider::after { content:""; height:1px; max-width:260px; flex:1; background:var(--ex-line); }
+.brand-scroll { width:min(290px,48vw); aspect-ratio:810 / 280; background-size:268.148% 258.571%; background-position:50% 50%; }
+.brand-seal { width:112px; height:112px; margin:0 auto 14px; background-size:300% 100%; background-position:100% 50%; clip-path:inset(0 0 0 6%); }
+.site-footer { border-top:0; padding-top:0; }
+.site-footer .ornamental-divider { padding-block:16px 28px; }
+.footer-mark .motto { color:var(--ex-ink); }
+@media(max-width:700px) {
+ .ex-brand { gap:8px; font-size:clamp(19px,5.5vw,25px); letter-spacing:.045em; }
+ .brand-flower { width:34px; height:34px; }
+ .ornamental-divider { gap:14px; padding:20px; }
+ .brand-scroll { width:190px; max-width:58vw; }
+ .brand-seal { width:92px; height:92px; }
+}
+
+/* Editorial hierarchy: ratio 4/3, base 18px. Local fonts only. */
+:root {
+ --atlas-caption:13.5px;
+ --atlas-body:18px;
+ --atlas-subtitle:24px;
+ --atlas-heading:32px;
+ --atlas-section:42.65px;
+ --atlas-display:56.86px;
+ --atlas-title:75.81px;
+}
+.ex-page,.research-page { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; }
+.ex-brand { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-section); font-weight:400; line-height:1; letter-spacing:.035em; }
+.ex-header nav a { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); font-weight:400; line-height:1.4; }
+.ex-header nav a[aria-current] { font-weight:600; }
+.ex-caption h1 { font-family:"Instrument Serif",Georgia,serif; font-size:clamp(var(--atlas-section),4.94vw,var(--atlas-title)); font-style:italic; font-weight:400; line-height:1.04; letter-spacing:-.02em; margin-bottom:14px; text-wrap:balance; }
+.ex-author { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-subtitle); font-style:italic; font-weight:400; line-height:1.35; letter-spacing:0; }
+.ex-overline,.ex-date,.ex-thumb-meta,.ex-results,.ex-position { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); font-weight:400; line-height:1.5; }
+.ex-overline { letter-spacing:.075em; margin-bottom:12px; }
+.ex-description { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.ex-filters select,.ex-search input,.ex-filter-button,.ex-action,.ex-more,.ex-dialog-close { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); line-height:1.5; }
+.ex-primary { font-weight:600; }
+.ex-metadata { font-size:var(--atlas-body); line-height:1.4; align-items:baseline; }
+.ex-metadata dt,.ex-record dt { font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); line-height:1.5; }
+.ex-metadata dd { font-family:"Crimson Pro",Georgia,serif; }
+.ex-thumb-title { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); font-weight:400; line-height:1.25; }
+.ex-thumb[aria-pressed="true"] .ex-thumb-title { font-weight:600; }
+.ex-dialog h2 { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-section); font-weight:400; line-height:1.1; letter-spacing:-.01em; }
+.ex-record dd { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.ex-home .block h2,.ex-home .section-head h2,.research-page h1 { font-family:"Instrument Serif",Georgia,serif; font-size:clamp(var(--atlas-section),4vw,var(--atlas-display)); font-weight:400; line-height:1.1; letter-spacing:-.015em; }
+.ex-home .block h3,.research-page h2 { font-family:"Instrument Serif",Georgia,serif; font-size:var(--atlas-heading); font-weight:400; line-height:1.2; }
+.ex-home .block p,.research-page .prose p { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.6; max-width:65ch; }
+.site-footer .muted,.site-footer a,.footer-mark .motto { font-family:"Crimson Pro",Georgia,serif; font-size:var(--atlas-body); line-height:1.5; }
+.site-footer h4 { font-size:var(--atlas-caption); letter-spacing:.065em; }
+@media(max-width:1100px) {
+ .ex-header { gap:20px; }
+ .ex-header nav { gap:20px; }
+ .ex-brand { font-size:var(--atlas-heading); }
+ .ex-header nav a { font-size:var(--atlas-caption); }
+}
+@media(max-width:700px) {
+ .ex-brand { font-size:var(--atlas-heading); letter-spacing:.02em; gap:6px; }
+ .ex-header nav { gap:10px; }
+ .ex-header nav a { font-size:12px; }
+ .ex-caption h1 { font-size:var(--atlas-display); }
+ .ex-filters select,.ex-search input,.ex-filter-button { font-size:var(--atlas-caption); }
+ .ex-thumb-meta { font-size:12px; }
+}
