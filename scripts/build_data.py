@@ -26,8 +26,12 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 from collections import Counter
+
+# URLs-placeholder internas nunca vão ao site público (regra: não inventar URL).
+PLACEHOLDER_URL = re.compile(r"iconocracy(-corpus)?\.(local|corpus)")
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "site" / "data"
@@ -151,6 +155,13 @@ def build_items(enriched: list[dict]) -> list[dict]:
     itens = []
     for x in enriched:
         img = x.get("thumbnail_url") or x.get("url_image_download") or ""
+        fonte = x.get("url") or ""
+        if PLACEHOLDER_URL.search(fonte):
+            fonte = ""
+        citacao = x.get("citation_abnt") or ""
+        if PLACEHOLDER_URL.search(citacao):
+            citacao = re.sub(r"\s*Disponível em:.*$", "", citacao, flags=re.S).rstrip()
+            citacao = re.sub(r"\s*Acesso em:.*$", "", citacao, flags=re.S).rstrip()
         item = {
             "id": x.get("id"),
             "titulo": x.get("title") or "(sem título)",
@@ -163,10 +174,10 @@ def build_items(enriched: list[dict]) -> list[dict]:
             "motivos": x.get("motif") or [],
             "descricao": (x.get("description") or "")[:600],
             "direitos": x.get("rights") or "",
-            "fonte_url": x.get("url") or "",
+            "fonte_url": fonte,
             "imagem": img,
             "tem_imagem": bool(img) or tem_webp_local(x.get("id")),
-            "citacao": x.get("citation_abnt") or "",
+            "citacao": citacao,
         }
         # Preserva metadados iconográficos quando presentes (opcional, não quebra filtros).
         iconografia = x.get(ICONOGRAPHIC_KEY)
