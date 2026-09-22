@@ -23,8 +23,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "Identificador estável. Prefixo de país/coleção seguido de segmentos alfanuméricos.",
-          "pattern": "^[A-Z]{2,}(-[A-Z0-9]+)+$"
+          "description": "Identificador estável: prefixo de país (ex.: FR-001) ou UUID para itens re-keyed.",
+          "pattern": "^([A-Z]{2,}(-[A-Z0-9]+)+|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$"
         },
         "title": {
           "type": "string",
@@ -214,9 +214,9 @@
         },
         "endurecimento_score": {
           "type": "number",
-          "description": "Índice de endurecimento (0 a 1).",
+          "description": "Índice de endurecimento (média dos 10 indicadores ordinais 0–3).",
           "minimum": 0,
-          "maximum": 1
+          "maximum": 3
         },
         "atlas_panel": {
           "type": "string",
