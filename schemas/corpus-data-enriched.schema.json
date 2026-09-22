@@ -4,52 +4,155 @@
   "title": "Mnemosyne Viva — Corpus enriquecido",
   "description": "Esquema do arquivo site/data/corpus-data-enriched.json: um array de itens do acervo. Mantém compatibilidade retroativa com os itens já publicados e documenta o objeto opcional iconographic_metadata (metodologia ICONOCRACIA).",
   "type": "array",
-  "items": { "$ref": "#/definitions/corpusItem" },
+  "items": {
+    "$ref": "#/definitions/corpusItem"
+  },
   "definitions": {
     "corpusItem": {
       "type": "object",
       "additionalProperties": true,
-      "required": ["id", "title", "country", "date", "regime", "url", "motif"],
+      "required": [
+        "id",
+        "title",
+        "country",
+        "date",
+        "regime",
+        "url",
+        "motif"
+      ],
       "properties": {
         "id": {
           "type": "string",
           "description": "Identificador estável. Prefixo de país/coleção seguido de segmentos alfanuméricos.",
           "pattern": "^[A-Z]{2,}(-[A-Z0-9]+)+$"
         },
-        "title": { "type": "string", "minLength": 1 },
-        "date": { "type": "string", "description": "Data textual (ano, 'c. 1900', intervalos)." },
-        "year": { "type": ["integer", "string", "null"] },
-        "period": { "type": "string" },
-        "period_norm": { "type": "string" },
-        "creator": { "type": "string" },
-        "institution": { "type": "string" },
-        "source_archive": { "type": "string" },
-        "country": { "type": "string" },
-        "country_pt": { "type": "string" },
-        "medium": { "type": "string" },
-        "medium_norm": { "type": "string" },
-        "motif": { "type": "array", "items": { "type": "string" } },
-        "motif_str": { "type": "string" },
-        "regime": { "type": "string" },
-        "regime_justificativa": { "type": "string" },
-        "description": { "type": "string" },
-        "rights": { "type": "string" },
-        "tags": { "type": "array", "items": { "type": "string" } },
-        "tags_str": { "type": "string" },
-        "citation_abnt": { "type": "string" },
-        "citation_chicago": { "type": "string" },
-        "local_image_path": { "type": ["string", "null"] },
-        "iiif_note": { "type": ["string", "null"] },
-        "iiif_source": { "type": ["string", "null"] },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "description": "Data textual (ano, 'c. 1900', intervalos)."
+        },
+        "year": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "period": {
+          "type": "string"
+        },
+        "period_norm": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "institution": {
+          "type": "string"
+        },
+        "source_archive": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "country_pt": {
+          "type": "string"
+        },
+        "medium": {
+          "type": "string"
+        },
+        "medium_norm": {
+          "type": "string"
+        },
+        "motif": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motif_str": {
+          "type": "string"
+        },
+        "regime": {
+          "type": "string"
+        },
+        "regime_justificativa": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "rights": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tags_str": {
+          "type": "string"
+        },
+        "citation_abnt": {
+          "type": "string"
+        },
+        "citation_chicago": {
+          "type": "string"
+        },
+        "local_image_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "iiif_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "iiif_source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "url": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "description": "URL da ficha no arquivo de origem (http/https) ou null quando indisponível.",
           "pattern": "^(https?://|$)"
         },
-        "url_iiif": { "type": ["string", "null"] },
-        "url_image_download": { "type": ["string", "null"], "pattern": "^(https?://|$)" },
-        "thumbnail_url": { "type": ["string", "null"], "pattern": "^(https?://|$)" },
-        "iconographic_metadata": { "$ref": "#/definitions/iconographicMetadata" }
+        "url_iiif": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url_image_download": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(https?://|$)"
+        },
+        "thumbnail_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(https?://|$)"
+        },
+        "iconographic_metadata": {
+          "$ref": "#/definitions/iconographicMetadata"
+        }
       }
     },
     "iconographicMetadata": {
@@ -64,14 +167,23 @@
         "iconclass": {
           "description": "Notação(ões) Iconclass. String única ou lista.",
           "oneOf": [
-            { "type": "string" },
-            { "type": "array", "items": { "type": "string" } }
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           ]
         },
         "attributes": {
           "type": "array",
           "description": "Atributos visuais (barrete frígio, ramo, espada, etc.).",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "pathosformel": {
           "type": "string",
@@ -96,7 +208,9 @@
         "purification_indicators": {
           "type": "array",
           "description": "Indicadores de purificação/branqueamento simbólico.",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "endurecimento_score": {
           "type": "number",
@@ -107,6 +221,133 @@
         "atlas_panel": {
           "type": "string",
           "description": "Painel do Atlas (Mnemosyne) ao qual o item pertence."
+        },
+        "panofsky": {
+          "type": "object",
+          "description": "Anotação Panofsky em 3 níveis propagada do master record (records.jsonl iconocode).",
+          "additionalProperties": false,
+          "properties": {
+            "pre_iconographic": {
+              "type": "array",
+              "description": "Nível pré-iconográfico: motivos observados.",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "motif": {
+                    "type": "string"
+                  },
+                  "observed": {
+                    "type": "boolean"
+                  },
+                  "notes": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "motif",
+                  "observed"
+                ]
+              }
+            },
+            "codes": {
+              "type": "array",
+              "description": "Nível iconográfico: códigos de classificação (Iconclass, AAT, TGN, ULAN).",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "scheme": {
+                    "type": "string",
+                    "enum": [
+                      "iconclass",
+                      "getty_aat",
+                      "tgn",
+                      "ulan",
+                      "custom"
+                    ]
+                  },
+                  "notation": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": "string"
+                  },
+                  "code_role": {
+                    "type": "string",
+                    "enum": [
+                      "depicts",
+                      "attribute",
+                      "context",
+                      "style"
+                    ]
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "evidence_source_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "scheme",
+                  "notation",
+                  "code_role",
+                  "confidence"
+                ]
+              }
+            },
+            "interpretation": {
+              "type": "array",
+              "description": "Nível iconológico: claims interpretativos com status e confiança.",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "claim_text": {
+                    "type": "string"
+                  },
+                  "claim_type": {
+                    "type": "string",
+                    "enum": [
+                      "iconographic",
+                      "legal_context",
+                      "dating",
+                      "attribution",
+                      "postcolonial_marker"
+                    ]
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "tentative",
+                      "gap"
+                    ]
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "required": [
+                  "claim_text",
+                  "claim_type",
+                  "status",
+                  "confidence"
+                ]
+              }
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Confiança agregada da codificação IconoCode."
+            }
+          }
         }
       }
     }
