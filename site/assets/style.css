@@ -925,3 +925,20 @@ button:disabled { cursor:default; opacity:.4; }
 .ex-frame .ex-missing { font-size:11px; padding:20px 8px; }
 @media(max-width:1100px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); } .ex-frame-image { height:160px; } }
 @media(max-width:700px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; } .ex-frame-image { height:130px; } .ex-results { flex-wrap:wrap; } }
+
+/* Constelação: campo disperso de molduras — a lógica da home estendida ao acervo inteiro. */
+.ex-constellation { height:clamp(430px,72vh,780px); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; margin-top:15px; }
+.ex-const-field { position:relative; margin:0 auto; }
+.ex-star { position:absolute; display:block; text-align:left; background:var(--palette-paper); padding:8px; border:0; color:var(--ex-ink); box-shadow:0 14px 32px #3b175d20; transform:rotate(var(--rot,0deg)); transition:transform .2s cubic-bezier(.22,1,.36,1); }
+.ex-star:hover { transform:rotate(0deg) translateY(-6px); z-index:3; color:var(--ex-ink); text-decoration:none; box-shadow:var(--shadow-lg); }
+.ex-star:focus-visible { z-index:4; }
+.ex-star-acid { background:var(--ex-action); }
+.ex-star[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-star-image { display:block; background:#ccbae3; }
+.ex-star-image img { width:100%; height:auto; max-height:260px; object-fit:contain; display:block; }
+.ex-star .ex-missing { font-size:11px; padding:20px 8px; }
+@media(max-width:700px) { .ex-constellation { height:64vh; } .ex-star-image img { max-height:190px; } }
+.ex-layout-wide { grid-template-columns:minmax(0,1fr); }
+.ex-layout-wide .ex-caption { display:none; }
+@media(max-width:700px) { .ex-layout-wide { display:block; } }
+.ex-ground-full { background:var(--ex-ground); }
