@@ -26,7 +26,7 @@
     return element;
   }
   function reproduce(item, container, lazy = false) {
-    if (!item.tem_imagem || !item.imagem) {
+    if (!item.tem_imagem) {
       container.append(node('span', 'ex-missing', 'Sem reprodução disponível — consulte o arquivo de origem.'));
       return;
     }

@@ -31,6 +31,15 @@ from collections import Counter
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "site" / "data"
+ACERVO_DIR = ROOT / "site" / "assets" / "acervo"
+
+
+def tem_webp_local(item_id) -> bool:
+    """Espelho local em WebP existe para o item (servido antes do fallback remoto)."""
+    if not item_id:
+        return False
+    path = ACERVO_DIR / f"{item_id}.webp"
+    return path.is_file() and path.stat().st_size > 0
 
 # Fonte primária (repo de trabalho) e fallback público (este repo autônomo).
 CORPUS_CANDIDATES = [
@@ -126,6 +135,7 @@ def build_stats(corpus: list[dict]) -> dict:
         "com_imagem": sum(
             1 for x in corpus
             if x.get("thumbnail_url") or x.get("url_image_download")
+            or tem_webp_local(x.get("id"))
         ),
         "periodo": {"min": min(years) if years else None, "max": max(years) if years else None},
         "por_pais": [{"pais": p, "n": n} for p, n in countries.most_common()],
@@ -155,7 +165,7 @@ def build_items(enriched: list[dict]) -> list[dict]:
             "direitos": x.get("rights") or "",
             "fonte_url": x.get("url") or "",
             "imagem": img,
-            "tem_imagem": bool(img),
+            "tem_imagem": bool(img) or tem_webp_local(x.get("id")),
             "citacao": x.get("citation_abnt") or "",
         }
         # Preserva metadados iconográficos quando presentes (opcional, não quebra filtros).
