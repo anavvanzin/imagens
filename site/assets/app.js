@@ -64,7 +64,8 @@
   let items = [], filtered = [], selected = null;
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
-  const stage = $('.ex-stage'), strip = $('#ex-filmstrip');
+  const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid');
+  let view = params.get('visao') === 'grade' ? 'grade' : 'palco';
   const dialog = node('dialog', 'ex-dialog');
   dialog.setAttribute('aria-labelledby', 'dialog-title');
   document.body.append(dialog);
@@ -82,6 +83,7 @@
       if (el.value) url.searchParams.set(key, el.value); else url.searchParams.delete(key);
     }
     if (selected) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
+    if (view === 'grade') url.searchParams.set('visao', 'grade'); else url.searchParams.delete('visao');
     url.searchParams.delete('buscar');
     history.replaceState(null, '', url);
   }
@@ -98,7 +100,30 @@
     $('#result-count').textContent = filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
     $('#clear-filters').hidden = !Object.values(fields).some((el) => el.value);
     renderStrip();
+    if (view === 'grade') renderGrid();
     renderSelected();
+  }
+  function setView(next) {
+    view = next;
+    stage.hidden = strip.hidden = next === 'grade';
+    grid.hidden = next !== 'grade';
+    $('#view-palco').setAttribute('aria-pressed', String(next !== 'grade'));
+    $('#view-grade').setAttribute('aria-pressed', String(next === 'grade'));
+    if (next === 'grade') renderGrid();
+    syncURL();
+  }
+  function renderGrid() {
+    grid.replaceChildren();
+    filtered.forEach((item, i) => {
+      const frame = node('button', 'ex-frame');
+      frame.type = 'button'; frame.dataset.id = item.id;
+      frame.setAttribute('aria-pressed', String(selected?.id === item.id));
+      frame.setAttribute('aria-label', 'Selecionar ' + item.titulo);
+      const image = node('span', 'ex-frame-image'); reproduce(item, image, true);
+      frame.append(image, node('span', 'ex-frame-cap', String(i + 1).padStart(2, '0') + ' / ' + shortTitle(item) + ' · ' + item.pais + ', ' + item.data));
+      frame.addEventListener('click', () => select(item));
+      grid.append(frame);
+    });
   }
   function renderStrip() {
     strip.replaceChildren();
@@ -153,6 +178,9 @@
         if (left < strip.scrollLeft || left + button.offsetWidth > strip.scrollLeft + strip.clientWidth) strip.scrollLeft = left;
       }
     });
+    grid.querySelectorAll('.ex-frame').forEach((frame) => {
+      frame.setAttribute('aria-pressed', String(frame.dataset.id === selected.id));
+    });
     syncURL();
   }
   function openRecord(imageOnly = false) {
@@ -187,6 +215,8 @@
   $('.ex-filters').addEventListener('submit', (event) => { event.preventDefault(); filterItems(); });
   Object.values(fields).forEach((field) => field.addEventListener('input', filterItems));
   $('#clear-filters').addEventListener('click', () => { Object.values(fields).forEach((field) => { field.value = ''; }); filterItems(); });
+  $('#view-palco').addEventListener('click', () => setView('palco'));
+  $('#view-grade').addEventListener('click', () => setView('grade'));
   fetch('data/acervo.json').then((response) => { if (!response.ok) throw new Error('Acervo indisponível'); return response.json(); }).then((data) => {
     if (!Array.isArray(data)) throw new Error('Formato inválido');
     const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
@@ -199,6 +229,7 @@
     Object.entries(fields).forEach(([key, field]) => { field.value = params.get(key) || ''; });
     selected = items.find((item) => item.id === params.get('item')) || items[0];
     filterItems();
+    setView(view);
     if (params.has('buscar')) fields.q.focus();
   }).catch(() => {
     filtered = []; selected = null; renderSelected();
