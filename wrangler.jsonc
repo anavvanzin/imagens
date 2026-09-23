@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "iconocracia",
+  "name": "imagens",
   "main": "src/index.js",
   "compatibility_date": "2026-07-23",
   "observability": {
@@ -12,13 +12,14 @@
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "containers": {
-    "Sandbox": {
+  "containers": [
+    {
+      "class_name": "Sandbox",
       "image": "./Dockerfile",
       "instance_type": "lite",
       "max_instances": 1
     }
-  },
+  ],
   "durable_objects": {
     "bindings": [{ "class_name": "Sandbox", "name": "Sandbox" }]
   },

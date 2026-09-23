@@ -905,3 +905,40 @@ button:disabled { cursor:default; opacity:.4; }
  .home-art-columbia { top:330px; width:73%; left:10%; }
 }
 @media(prefers-reduced-motion:reduce) { .home-art { transition:none; } }
+
+/* Grade: parede do acervo — molduras de papel sobre a lavanda, caption em mono. */
+.ex-toolbar { display:flex; justify-content:flex-end; margin:-8px 0 13px; }
+.ex-results-actions { display:flex; align-items:center; gap:16px; }
+.ex-view-toggle { display:flex; }
+.ex-view-toggle button { display:flex; align-items:center; gap:8px; min-height:36px; padding:0 14px; border:1px solid var(--ex-ink); background:transparent; color:var(--ex-ink); font-family:"JetBrains Mono",monospace; font-size:var(--atlas-caption); }
+.ex-view-toggle button svg { width:17px; height:17px; }
+.ex-view-toggle button:first-child { border-radius:4px 0 0 4px; }
+.ex-view-toggle button + button { border-left:0; border-radius:0 4px 4px 0; }
+.ex-view-toggle button[aria-pressed="true"] { background:var(--ex-action); font-weight:600; }
+.ex-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:18px; margin-top:15px; }
+.ex-frame { display:block; text-align:left; background:var(--palette-paper); border:1px solid var(--ex-line); padding:8px; color:var(--ex-ink); box-shadow:var(--shadow); transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s cubic-bezier(.22,1,.36,1); }
+.ex-frame:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); color:var(--ex-ink); text-decoration:none; }
+.ex-frame[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-frame-image { display:flex; align-items:center; justify-content:center; height:200px; background:#ccbae3; }
+.ex-frame-image img { width:100%; height:100%; object-fit:contain; }
+.ex-frame-cap { display:block; font-family:"JetBrains Mono",monospace; font-size:10px; line-height:1.5; padding:8px 2px 2px; overflow-wrap:anywhere; }
+.ex-frame .ex-missing { font-size:11px; padding:20px 8px; }
+@media(max-width:1100px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(170px,1fr)); } .ex-frame-image { height:160px; } }
+@media(max-width:700px) { .ex-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; } .ex-frame-image { height:130px; } .ex-results { flex-wrap:wrap; } }
+
+/* Constelação: campo disperso de molduras — a lógica da home estendida ao acervo inteiro. */
+.ex-constellation { height:clamp(430px,72vh,780px); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:var(--ex-selection) transparent; margin-top:15px; }
+.ex-const-field { position:relative; margin:0 auto; }
+.ex-star { position:absolute; display:block; text-align:left; background:var(--palette-paper); padding:8px; border:0; color:var(--ex-ink); box-shadow:0 14px 32px #3b175d20; transform:rotate(var(--rot,0deg)); transition:transform .2s cubic-bezier(.22,1,.36,1); }
+.ex-star:hover { transform:rotate(0deg) translateY(-6px); z-index:3; color:var(--ex-ink); text-decoration:none; box-shadow:var(--shadow-lg); }
+.ex-star:focus-visible { z-index:4; }
+.ex-star-acid { background:var(--ex-action); }
+.ex-star[aria-pressed="true"] { outline:2px solid var(--ex-selection); outline-offset:2px; }
+.ex-star-image { display:block; background:#ccbae3; }
+.ex-star-image img { width:100%; height:auto; max-height:260px; object-fit:contain; display:block; }
+.ex-star .ex-missing { font-size:11px; padding:20px 8px; }
+@media(max-width:700px) { .ex-constellation { height:64vh; } .ex-star-image img { max-height:190px; } }
+.ex-layout-wide { grid-template-columns:minmax(0,1fr); }
+.ex-layout-wide .ex-caption { display:none; }
+@media(max-width:700px) { .ex-layout-wide { display:block; } }
+.ex-ground-full { background:var(--ex-ground); }
