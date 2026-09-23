@@ -37,6 +37,9 @@
     img.src = 'assets/acervo/' + encodeURIComponent(item.id) + '.webp';
     let fallback = false;
     img.addEventListener('error', () => {
+      // renderSelected reuses #ex-image. A 404 from the previous work must not
+      // replaceChildren on the stage after that img has already been detached.
+      if (img.parentNode !== container) return;
       if (!fallback && safeURL(item.imagem)) { fallback = true; img.src = item.imagem; }
       else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
     });
