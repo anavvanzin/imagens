@@ -114,9 +114,11 @@ def transform_item(item: dict[str, Any]) -> dict[str, Any]:
         "tem_imagem": bool(image),
         "citacao": item.get("citation_abnt") or "",
     }
-    for key in ("iconographic_metadata", "endurecimento_score", "indicadores"):
-        if item.get(key) is not None:
-            output[key] = item[key]
+    if item.get("iconographic_metadata") is not None:
+        output["iconographic_metadata"] = {
+            k: v for k, v in item["iconographic_metadata"].items()
+            if k != "endurecimento_score"
+        }
     return output
 
 

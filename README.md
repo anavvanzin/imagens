@@ -32,7 +32,7 @@ Metadados iconográficos da metodologia ICONOCRACIA são **opcionais** e ficam n
 objeto aninhado `iconographic_metadata` (campos: `allegorical_figure`, `iconclass`,
 `attributes`, `pathosformel`, `visual_regime`, `state_function`,
 `contract_visual_sexual`, `coloniality_of_seeing`, `purification_indicators`,
-`endurecimento_score`, `atlas_panel`). Quando presente, `build_data.py` preserva
+`atlas_panel`). Quando presente, `build_data.py` preserva
 esse objeto em `site/data/acervo.json` sem afetar os filtros existentes.
 
 Validação local (o `jsonschema` é opcional; sem ele, um validador stdlib mínimo é usado):
