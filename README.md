@@ -7,6 +7,7 @@ Site editorial estático para o novo `iconocracia.com`, concebido como casa púb
 - `site/index.html` — homepage.
 - `site/sobre.html` — apresentação do projeto, método e conceitos.
 - `site/acervo.html` — recorte inicial do acervo, com busca e filtros.
+- `site/404.html` — página de erro servida pelo Worker para rotas desconhecidas.
 - `site/assets/` — CSS e JavaScript.
 - `site/data/` — JSONs estáticos usados pela homepage e pelo acervo.
 - `scripts/build_data.py` — regenera `site/data/*.json` a partir dos dados do corpus original.
@@ -74,9 +75,8 @@ python scripts/measure_performance.py --threshold-ms 2000 --top 10
 
 ## Deploy
 
-O site é HTML/CSS/JS puro, sem etapa de build. No Vercel, usar framework `Other` ou `null`, sem `buildCommand` e com `outputDirectory` configurado como `site`.
-
-Para o Worker Cloudflare (`npx wrangler deploy`), `POST /api/exec` exige
-`Authorization: Bearer <EXEC_API_KEY>`. Configure o secret com
-`npx wrangler secret put EXEC_API_KEY` (localmente: copie `.dev.vars.example` para
-`.dev.vars`). Sem o secret, a rota responde `503`.
+O site é HTML/CSS/JS puro, sem etapa de build. Produção = **Cloudflare Worker**
+(`npx wrangler deploy`, worker `iconocracia`), que serve `site/` via assets binding e
+responde diretamente `/robots.txt`, `/sitemap.xml` (gerado de `site/data/stats.json`),
+redirects (`/pesquisa-e-metodo` → `/sobre`) e 404 limpos (`site/404.html`).
+Não há deploy Vercel nem endpoints de API.
