@@ -11,5 +11,8 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "migrations": [
+    { "tag": "v2", "deleted_classes": ["Sandbox"] }
   ]
 }
