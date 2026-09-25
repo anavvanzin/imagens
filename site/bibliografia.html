@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliografia viva — Mnemosyne Viva</title>
+<meta name="description" content="Bibliografia viva da pesquisa ICONOCRACIA: mapa interativo da literatura que sustenta a tese — 186 trabalhos, 8 interlocutores e o registro das consultas, com dados do Google Scholar coletados em set/2026.">
+<meta name="author" content="Ana Vanzin — PPGD/UFSC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bibliografia viva — Mnemosyne Viva">
+<meta property="og:description" content="Cartografia interativa da literatura que sustenta a tese Iconocracia, atualizada com dados do Google Scholar.">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#b99aee">
+
+    <link rel="icon" href="assets/edelweiss-icon.png" type="image/png">
+    <link rel="stylesheet" href="assets/style.css?v=20260922-grade">
+    <style>
+      /* Escopo da página: apenas tokens do design system. */
+      .bib-filters { grid-template-columns: 1.9fr 1fr 1fr; }
+      .bib-list { list-style: none; margin-top: 1.2rem; }
+      .bib-item { padding: 1.3rem 0 1.4rem; border-top: 1px solid var(--border-light); }
+      .bib-item h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1.25; margin-bottom: .3rem; }
+      .bib-item h3 a { color: var(--text-primary); }
+      .bib-item h3 a:hover { color: var(--accent); }
+      .bib-authors { font-family: var(--font-serif); font-style: italic; color: var(--text-secondary); margin-bottom: .35rem; }
+      .bib-meta { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; color: var(--text-muted); margin-bottom: .5rem; }
+      .bib-meta .bib-cites { color: var(--accent); }
+      .bib-snippet { color: var(--text-secondary); font-size: .95rem; max-width: 72ch; margin-bottom: .55rem; }
+      .bib-author-metrics { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .04em; color: var(--text-muted); margin-bottom: .6rem; }
+      .bib-author-top { font-size: .92rem; color: var(--text-secondary); margin: .7rem 0 0; }
+      .bib-author-top li { margin-bottom: .3rem; }
+      @media (max-width: 700px) { .bib-filters { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="research-page">
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+<header class="ex-header"><a class="ex-brand" href="index.html"><span class="brand-flower brand-ornament" aria-hidden="true"></span><span>ICONOCRACIA</span></a><nav aria-label="Navegação principal"><a href="index.html">Início</a><a href="acervo.html">Acervo</a><a href="sobre.html">Pesquisa e método</a><a href="bibliografia.html" aria-current="page">Bibliografia</a></nav><button class="ex-search-shortcut" aria-label="Buscar na bibliografia" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></button></header>
+
+<main id="main">
+
+  <section class="hero wrap narrow">
+    <p class="label">Bibliografia</p>
+    <h1>Bibliografia viva</h1>
+    <p class="lead">A cartografia da literatura que sustenta a tese — consultável, filtrável e datada.</p>
+  </section>
+
+  <section class="block" style="padding-top:1rem;">
+    <div class="wrap narrow prose">
+      <p>
+        Nenhuma tese se escreve sozinha. Esta página é o <strong>mapa bibliográfico</strong> da
+        pesquisa <em>Iconocracia</em>: os trabalhos que fundamentam os conceitos de Contrato
+        Sexual Visual e Feminilidade de Estado, reunidos a partir de consultas sistemáticas ao
+        <strong>Google Scholar</strong> e atualizados conforme a leitura avança. Não é uma
+        bibliografia de papel: é um instrumento de trabalho público, com filtros por tema,
+        busca por título e autoria, e o registro honesto de como os dados foram coletados.
+      </p>
+    </div>
+  </section>
+
+  <section class="stat-band" aria-label="Resumo da bibliografia">
+    <div class="wrap">
+      <div class="stat"><div class="num">186</div><div class="lbl">Trabalhos mapeados</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">Interlocutores</div></div>
+      <div class="stat"><div class="num">23</div><div class="lbl">Consultas registradas</div></div>
+      <div class="stat"><div class="num">1945–2026</div><div class="lbl">Período coberto</div></div>
+    </div>
+  </section>
+
+  <section class="block" id="mapa" aria-labelledby="mapa-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">O mapa</span>
+        <h2 id="mapa-title">Explorar os trabalhos</h2>
+        <p>Filtre por tema, busque por título ou autoria e reordene o corpus.
+          Cada entrada aponta para a fonte de onde o registro foi coletado.</p>
+      </div>
+
+      <form class="ex-filters bib-filters" role="search" id="bib-form">
+        <label class="ex-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">Buscar por título ou autoria</span><input id="q" type="search" placeholder="Buscar por título ou autoria…" autocomplete="off"></label>
+        <label><span class="sr-only">Tema</span><select id="bib-tema"><option value="">Tema</option></select></label>
+        <label><span class="sr-only">Ordenação</span><select id="bib-ordem">
+          <option value="citacoes">Mais citados</option>
+          <option value="recentes">Mais recentes</option>
+          <option value="az">A–Z (título)</option>
+        </select></label>
+      </form>
+      <div class="ex-results"><span id="bib-count" role="status">Carregando bibliografia…</span><div class="ex-results-actions"><button id="bib-clear" type="button" hidden>Limpar filtros</button></div></div>
+
+      <ol class="bib-list" id="bib-list"></ol>
+
+      <noscript>
+        <p>A lista interativa exige JavaScript. Os oito trabalhos mais citados do mapa, no instantâneo de setembro de 2026:</p>
+        <ul>
+          <li><strong><a href="https://repositorio.ufsc.br/bitstream/handle/praxis/411/Jacques%20Ranci%C3%A8re.doc?sequence=1">Partilha do sensível</a></strong> — J Rancière, 2009 · 5267 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=kcWxEAAAQBAJ&amp;oi=fnd&amp;pg=PT7&amp;dq=Rep%C3%BAblica+alegoria+feminina&amp;ots=fJ8GqeIvN7&amp;sig=FZqLxzyP6UWpzwsiIIpX9Gubpn0">A formação das almas: o imaginário da República no Brasil</a></strong> — JM De Carvalho, 2023 · 3630 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=KUrd5GqffyEC&amp;oi=fnd&amp;pg=PA1&amp;dq=female+allegory+justice&amp;ots=K8TKN0QNx_&amp;sig=8spcoZH1k6vM9-rGbE3UubpNZvo">Monuments and maidens: The allegory of the female form</a></strong> — M Warner, 2000 · 1523 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=ZQtYRQK0YI0C&amp;oi=fnd&amp;pg=PA9&amp;dq=Panofsky+iconology&amp;ots=iG0z8bEjs9&amp;sig=E6qYhv1w5MAVg7w-NAhnEaFS3rg">Panofsky and the foundations of art history</a></strong> — MA Holly, 1984 · 602 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=0y8vCgAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=nocturnal+jurisprudence+Stramignoni&amp;ots=fjlFviAtIC&amp;sig=z-ZpJCJXPoT0ahfJj1L1nhJ2LYU">The spatial, the legal and the pragmatics of world-making: Nomospheric investigations</a></strong> — D Delaney, 2010 · 548 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=jDVVo3BH31wC&amp;oi=fnd&amp;pg=PR9&amp;dq=female+allegory+justice&amp;ots=f2-943LFPn&amp;sig=r1E9I_sXwkLlSH1VmQbmr1UJYfs">Allegory and violence</a></strong> — G Teskey, 1996 · 530 citações</li>
+          <li><strong><a href="https://books.google.com/books?hl=zh-CN&amp;lr=&amp;id=eWb7EAAAQBAJ&amp;oi=fnd&amp;pg=PA405&amp;dq=Warburg+Nachleben+survival+of+images&amp;sig=cJxIVE-UcecS_aNaYRidKf2KZjw">Aby Warburg and the image in motion</a></strong> — PA Michaud, 2024 · 508 citações</li>
+          <li><strong><a href="https://access.heinonline.com/hol-cgi-bin/get_pdf.cgi?handle=hein.journals/uclr54&amp;section=62">The personification of the business corporation in American law</a></strong> — GA Mark, 1987 · 505 citações</li>
+        </ul>
+      </noscript>
+    </div>
+  </section>
+
+  <section class="block alt" id="interlocutores" aria-labelledby="interlocutores-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">Interlocutores</span>
+        <h2 id="interlocutores-title">Os oito interlocutores da tese</h2>
+        <p>Perfis de autoria consultados diretamente no Google Scholar, com os indicadores
+          registrados no momento da coleta. Os três trabalhos mais citados de cada perfil
+          aparecem abaixo dos indicadores.</p>
+      </div>
+      <div class="grid-3" id="bib-authors"></div>
+      <p class="micro-note wrap narrow" style="margin:1.6rem auto 0;">
+        <strong>Nota de cautela:</strong> os perfis do Google Scholar são montados por algoritmo
+        e podem misturar homônimos — afiliações, métricas e listas de trabalhos devem ser lidas
+        como indicações, não como curriculum verificado. Cada ficha bibliográfica, não o perfil,
+        é a unidade confiável deste mapa.
+      </p>
+    </div>
+  </section>
+
+  <section class="block" id="metodo" aria-labelledby="metodo-title">
+    <div class="wrap narrow prose">
+      <span class="label">Como este mapa foi feito</span>
+      <h2 id="metodo-title">Nota metodológica</h2>
+
+      <div class="def">
+        <div class="term">Coleta</div>
+        <p>Os dados foram coletados do Google Scholar em <strong>setembro de 2026</strong>, a partir de
+          23 consultas registradas — sobre iconografia da Justiça, alegorias femininas da República,
+          personificação do direito, Warburg, Panofsky, Mondzain, Rancière, Goodrich e Stramignoni,
+          entre outras. O registro integral das consultas acompanha os dados publicados.</p>
+      </div>
+
+      <div class="def">
+        <div class="term">Trechos, não resumos</div>
+        <p>Os textos exibidos em cada entrada são <strong>trechos</strong> (snippets) devolvidos pelo
+          Google Scholar, com reticências do próprio serviço — não são resumos redigidos pela pesquisa
+          nem o abstract integral do trabalho.</p>
+      </div>
+
+      <div class="def">
+        <div class="term">Citações como instantâneo</div>
+        <p>Os contadores de citação são <strong>instantâneos do dia da coleta</strong>: mudam com o tempo
+          e não devem ser citados como valor estável. Ordenar por «mais citados» mostra a paisagem de
+          set/2026, não um ranking definitivo.</p>
+      </div>
+
+      <div class="def">
+        <div class="term">Homônimos e perfis</div>
+        <p>Os perfis de autoria do Google Scholar são gerados automaticamente e há
+          <strong>contaminação possível por homônimos</strong> — métricas, afiliações e trabalhos
+          atribuídos a um perfil podem pertencer a outra pessoa de mesmo nome. Tratamos esses dados
+          como sinalização de interlocução, e não como curadoria fechada.</p>
+      </div>
+
+      <h2>Integridade e reuso</h2>
+      <p>
+        Nenhuma entrada foi redigida à mão: cada trabalho linka para a fonte de onde o registro foi
+        coletado, e campos ausentes na origem são simplesmente omitidos. Os metadados desta página —
+        como os do acervo — são disponibilizados sob licença <strong>CC-BY-4.0</strong>; os trabalhos
+        referenciados permanecem sob os direitos de seus autores e editoras.
+      </p>
+
+      <div class="ornament" aria-hidden="true"><span class="glyph">❦ ✦ ❧</span></div>
+      <div class="cta-row" style="margin-top:1rem;">
+        <a class="btn btn-primary" href="acervo.html">Explorar o acervo</a>
+        <a class="btn btn-ghost" href="sobre.html">Pesquisa e método</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="ornamental-divider" aria-hidden="true"><span class="brand-scroll brand-ornament"></span></div>
+  <div class="footer-mark">
+    <span class="brand-seal brand-ornament" aria-hidden="true"></span>
+    <div class="motto">Ler é método · método é pesquisa</div>
+  </div>
+  <div class="wrap cols">
+    <div class="fcol">
+      <h4>Mnemosyne Viva</h4>
+      <p class="muted">Casa pública do acervo, do atlas e da pesquisa Iconocracia. Alegoria feminina
+        como operador epistêmico da legitimidade jurídica.</p>
+    </div>
+    <div class="fcol">
+      <h4>Navegação</h4>
+      <p><a href="index.html">Início</a> · <a href="acervo.html">Acervo</a> · <a href="sobre.html">Pesquisa e método</a> · <a href="bibliografia.html">Bibliografia</a></p>
+    </div>
+    <div class="fcol">
+      <h4>Pesquisa</h4>
+      <p class="muted">Ana Vanzin · PPGD/UFSC · defesa prevista: 2030<br>
+        Metadados sob licença CC-BY-4.0. Imagens pertencem às instituições de origem.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="assets/bibliografia-data.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-01.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-02.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-03.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-04.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-05.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-06.js?v=20260924-biblio"></script>
+<script src="assets/bibliografia-papers-07.js?v=20260924-biblio"></script>
+<script src="assets/app.js?v=20260923-merge"></script>
+<script>
+(() => {
+  'use strict';
+  const data = window.BIBLIO_DATA;
+  if (!data) return;
+  const $ = (selector) => document.querySelector(selector);
+  const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const node = (tag, className, text) => {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  };
+  // O campo venue vem no formato bruto do Scholar: "autores - veículo, ano - fonte".
+  const venueOf = (raw, year) => {
+    const parts = String(raw || '').split(' - ');
+    let mid = parts.length >= 3 ? parts.slice(1, -1).join(' - ') : String(raw || '');
+    if (year) {
+      mid = mid.replace(new RegExp(',\\s*' + year + '\\s*$'), '');
+      if (mid.trim() === String(year)) mid = '';
+    }
+    return mid.trim();
+  };
+  const papers = data.papers;
+  const list = $('#bib-list'), count = $('#bib-count'), clear = $('#bib-clear');
+  const fields = { q: $('#q'), tema: $('#bib-tema'), ordem: $('#bib-ordem') };
+
+  // Filtro de tema com contagem real por rótulo.
+  const themeCount = new Map();
+  papers.forEach((p) => (p.themes || []).forEach((t) => themeCount.set(t, (themeCount.get(t) || 0) + 1)));
+  [...themeCount.keys()].sort((a, b) => a.localeCompare(b, 'pt')).forEach((t) => {
+    const option = node('option', '', t + ' (' + themeCount.get(t) + ')');
+    option.value = t;
+    fields.tema.append(option);
+  });
+
+  const sorters = {
+    citacoes: (a, b) => (b.citation_count || 0) - (a.citation_count || 0),
+    recentes: (a, b) => (b.year || 0) - (a.year || 0) || (b.citation_count || 0) - (a.citation_count || 0),
+    az: (a, b) => normalize(a.title).localeCompare(normalize(b.title), 'pt')
+  };
+  function current() {
+    const term = normalize(fields.q.value);
+    const out = papers.filter((p) => {
+      if (fields.tema.value && !(p.themes || []).includes(fields.tema.value)) return false;
+      if (!term) return true;
+      const haystack = normalize([p.title, (p.authors || []).join(' '), p.venue].join(' '));
+      return haystack.includes(term);
+    });
+    return out.sort(sorters[fields.ordem.value] || sorters.citacoes);
+  }
+  function renderItem(p) {
+    const item = node('li', 'bib-item');
+    const title = node('h3');
+    if (p.url) {
+      const link = node('a', '', p.title);
+      link.href = p.url; link.target = '_blank'; link.rel = 'noopener';
+      title.append(link);
+    } else title.textContent = p.title;
+    item.append(title);
+    item.append(node('p', 'bib-authors', (p.authors || []).join(', ') || 'Autoria não informada'));
+    const meta = [];
+    if (p.year) meta.push(String(p.year));
+    const venue = venueOf(p.venue, p.year);
+    if (venue) meta.push(venue);
+    const metaLine = node('p', 'bib-meta', meta.join(' · ') + ' · ');
+    metaLine.append(node('span', 'bib-cites', (p.citation_count || 0) + (p.citation_count === 1 ? ' citação' : ' citações')));
+    item.append(metaLine);
+    if (p.abstract) item.append(node('p', 'bib-snippet', p.abstract));
+    if (p.themes && p.themes.length) {
+      const pills = node('p', 'pills');
+      p.themes.forEach((t) => pills.append(node('span', 'pill', t)));
+      item.append(pills);
+    }
+    return item;
+  }
+  function render() {
+    const visible = current();
+    list.replaceChildren(...visible.map(renderItem));
+    count.textContent = visible.length + ' de ' + papers.length + ' trabalhos · instantâneo ' + data.meta.coletado_em;
+    clear.hidden = !fields.q.value && !fields.tema.value;
+  }
+  fields.q.addEventListener('input', render);
+  fields.tema.addEventListener('input', render);
+  fields.ordem.addEventListener('input', render);
+  clear.addEventListener('click', () => { fields.q.value = ''; fields.tema.value = ''; render(); });
+  $('#bib-form').addEventListener('submit', (event) => event.preventDefault());
+  render();
+
+  // Interlocutores.
+  const grid = $('#bib-authors');
+  data.authors.forEach((a) => {
+    const card = node('article', 'card');
+    card.append(node('span', 'tag', 'Perfil Scholar'));
+    card.append(node('h3', '', a.name));
+    const metrics = [];
+    if (a.affiliation) metrics.push(a.affiliation);
+    if (a.career_span) metrics.push(a.career_span);
+    if (metrics.length) card.append(node('p', 'bib-author-metrics', metrics.join(' · ')));
+    const numbers = [];
+    if (a.total_citations != null) numbers.push(a.total_citations + ' citações');
+    if (a.h_index != null) numbers.push('h-index ' + a.h_index);
+    if (a.i10_index != null) numbers.push('i10 ' + a.i10_index);
+    if (numbers.length) card.append(node('p', 'bib-author-metrics', numbers.join(' · ')));
+    if (a.research_interests && a.research_interests.length) {
+      const pills = node('p', 'pills');
+      a.research_interests.forEach((t) => pills.append(node('span', 'pill', t)));
+      card.append(pills);
+    }
+    if (a.top_papers && a.top_papers.length) {
+      const ul = node('ul', 'bib-author-top');
+      a.top_papers.forEach((t) => {
+        const li = node('li');
+        if (t.url) {
+          const link = node('a', '', t.title);
+          link.href = t.url; link.target = '_blank'; link.rel = 'noopener';
+          li.append(link);
+        } else li.append(node('span', '', t.title));
+        const bits = [];
+        if (t.year) bits.push(String(t.year));
+        if (t.citation_count != null) bits.push(t.citation_count + ' cit.');
+        if (bits.length) li.append(node('span', 'bib-author-metrics', ' — ' + bits.join(' · ')));
+        ul.append(li);
+      });
+      card.append(ul);
+    }
+    grid.append(card);
+  });
+})();
+</script>
+</body>
+</html>
