@@ -14,6 +14,7 @@
     "nodejs_compat"
   ],
   "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["Sandbox"] },
     { "tag": "v2", "deleted_classes": ["Sandbox"] }
   ]
 }
