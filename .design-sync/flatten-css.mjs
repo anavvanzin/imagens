@@ -32,7 +32,7 @@ if (!importLine.test(siteCss)) throw new Error('style.css no longer imports ./de
 // .brand-ornament rule, and a 160 KB URI per occurrence adds up).
 const ornaments = [
   ['edelweiss-ornaments.png', 'edelweiss-ornaments.webp', '--edelweiss-sprite'],
-  ['edelweiss-icon.png', 'edelweiss-icon.webp', '--edelweiss-icon'],
+  ['edelweiss-flower.png', 'edelweiss-flower.webp', '--edelweiss-flower'],
 ];
 let body = siteCss.replace(importLine, '');
 const ornamentVars = [];
