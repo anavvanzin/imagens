@@ -11,3 +11,10 @@ __pycache__/
 node_modules/
 .DS_Store
 **/.DS_Store
+
+# design-sync (regenerated build output and staged scripts)
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
