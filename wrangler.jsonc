@@ -1,27 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "imagens",
+  "name": "iconocracia",
   "main": "src/index.js",
   "compatibility_date": "2026-07-23",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "site"
+    "directory": "site",
+    "binding": "ASSETS"
   },
   "compatibility_flags": [
     "nodejs_compat"
   ],
-  "containers": [
-    {
-      "class_name": "Sandbox",
-      "image": "./Dockerfile",
-      "instance_type": "lite",
-      "max_instances": 1
-    }
-  ],
-  "durable_objects": {
-    "bindings": [{ "class_name": "Sandbox", "name": "Sandbox" }]
-  },
-  "migrations": [{ "new_sqlite_classes": ["Sandbox"], "tag": "v1" }]
+  "migrations": [
+    { "tag": "v2", "deleted_classes": ["Sandbox"] }
+  ]
 }

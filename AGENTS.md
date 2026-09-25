@@ -8,37 +8,49 @@ canonical file/directory overview.
 
 ### Services
 
-- **Static site (only runnable service).** Served either by Vercel (`outputDirectory: site`)
-  or locally by the Cloudflare Worker in `src/index.js`. For local development run the
-  Worker with Miniflare:
+- **Static site (only runnable service).** Production is the Cloudflare Worker in
+  `src/index.js` (worker name: `iconocracia`), which serves `site/` via the assets
+  binding and owns `/robots.txt`, `/sitemap.xml`, redirects, and the clean 404.
+  There is no Vercel deploy. For local development run the Worker with Miniflare:
   - `npx wrangler dev --port 8787` — serves the `site/` assets plus the Worker. Open
     `http://127.0.0.1:8787/` (homepage) and `/acervo` (collection grid).
   - The pinned wrangler is v3; it prints harmless warnings about being out-of-date and
-    about the `compatibility_date` (2026-07-03) being newer than the runtime — the site
+    about the `compatibility_date` being newer than the runtime — the site
     serves fine regardless.
-  - The Worker's `/api/exec` endpoint uses `@cloudflare/sandbox` (a Cloudflare
-    *container* Durable Object built from `Dockerfile`). Containers require Docker, which
-    is **not** available in this environment. This does **not** affect the editorial site
-    or static asset serving — only that one sandbox API route is unavailable locally.
-  - **Auth:** `POST /api/exec` requires `Authorization: Bearer <EXEC_API_KEY>`. Set the
-    secret locally via `.dev.vars` (see `.dev.vars.example`) and in production with
-    `npx wrangler secret put EXEC_API_KEY`. If the secret is unset, the route returns
-    `503` (fail closed). Static assets stay public.
+  - The old `/api/exec` sandbox endpoint (Cloudflare container Durable Object) was
+    **removed** — the editorial site carries no server-side execution surface.
 
-### Data generation (do this before demoing the acervo grid)
+## Regra de design: quando usar o musepool
 
-- `site/data/acervo.json` and `site/data/stats.json` are **generated** by
-  `python3 scripts/build_data.py` from `site/data/corpus-data-enriched.json`. A fresh
-  checkout ships `acervo.json` as an empty `[]` and a minimal `stats.json`, so the grid
-  is empty until you run the build script (it regenerates ~95 items). These generated
-  files are intentionally left untracked-in-spirit; avoid committing regenerated data.
+Antes de gerar qualquer página, componente ou HTML novo, decidir qual autoridade
+de design se aplica. Critério de desempate: **na dúvida, o design system
+existente vence.**
 
-### Validation (no unit/test suite exists)
+**USAR o musepool quando:**
+- A superfície **não tem identidade própria**: domínio/microssite novo,
+  landing page isolada, dashboard — ou pedido explícito de identidade visual
+  nova. Páginas novas **dentro** de um site existente (atlas, método, artigos
+  públicos no iconocracia.com; qualquer página no anavanzin.com) NÃO são esse
+  caso: herdam o design system do site hospedeiro.
+- Fluxo: recall amplo (temperatura 0.6–0.9) → escolher 1–2 dimensões "wow"
+  → fetch profundo (seed + referências dimensionais) → sintetizar.
+- Queries em inglês, por problema e não por estilo (ex.: "scholarly digital
+  archive, dense image grid, Warburg-inspired interface" — nunca
+  "minimal/clean/modern").
+- Restrição de saída: **HTML/CSS estático, sem build, sem framework** — o
+  resultado precisa caber no pipeline existente. Se o musepool não estiver
+  disponível, não improvisar identidade nova: herdar o design system e avisar.
 
-- `python3 scripts/validate_acervo.py --json site/data/corpus-data-enriched.json --schema schemas/corpus-data-enriched.schema.json --report /tmp/report.md`
-  validates JSON + JSON Schema, then checks every external image URL over the network.
-  Schema validation uses `jsonschema` when installed (stdlib fallback otherwise). Some
-  image URLs return 403/timeout from restricted networks — those are network/WAF issues,
-  **not** code failures. Use `--retries 0 --timeout 5` for a fast run.
-- There is no linter configured. CI is the GitHub workflows in `.github/workflows/`
-  (`validate-acervo`, `performance-acervo`, `conflict-markers`).
+**NÃO USAR o musepool quando:**
+- O trabalho é dentro de um design system já resolvido. O iconocracia.com
+  (Mnemosyne Viva) já tem identidade própria: papel creme #EFE5CF, lacre
+  vermelho, Instrument Serif (display) + Crimson Pro (corpo) + JetBrains Mono.
+  Nesse caso a referência é o próprio site (site/assets/style.css) — mexer
+  no design é dano, não melhoria. Pedido explícito de redesign → confirmar
+  escopo antes de tocar nos tokens.
+- O trabalho é técnico e não visual (SEO, canonicals, JSON-LD, redirects,
+  Worker, fichas estáticas): nenhuma decisão de design deve ser tomada.
+
+**Princípio:** o musepool existe para impedir a "média visual de IA". Onde já
+existe identidade construída, ela é a referência — o musepool só entra onde
+não há identidade alguma.

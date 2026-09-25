@@ -37,6 +37,9 @@
     img.src = 'assets/acervo/' + encodeURIComponent(item.id) + '.webp';
     let fallback = false;
     img.addEventListener('error', () => {
+      // renderSelected reuses #ex-image. A 404 from the previous work must not
+      // replaceChildren on the stage after that img has already been detached.
+      if (img.parentNode !== container) return;
       if (!fallback && safeURL(item.imagem)) { fallback = true; img.src = item.imagem; }
       else container.replaceChildren(node('span', 'ex-missing', 'Reprodução indisponível — consulte o arquivo de origem.'));
     });
@@ -64,7 +67,12 @@
   let items = [], filtered = [], selected = null;
   const fields = { q: $('#q'), pais: $('#f-pais'), regime: $('#f-regime'), periodo: $('#f-periodo'), tipo: $('#f-tipo') };
   const params = new URLSearchParams(location.search);
-  const stage = $('.ex-stage'), strip = $('#ex-filmstrip');
+  const stage = $('.ex-stage'), strip = $('#ex-filmstrip'), grid = $('#ex-grid'), constellation = $('#ex-constellation');
+  const VIEWS = ['palco', 'grade', 'constelacao'];
+  let view = VIEWS.includes(params.get('visao')) ? params.get('visao') : 'palco';
+  // Layout da constelação: determinístico, semeado pelo id da obra — o campo é estável entre visitas.
+  const hashId = (s) => { let h = 2166136261; for (const c of String(s)) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+  const mulberry = (seed) => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
   const dialog = node('dialog', 'ex-dialog');
   dialog.setAttribute('aria-labelledby', 'dialog-title');
   document.body.append(dialog);
@@ -82,6 +90,7 @@
       if (el.value) url.searchParams.set(key, el.value); else url.searchParams.delete(key);
     }
     if (selected) url.searchParams.set('item', selected.id); else url.searchParams.delete('item');
+    if (view !== 'palco') url.searchParams.set('visao', view); else url.searchParams.delete('visao');
     url.searchParams.delete('buscar');
     history.replaceState(null, '', url);
   }
@@ -98,7 +107,67 @@
     $('#result-count').textContent = filtered.length + ' de ' + items.length + ' registros · recorte do acervo';
     $('#clear-filters').hidden = !Object.values(fields).some((el) => el.value);
     renderStrip();
+    if (view === 'grade') renderGrid();
+    if (view === 'constelacao') renderConstellation();
     renderSelected();
+  }
+  function setView(next) {
+    view = next;
+    stage.hidden = strip.hidden = next !== 'palco';
+    grid.hidden = next !== 'grade';
+    constellation.hidden = next !== 'constelacao';
+    // Constelação ocupa a largura toda: a ficha volta quando se abre a obra (diálogo).
+    document.querySelector('.ex-layout').classList.toggle('ex-layout-wide', next === 'constelacao');
+    document.body.classList.toggle('ex-ground-full', next === 'constelacao');
+    $('#view-palco').setAttribute('aria-pressed', String(next === 'palco'));
+    $('#view-grade').setAttribute('aria-pressed', String(next === 'grade'));
+    $('#view-constelacao').setAttribute('aria-pressed', String(next === 'constelacao'));
+    if (next === 'grade') renderGrid();
+    if (next === 'constelacao') renderConstellation();
+    syncURL();
+  }
+  function renderGrid() {
+    grid.replaceChildren();
+    filtered.forEach((item, i) => {
+      const frame = node('button', 'ex-frame');
+      frame.type = 'button'; frame.dataset.id = item.id;
+      frame.setAttribute('aria-pressed', String(selected?.id === item.id));
+      frame.setAttribute('aria-label', 'Selecionar ' + item.titulo);
+      const image = node('span', 'ex-frame-image'); reproduce(item, image, true);
+      frame.append(image, node('span', 'ex-frame-cap', String(i + 1).padStart(2, '0') + ' / ' + shortTitle(item) + ' · ' + item.pais + ', ' + item.data));
+      frame.addEventListener('click', () => select(item));
+      grid.append(frame);
+    });
+  }
+  function renderConstellation() {
+    constellation.replaceChildren();
+    const small = matchMedia('(max-width:700px)').matches;
+    const cols = small ? 3 : Math.max(4, Math.floor((constellation.clientWidth || 1200) / 300));
+    const cellW = small ? 250 : 300, cellH = small ? 260 : 300;
+    const rows = Math.ceil(filtered.length / cols);
+    const field = node('div', 'ex-const-field');
+    field.style.width = cols * cellW + 'px';
+    field.style.height = Math.max(rows * cellH, 400) + 'px';
+    const widths = [150, 190, 240];
+    filtered.forEach((item, i) => {
+      const rng = mulberry(hashId(item.id));
+      const col = i % cols, row = Math.floor(i / cols);
+      const w = widths[Math.floor(rng() * widths.length)];
+      const x = col * cellW + 20 + rng() * (cellW - w - 40);
+      const y = row * cellH + 18 + rng() * (cellH - w * 0.9 - 36);
+      const rot = (rng() * 14 - 7).toFixed(1);
+      const frame = node('button', 'ex-star' + (rng() < 0.08 ? ' ex-star-acid' : ''));
+      frame.type = 'button'; frame.dataset.id = item.id;
+      frame.style.left = x + 'px'; frame.style.top = Math.max(0, y) + 'px';
+      frame.style.width = w + 'px'; frame.style.setProperty('--rot', rot + 'deg');
+      frame.setAttribute('aria-pressed', String(selected?.id === item.id));
+      frame.setAttribute('aria-label', 'Abrir ficha de ' + item.titulo);
+      const image = node('span', 'ex-star-image'); reproduce(item, image, true);
+      frame.append(image, node('span', 'ex-frame-cap', String(i + 1).padStart(2, '0') + ' / ' + shortTitle(item) + ' · ' + item.pais + ', ' + item.data));
+      frame.addEventListener('click', () => { select(item); openRecord(); });
+      field.append(frame);
+    });
+    constellation.append(field);
   }
   function renderStrip() {
     strip.replaceChildren();
@@ -153,6 +222,12 @@
         if (left < strip.scrollLeft || left + button.offsetWidth > strip.scrollLeft + strip.clientWidth) strip.scrollLeft = left;
       }
     });
+    grid.querySelectorAll('.ex-frame').forEach((frame) => {
+      frame.setAttribute('aria-pressed', String(frame.dataset.id === selected.id));
+    });
+    constellation.querySelectorAll('.ex-star').forEach((frame) => {
+      frame.setAttribute('aria-pressed', String(frame.dataset.id === selected.id));
+    });
     syncURL();
   }
   function openRecord(imageOnly = false) {
@@ -187,6 +262,9 @@
   $('.ex-filters').addEventListener('submit', (event) => { event.preventDefault(); filterItems(); });
   Object.values(fields).forEach((field) => field.addEventListener('input', filterItems));
   $('#clear-filters').addEventListener('click', () => { Object.values(fields).forEach((field) => { field.value = ''; }); filterItems(); });
+  $('#view-palco').addEventListener('click', () => setView('palco'));
+  $('#view-grade').addEventListener('click', () => setView('grade'));
+  $('#view-constelacao').addEventListener('click', () => setView('constelacao'));
   fetch('data/acervo.json').then((response) => { if (!response.ok) throw new Error('Acervo indisponível'); return response.json(); }).then((data) => {
     if (!Array.isArray(data)) throw new Error('Formato inválido');
     const featured = ['BR-009', 'US-008', 'FR-005', 'BR-005', 'FR-008'];
@@ -199,6 +277,7 @@
     Object.entries(fields).forEach(([key, field]) => { field.value = params.get(key) || ''; });
     selected = items.find((item) => item.id === params.get('item')) || items[0];
     filterItems();
+    setView(view);
     if (params.has('buscar')) fields.q.focus();
   }).catch(() => {
     filtered = []; selected = null; renderSelected();

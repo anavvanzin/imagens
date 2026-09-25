@@ -79,12 +79,16 @@ site/
 - Responsivo (grid fluida), acessibilidade básica (skip-link, `aria-current`, `aria-live`, labels,
   `prefers-reduced-motion` — implementado de fato apenas no PR #27; antes desta data a afirmacao era incorreta), metatags Open Graph + `theme-color` + `lang="pt-BR"`.
 
-## 5. Configuração de deploy (Vercel)
+## 5. Configuração de deploy (Cloudflare Worker)
 
-`vercel.json` atualizado:
+> Atualização (2026-09): o deploy Vercel foi **descontinuado** — `vercel.json` removido.
+> Produção é o Worker `iconocracia` (`wrangler.jsonc`, assets em `site/`), que também
+> serve `/robots.txt`, `/sitemap.xml`, redirects e 404. O endpoint `/api/exec`
+> (container sandbox) foi removido junto com `Dockerfile`.
+
+Registro histórico (Vercel, até 2026-09):
 - `outputDirectory: "site"` (antes: `corpus`).
 - `cleanUrls: true` → `/sobre` e `/acervo` servem os `.html` sem extensão.
-- Removido o `ignoreCommand` que restringia builds a branches `claude/*` (impedia deploy normal).
 - Framework: `null` (estático). Sem `buildCommand`/`installCommand`.
 
 ## 6. Validação executada
@@ -111,6 +115,4 @@ site/
   como estatística, não como grade. Marcado claramente como "recorte inicial".
 - **Hotlink de terceiros:** algumas fontes (Numista) bloqueiam hotlink → imagem cai no placeholder.
   Mitigação futura: baixar/servir imagens de domínio público localmente.
-- **`vercel.json` alterado:** mudou o diretório de deploy de `corpus` para `site` e removeu o gate de
-  branch. Se houver deploy do explorador antigo em produção, esta mudança o substitui — revisar antes de push.
 - **Sparse checkout foi desabilitado** para materializar os dados; nenhuma alteração foi commitada/pushada.

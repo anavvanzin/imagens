@@ -12,13 +12,17 @@ class CorpusSyncTests(unittest.TestCase):
             "id": "uuid-1", "title": "Justice", "country": "France",
             "date": "1900", "regime": "normativo", "motif": ["female allegory", "Balança"],
             "local_image_path": "assets/justice.webp", "thumbnail_url": "https://example.test/image",
-            "endurecimento_score": 0.5, "indicadores": {"rigidez_postural": 2}
+            "endurecimento_score": 0.5, "indicadores": {"rigidez_postural": 2},
+            "iconographic_metadata": {"visual_regime": "normativo", "endurecimento_score": 0.5}
         }
         result = transform_item(item)
         self.assertEqual(result["pais"], "França")
         self.assertEqual(result["imagem"], "assets/justice.webp")
         self.assertEqual(result["motivos"], ["Balança"])
-        self.assertEqual(result["endurecimento_score"], 0.5)
+        # escore composto aposentado: nunca propagado (metodologia = inventário verbal de atributos)
+        self.assertNotIn("endurecimento_score", result)
+        self.assertNotIn("indicadores", result)
+        self.assertEqual(result["iconographic_metadata"], {"visual_regime": "normativo"})
 
     def test_validation_rejects_duplicate_ids(self):
         records = [{"id": "same", "title": "A", "country": "Brazil", "date": "1900", "regime": "militar"},

@@ -212,12 +212,6 @@
             "type": "string"
           }
         },
-        "endurecimento_score": {
-          "type": "number",
-          "description": "Índice de endurecimento (média dos 10 indicadores ordinais 0–3).",
-          "minimum": 0,
-          "maximum": 3
-        },
         "atlas_panel": {
           "type": "string",
           "description": "Painel do Atlas (Mnemosyne) ao qual o item pertence."
