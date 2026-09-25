@@ -20,6 +20,8 @@
 ## Site issues found during the sync (not fixed by the sync)
 - `site/assets/style.css` repeats the `.brand-ornament` rule right after `.brand-flower` (commit 4199cff). The repeat overrides `.brand-flower`'s `background-image`, so `span.brand-flower.brand-ornament` in the header shows the whole three-motif sprite shrunk into 46px instead of `edelweiss-icon.png`. The design system mirrors the site, so it has the same bug. Deleting the second `.brand-ornament` line fixes both after a re-sync.
 
+- AGENTS.md ("Regra de design") describes the site identity as "papel creme #EFE5CF, lacre vermelho". That is the Iuris Memoria base layer; since the Exposição block in `style.css` the live look is lavender / violet / acid yellow, and that is what this design system ships. Both agree that `site/assets/style.css` is the reference.
+
 ## Re-sync risks
 - The WebP ornament copies go stale if `site/assets/edelweiss-*.png` change; regenerate them (same sizes) before re-syncing.
 - `conventions.md` lists class and token names from `style.css`. A site redesign can orphan them; re-validate each name against `ds-bundle/_ds_bundle.css`.

@@ -24,6 +24,7 @@ The Exposição palette overrides the older Iuris Memoria vellum tokens that are
 | Callout | `div.notice` with a leading `<strong>` |
 | Figures | `section.stat-band` > `.stat` > `.num` + `.lbl` |
 | Collection viewer | `.exhibition`; filters `.ex-filters` (`.ex-search` with input, selects, `.ex-filter-button`); image `.ex-stage`; `.ex-filmstrip` > `button.ex-thumb` (`.ex-thumb-image`, `.ex-thumb-title`, `.ex-thumb-meta`); text `.ex-caption` (`.ex-overline`, `h1`, `.ex-author`, `.ex-description`, `dl.ex-metadata`); actions `a.ex-action` (+ `.ex-primary` for the yellow one) |
+| Collection views | switch `.ex-toolbar` > `.ex-view-toggle` (buttons with `aria-pressed="true"` on the current one); wall `.ex-grid` > `button.ex-frame` (`.ex-frame-image` + `.ex-frame-cap` "01 / title · country, date"); scattered field `.ex-constellation` > `.ex-const-field` > `button.ex-star` (+ `.ex-star-acid`, `.ex-star-image`, `.ex-frame-cap`, tilt via `style="--rot:-4deg"`); missing image `span.ex-missing` |
 | Ornaments | `span.brand-ornament` + `.brand-scroll` (scroll), `.brand-seal` (round seal) or `.brand-flower` (46px mark); divider `div.ornamental-divider` > `span.brand-scroll.brand-ornament` |
 | Footer | `footer.site-footer` (violet ground, acid headings) |
 | Utilities | `.sr-only`, `.mono`, `.rubric` |
