@@ -1,0 +1,14 @@
+{
+  "projectId": "b7da31ab-932b-4f59-a02d-f232a102eada",
+  "shape": "package",
+  "pkg": "mnemosyne-viva-sandbox",
+  "globalName": "MnemosyneViva",
+  "buildCmd": "node .design-sync/flatten-css.mjs",
+  "entry": ".design-sync/.cache/src/entry.mjs",
+  "cssEntry": ".design-sync/.cache/src/mnemosyne-viva.css",
+  "extraFonts": [
+    "site/assets/design-system/fonts/fonts.css"
+  ],
+  "guidelinesGlob": [],
+  "readmeHeader": ".design-sync/conventions.md"
+}
